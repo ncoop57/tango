@@ -13,6 +13,6 @@ fi
 # Run the docker container. Add additional -v if
 # you need to mount more volumes into the container
 # Also, make sure to edit the ports to fix your needs.
-docker run -d --runtime=nvidia -v $(pwd):/tf/main	\
+docker run -d --runtime=nvidia --ipc=host -v $(pwd):/tf/main	\
 	-v /mnt/data/tango:/tf/data			\
-	-p 8004:8888  $TAG
+	-p 8003:8888  $TAG
