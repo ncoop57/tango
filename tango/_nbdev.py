@@ -5,6 +5,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"fix_frame_rate": "00_prep.ipynb",
          "chunk_videos": "00_prep.ipynb",
          "get_rand_imgs": "00_prep.ipynb",
+         "vid_from_frames": "00_prep.ipynb",
          "gen_vcodebook": "01_features.ipynb",
          "get_df": "01_features.ipynb",
          "get_bovw": "01_features.ipynb",
@@ -14,8 +15,6 @@ index = {"fix_frame_rate": "00_prep.ipynb",
 modules = ["prep.py",
            "features.py",
            "eval.py"]
-
-doc_url = "https://ncoop57.github.io/tango/"
 
 git_url = "https://github.com/ncoop57/tango/tree/master/"
 
