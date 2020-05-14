@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: Prep
-      url: /prepper
+      url: /prep
     - output: web,pdf
       title: Features
       url: /features
