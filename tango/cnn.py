@@ -106,7 +106,7 @@ def trainAsModel():
 # Cell
 class Extractor():
 
-    '''Low level implementation of Extractor class for fine tuned models only.'''
+    '''Low level implementation of Extractor class for non-layered models only.'''
 
     def __init__(self, learn, linear_output_layer, model, isFT):
         self.models = {'resnet50'}
@@ -140,7 +140,7 @@ class Extractor():
 # Cell
 class LayeredExtractor():
 
-    ''''''
+    '''Low level implementation of Extractor class for layered models only.'''
 
     def __init__(self):
         self.features = []
