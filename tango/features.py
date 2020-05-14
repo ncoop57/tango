@@ -40,9 +40,13 @@ class Extractor(ABC):
         pass
 
 # Cell
+
 class SIFTExtractor(Extractor):
 
+    '''Exposed SIFTExtractor class used for retrieving features.'''
+
     def extract(self, img):
+        '''Given an iamge, extract features using SIFT. Returns the feature vector.'''
         _, features = self.extractor.detectAndCompute(img, None)
         return features
 
@@ -51,7 +55,12 @@ class CNNExtractor(Extractor):
     '''Exposed CNNExtractor class used for retrieving features.'''
 
     def extract(self, img):
+        '''Given an image, extract features from the layers of a CNN. Returns the feature vector.'''
+
         return self.extractor.getFeatures(img)
+
+show_doc(CNNExtractor.extract)
+show_doc(SIFTExtractor.extract)
 
 # Cell
 def gen_vcodebook(imgs, extractor, vwords = 10_000):
