@@ -31,6 +31,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Cell
 class Extractor(ABC):
 
+    '''Abstract Extractor class used to implement
+    BOVW technique.'''
+
     def __init__(self, extractor):
         self.extractor = extractor
         super().__init__()
