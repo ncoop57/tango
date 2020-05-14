@@ -60,10 +60,10 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L43" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
-<p>Abstract Extractor class used to implement
-BOVW technique.</p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
 
 </div>
 
@@ -82,10 +82,10 @@ BOVW technique.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L52" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L49" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
-<p>Abstract Extractor class used to implement
-BOVW technique.</p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
 
 </div>
 
@@ -107,7 +107,7 @@ BOVW technique.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L58" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>=<em><code>10000</code></em>)</p>
+<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>=<em><code>10000</code></em>)</p>
 </blockquote>
 <p>Constructs a visual codebook based on the given images.
 You can change vwords to increase the vocabulary of the codebook.</p>
@@ -121,6 +121,20 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vwords</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">codebook</span> <span class="o">=</span> <span class="n">gen_vcodebook</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">vwords</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -132,7 +146,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
+<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
 </blockquote>
 <p>Generates the document frequency for the visual words</p>
 
@@ -145,6 +159,19 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -156,7 +183,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
+<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
 </blockquote>
 <p>Generates the bag of visual words (bovw) for an entire video.</p>
 
@@ -169,6 +196,61 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">bovw</span> <span class="o">=</span> <span class="n">get_bovw</span><span class="p">(</span><span class="n">video_paths</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+    <div>
+        <style>
+            /* Turns off some styling */
+            progress {
+                /* gets rid of default border in Firefox and Opera. */
+                border: none;
+                /* Needs to be in here for Safari polyfill so background images work as expected. */
+                background-size: auto;
+            }
+            .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+                background: #F44336;
+            }
+        </style>
+      <progress value='100' class='' max='100', style='width:300px; height:20px; vertical-align: middle;'></progress>
+      100.00% [100/100 02:21<00:00]
+    </div>
+    
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([61,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 39])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -180,9 +262,39 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
+<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
 </blockquote>
 
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tf_idf_pix2</span> <span class="o">=</span> <span class="n">calc_tf_idf</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 1.827397,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,
+       -0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  0.      ,  1.168336])</pre>
 </div>
 
 </div>
