@@ -11,6 +11,7 @@ import torch.nn as nn
 from torchvision import models
 from torch.autograd import Variable
 import cv2
+from nbdev.showdoc import *
 
 # Cell
 class Hook():
