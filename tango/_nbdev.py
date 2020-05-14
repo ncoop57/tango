@@ -2,13 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"fix_frame_rate": "00_prep.ipynb",
-         "chunk_videos": "00_prep.ipynb",
-         "get_rand_imgs": "00_prep.ipynb",
-         "vid_from_frames": "00_prep.ipynb",
-         "save_detected_frames": "00_prep.ipynb",
-         "gen_vids_from_v2s": "00_prep.ipynb",
-         "run_phase1_v2s": "00_prep.ipynb",
+index = {"fix_frame_rate": "04_prepper.ipynb",
+         "chunk_videos": "04_prepper.ipynb",
+         "get_rand_imgs": "04_prepper.ipynb",
+         "vid_from_frames": "04_prepper.ipynb",
+         "save_detected_frames": "04_prepper.ipynb",
+         "gen_vids_from_v2s": "04_prepper.ipynb",
+         "run_phase1_v2s": "04_prepper.ipynb",
          "Extractor": "03_cnn.ipynb",
          "SIFTExtractor": "01_features.ipynb",
          "CNNExtractor": "01_features.ipynb",
@@ -31,7 +31,8 @@ index = {"fix_frame_rate": "00_prep.ipynb",
 modules = ["prep.py",
            "features.py",
            "eval.py",
-           "cnn.py"]
+           "cnn.py",
+           "prepper.py"]
 
 git_url = "https://github.com/ncoop57/tango/tree/master/"
 

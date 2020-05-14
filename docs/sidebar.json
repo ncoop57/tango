@@ -1,10 +1,10 @@
 {
   "tango": {
     "Overview": "/",
-    "Prep": "/prep",
+    "Prep": "/prepper",
     "Features": "/features",
-    "CNN": "/cnn",
     "Eval": "/eval",
-    "Title": "/test2"
+    "CNN": "/cnn",
+    "Title": "/lesson1-pets"
   }
 }

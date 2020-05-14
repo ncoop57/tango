@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: Prep
-      url: /prep
+      url: /prepper
     - output: web,pdf
       title: Features
       url: /features
@@ -19,8 +19,11 @@ entries:
       title: Eval
       url: /eval
     - output: web,pdf
+      title: CNN
+      url: /cnn
+    - output: web,pdf
       title: Title
-      url: /test2
+      url: /lesson1-pets
     output: web
     title: tango
   output: web
