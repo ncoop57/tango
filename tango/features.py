@@ -48,6 +48,8 @@ class SIFTExtractor(Extractor):
 
 class CNNExtractor(Extractor):
 
+    '''Exposed CNNExtractor class used for retrieving features.'''
+
     def extract(self, img):
         return self.extractor.getFeatures(img)
 
