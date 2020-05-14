@@ -39,7 +39,7 @@ def get_bovw(vid_path, extractor, codebook):
 
     # checks whether frames were extracted
     success = 1
-    bovw = numpy.array([])
+    bovw = np.array([])
     for i in progress_bar(range(100)):
         # vid object calls read
         # function extract frames
@@ -47,17 +47,17 @@ def get_bovw(vid_path, extractor, codebook):
         if success:
             features = extractor.extract(img)
             vw = codebook.predict(features)
-            bovw = numpy.concatenate((bovw, vw))
+            bovw = np.concatenate((bovw, vw))
 
-    hist = numpy.histogram(bovw, bins = vwords)[0]
+    hist = np.histogram(bovw, bins = vwords)[0]
     return hist, bovw
 
 # Cell
 def calc_tf_idf(tfs, dfs):
-    tf_idf = numpy.array([])
+    tf_idf = np.array([])
     for tf, df in zip(tfs, dfs):
-        tf = tf / numpy.sum(tfs)
-        idf = numpy.log(len(tfs) / (df + 1))
-        tf_idf = numpy.append(tf_idf, tf * idf)
+        tf = tf / np.sum(tfs)
+        idf = np.log(len(tfs) / (df + 1))
+        tf_idf = np.append(tf_idf, tf * idf)
 
     return tf_idf
