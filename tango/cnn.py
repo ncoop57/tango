@@ -52,6 +52,10 @@ def get_named_module_from_model(model, name):
 
 # Cell
 def trainPetsModel():
+    '''Fine tunes a pretrained ResNet50 model to detect pet breeds
+    and returns the resulting model in learn as well as the last layer
+    in linear_output_layer for subsequent feature extraction.'''
+
     bs = 16
     np.random.seed(2)
 
@@ -69,6 +73,9 @@ def trainPetsModel():
 
 # Cell
 def getFeaturesResNet50(img):
+    '''Directly gets a feature vector from the last layer of ResNet50
+    without any fine tuning.'''
+
     model = models.resnet50(pretrained=True)
     modules = list(model.children())[:-1]
     resNet50 = nn.Sequential(*modules)
@@ -81,6 +88,10 @@ def getFeaturesResNet50(img):
 
 # Cell
 def trainAsModel():
+    '''Fine tunes a pretrained ResNet50 model to detect Google Play store
+    categories of Android screenshots and returns the resulting model in learn
+    as well as the last layer in linear_output_layer for subsequent feature extraction.'''
+
     bs = 16
     np.random.seed(2)
 
@@ -94,6 +105,8 @@ def trainAsModel():
 
 # Cell
 class Extractor():
+
+    '''Low level implementation of Extractor class for fine tuned models only.'''
 
     def __init__(self, learn, linear_output_layer, model, isFT):
         self.models = {'resnet50'}
@@ -126,6 +139,8 @@ class Extractor():
 
 # Cell
 class LayeredExtractor():
+
+    ''''''
 
     def __init__(self):
         self.features = []
