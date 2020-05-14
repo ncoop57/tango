@@ -46,7 +46,7 @@ class SIFTExtractor(Extractor):
     '''Exposed SIFTExtractor class used for retrieving features.'''
 
     def extract(self, img):
-        '''Given an iamge, extract features using SIFT. Returns the feature vector.'''
+        '''Given an image, extract features using SIFT. Returns the feature vector.'''
         _, features = self.extractor.detectAndCompute(img, None)
         return features
 
