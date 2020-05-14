@@ -20,7 +20,7 @@ entries:
       url: /eval
     - output: web,pdf
       title: Title
-      url: /lesson1-pets
+      url: /test2
     output: web
     title: tango
   output: web
