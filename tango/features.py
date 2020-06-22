@@ -40,7 +40,6 @@ class Extractor(ABC):
         pass
 
 # Cell
-
 class SIFTExtractor(Extractor):
 
     '''Exposed SIFTExtractor class used for retrieving features.'''
@@ -59,9 +58,6 @@ class CNNExtractor(Extractor):
 
         return self.extractor.getFeatures(img)
 
-show_doc(CNNExtractor.extract)
-show_doc(SIFTExtractor.extract)
-
 # Cell
 def gen_vcodebook(imgs, extractor, vwords = 10_000):
     """
@@ -79,7 +75,7 @@ def gen_vcodebook(imgs, extractor, vwords = 10_000):
     return codebook
 
 # Cell
-def get_df(imgs, extractor, codebook):
+def get_df(imgs, extractor, codebook, vwords):
     """Generates the document frequency for the visual words"""
     hist = None
     for img in imgs:
@@ -93,14 +89,15 @@ def get_df(imgs, extractor, codebook):
     return hist
 
 # Cell
-def get_bovw(vid_path, extractor, codebook):
+def get_bovw(vid_path, extractor, codebook, vwords, n = None):
     """Generates the bag of visual words (bovw) for an entire video."""
     vid = cv2.VideoCapture(str(vid_path))
+    if n is None: n = vid.get(cv2.CAP_PROP_FRAME_COUNT)
 
     # checks whether frames were extracted
     success = 1
     bovw = np.array([])
-    for i in progress_bar(range(100)):
+    for i in progress_bar(range(n)):
         # vid object calls read
         # function extract frames
         success, img = vid.read()
