@@ -21,44 +21,22 @@ summary: "This module contains all the necessary functions for extracting and or
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="CNNExtractor.extract" class="doc_header"><code>CNNExtractor.extract</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CNNExtractor.extract</code>(<strong><code>img</code></strong>)</p>
-</blockquote>
-<p>Given an image, extract features from the layers of a CNN. Returns the feature vector.</p>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="SIFTExtractor.extract" class="doc_header"><code>SIFTExtractor.extract</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SIFTExtractor.extract</code>(<strong><code>img</code></strong>)</p>
-</blockquote>
-<p>Given an image, extract features using SIFT. Returns the feature vector.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/data/datasets/videos&quot;</span><span class="p">)</span>
+<span class="n">video_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/video.mp4&quot;</span><span class="p">));</span> <span class="n">video_paths</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+    </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -66,16 +44,23 @@ summary: "This module contains all the necessary functions for extracting and or
 <div class="output_area">
 
 
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="Extractor" class="doc_header"><code>class</code> <code>Extractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/cnn.py#L96" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Extractor</code>(<strong><code>learn</code></strong>, <strong><code>linear_output_layer</code></strong>, <strong><code>model</code></strong>, <strong><code>isFT</code></strong>)</p>
-</blockquote>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[PosixPath(&#39;/tf/data/datasets/videos/art_and_design/ibis_paint/scenario1/video.mp4&#39;),
+ PosixPath(&#39;/tf/data/datasets/videos/art_and_design/ibis_paint/scenario2/video.mp4&#39;),
+ PosixPath(&#39;/tf/data/datasets/videos/art_and_design/pixel_art_paint/scenario1/video.mp4&#39;),
+ PosixPath(&#39;/tf/data/datasets/videos/art_and_design/pixel_art_paint/scenario2/video.mp4&#39;),
+ PosixPath(&#39;/tf/data/datasets/videos/auto_and_vehicles/car_part/scenario1/video.mp4&#39;),
+ PosixPath(&#39;/tf/data/datasets/videos/auto_and_vehicles/car_part/scenario2/video.mp4&#39;)]</pre>
+</div>
 
 </div>
 
 </div>
+</div>
 
 </div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -87,21 +72,9 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="CNNExtractor.extract" class="doc_header"><code>CNNExtractor.extract</code><a href="__main__.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>CNNExtractor.extract</code>(<strong><code>img</code></strong>)</p>
+<h2 id="Extractor" class="doc_header"><code>class</code> <code>Extractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/cnn.py#L108" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Extractor</code>(<strong><code>learn</code></strong>, <strong><code>linear_output_layer</code></strong>, <strong><code>model</code></strong>, <strong><code>isFT</code></strong>)</p>
 </blockquote>
-<p>Given an image, extract features from the layers of a CNN. Returns the feature vector.</p>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="SIFTExtractor.extract" class="doc_header"><code>SIFTExtractor.extract</code><a href="__main__.py#L7" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SIFTExtractor.extract</code>(<strong><code>img</code></strong>)</p>
-</blockquote>
-<p>Given an image, extract features using SIFT. Returns the feature vector.</p>
+<p>Low level implementation of Extractor class for non-layered models only.</p>
 
 </div>
 
@@ -113,6 +86,9 @@ summary: "This module contains all the necessary functions for extracting and or
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -120,7 +96,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>learn</code></strong>, <strong><code>linear_output_layer</code></strong>, <strong><code>model</code></strong>, <strong><code>isFT</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L44" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
 <p>Exposed SIFTExtractor class used for retrieving features.</p>
 
@@ -141,7 +117,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>learn</code></strong>, <strong><code>linear_output_layer</code></strong>, <strong><code>model</code></strong>, <strong><code>isFT</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L53" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
 <p>Exposed CNNExtractor class used for retrieving features.</p>
 
@@ -172,10 +148,10 @@ summary: "This module contains all the necessary functions for extracting and or
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Three different extraction techniques</span>
-<span class="n">learn</span><span class="p">,</span> <span class="n">linear_output_layer</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">trainPetsModel</span><span class="p">()</span>
-<span class="n">extractor</span> <span class="o">=</span> <span class="n">CNNExtractor</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">createExtractor</span><span class="p">(</span><span class="n">learn</span><span class="p">,</span> <span class="n">linear_output_layer</span><span class="p">,</span> <span class="s1">&#39;resnet50&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="n">extractor</span> <span class="o">=</span> <span class="n">CNNExtractor</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">createExtractor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;resnet50&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">extractor</span> <span class="o">=</span> <span class="n">CNNExtractor</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">createLayeredExtractor</span><span class="p">())</span>
+<span class="c1"># learn, linear_output_layer = trainPetsModel()</span>
+<span class="c1"># extractor = CNNExtractor(cnn.createExtractor(learn, linear_output_layer, &#39;resnet50&#39;, True))</span>
+<span class="n">extractor</span> <span class="o">=</span> <span class="n">CNNExtractor</span><span class="p">(</span><span class="n">createExtractor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;resnet50&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+<span class="c1"># extractor = CNNExtractor(cnn.createLayeredExtractor())</span>
 </pre></div>
 
     </div>
@@ -209,7 +185,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>=<em><code>10000</code></em>)</p>
+<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>=<em><code>10000</code></em>)</p>
 </blockquote>
 <p>Constructs a visual codebook based on the given images.
 You can change vwords to increase the vocabulary of the codebook.</p>
@@ -248,7 +224,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
+<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>)</p>
 </blockquote>
 <p>Generates the document frequency for the visual words</p>
 
@@ -265,7 +241,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">,</span> <span class="n">vwords</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -285,9 +261,32 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>)</p>
+<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>, <strong><code>n</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Generates the bag of visual words (bovw) for an entire video.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="new_get_bovw" class="doc_header"><code>new_get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_get_bovw</code>(<strong><code>vid</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>, <strong><code>fps</code></strong>=<em><code>30</code></em>, <strong><code>frames_to_keep</code></strong>=<em><code>1</code></em>)</p>
+</blockquote>
 
 </div>
 
@@ -302,10 +301,40 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hist</span><span class="p">,</span> <span class="n">bovw</span> <span class="o">=</span> <span class="n">get_bovw</span><span class="p">(</span><span class="n">video_paths</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vid</span> <span class="o">=</span> <span class="n">Video</span><span class="p">(</span><span class="n">video_paths</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">bovw</span> <span class="o">=</span> <span class="n">new_get_bovw</span><span class="p">(</span><span class="n">vid</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">,</span> <span class="n">vwords</span><span class="p">,</span> <span class="n">frames_to_keep</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">bovw</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>26</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -322,7 +351,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
+<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L127" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
 </blockquote>
 
 </div>
