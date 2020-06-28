@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:1.13.0rc2-gpu-py3-jupyter
+FROM tensorflow/tensorflow:2.0.0rc0-gpu-py3-jupyter
 
 ADD ./requirements.txt .
 
