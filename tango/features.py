@@ -22,6 +22,8 @@ from .cnn import *
 
 from pathlib import Path
 
+from PIL import Image
+
 from matplotlib import pyplot as plt
 
 from nbdev.showdoc import *
