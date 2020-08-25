@@ -37,7 +37,7 @@ summary: "This module contains all the necessary functions for evaluating differ
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
+<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L205" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -60,7 +60,30 @@ summary: "This module contains all the necessary functions for evaluating differ
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="cosine_similarity" class="doc_header"><code>cosine_similarity</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cosine_similarity</code>(<strong><code>a</code></strong>, <strong><code>b</code></strong>)</p>
+<h4 id="cosine_similarity" class="doc_header"><code>cosine_similarity</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cosine_similarity</code>(<strong><code>a</code></strong>, <strong><code>b</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="hit_rate_at_k" class="doc_header"><code>hit_rate_at_k</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>hit_rate_at_k</code>(<strong><code>rs</code></strong>, <strong><code>k</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -89,7 +112,7 @@ summary: "This module contains all the necessary functions for evaluating differ
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="mean_reciprocal_rank" class="doc_header"><code>mean_reciprocal_rank</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mean_reciprocal_rank</code>(<strong><code>rs</code></strong>)</p>
+<h4 id="mean_reciprocal_rank" class="doc_header"><code>mean_reciprocal_rank</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mean_reciprocal_rank</code>(<strong><code>rs</code></strong>)</p>
 </blockquote>
 <p>Score is reciprocal of the rank of the first relevant item</p>
 <p>First element is 'rank 1'.  Relevance is binary (nonzero is relevant).</p>
@@ -129,7 +152,7 @@ mean_reciprocal_rank(rs)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="r_precision" class="doc_header"><code>r_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>r_precision</code>(<strong><code>r</code></strong>)</p>
+<h4 id="r_precision" class="doc_header"><code>r_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>r_precision</code>(<strong><code>r</code></strong>)</p>
 </blockquote>
 <p>Score is precision after all relevant documents have been retrieved</p>
 <p>Relevance is binary (nonzero is relevant).</p>
@@ -168,7 +191,7 @@ r_precision(r)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="precision_at_k" class="doc_header"><code>precision_at_k</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>precision_at_k</code>(<strong><code>r</code></strong>, <strong><code>k</code></strong>)</p>
+<h4 id="precision_at_k" class="doc_header"><code>precision_at_k</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>precision_at_k</code>(<strong><code>r</code></strong>, <strong><code>k</code></strong>)</p>
 </blockquote>
 <p>Score is precision @ k</p>
 <p>Relevance is binary (nonzero is relevant).</p>
@@ -211,7 +234,7 @@ ValueError: Relevance score length &lt; k</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="average_precision" class="doc_header"><code>average_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>average_precision</code>(<strong><code>r</code></strong>)</p>
+<h4 id="average_precision" class="doc_header"><code>average_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L141" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>average_precision</code>(<strong><code>r</code></strong>)</p>
 </blockquote>
 <p>Score is average precision (area under PR curve)</p>
 <p>Relevance is binary (nonzero is relevant).</p>
@@ -247,7 +270,7 @@ average_precision(r)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="mean_average_precision" class="doc_header"><code>mean_average_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mean_average_precision</code>(<strong><code>rs</code></strong>)</p>
+<h4 id="mean_average_precision" class="doc_header"><code>mean_average_precision</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>mean_average_precision</code>(<strong><code>rs</code></strong>)</p>
 </blockquote>
 <p>Score is mean average precision</p>
 <p>Relevance is binary (nonzero is relevant).</p>
@@ -364,6 +387,34 @@ mean_average_precision(rs)
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # export</span>
+<span class="c1"># def evaluate(results, top_n = 5):</span>
+<span class="c1">#     # calc Precision/Recall (with 5 top docs)?, MRR, and mAP</span>
+<span class="c1">#     for model in results:</span>
+<span class="c1">#         rs = []</span>
+<span class="c1">#         for app in results[model]:</span>
+<span class="c1">#             r = []</span>
+<span class="c1">#             for labels, score in results[model][app].items():</span>
+<span class="c1">#                 if labels[0] == &#39;S01&#39;:</span>
+<span class="c1">#                     if labels[2] != labels[3]:</span>
+<span class="c1">#                         if labels[0] == labels[1]: r.append(1)</span>
+<span class="c1">#                         else: r.append(0)</span>
+<span class="c1">#             rs.append(r)</span>
+    
+<span class="c1">#         print(f&#39;{model} mAP:&#39;, mean_average_precision(rs))</span>
+<span class="c1">#         print(f&#39;{model} mRR:&#39;, mean_reciprocal_rank(rs))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -375,7 +426,117 @@ mean_average_precision(rs)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="evaluate" class="doc_header"><code>evaluate</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L180" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>evaluate</code>(<strong><code>results</code></strong>, <strong><code>top_n</code></strong>=<em><code>5</code></em>)</p>
+<h4 id="rank_stats" class="doc_header"><code>rank_stats</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rank_stats</code>(<strong><code>rs</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def evaluate(results, top_k = [1, 5, 10]):</span>
+<span class="c1">#     output = {}</span>
+<span class="c1">#     for app in results:</span>
+<span class="c1">#         output[app] = {}</span>
+<span class="c1">#         app_rs = []</span>
+<span class="c1">#         for report in results[app]:</span>
+<span class="c1">#             output[app][report] = {}</span>
+<span class="c1">#             report_rs = []</span>
+<span class="c1">#             for vid in results[app][report]:</span>
+<span class="c1">#                 output[app][report][vid] = {&#39;ranks&#39;: []}</span>
+<span class="c1">#                 r = []</span>
+<span class="c1">#                 for labels, score in results[app][report][vid].items():</span>
+<span class="c1">#                     output[app][report][vid][&#39;ranks&#39;].append((labels, score))</span>
+<span class="c1">#                     if labels[0] == report: r.append(1)</span>
+<span class="c1">#                     else: r.append(0)</span>
+<span class="c1">#                 r = np.asarray(r)</span>
+<span class="c1">#                 output[app][report][vid][&#39;rank&#39;] = r.nonzero()[0][0] + 1</span>
+<span class="c1">#                 output[app][report][vid][&#39;average_precision&#39;] = average_precision(r)</span>
+<span class="c1">#                 report_rs.append(r)</span>
+            
+<span class="c1">#             report_rs_std, report_rs_mean, report_rs_med, report_mRR = rank_stats(report_rs)</span>
+<span class="c1">#             report_mAP = mean_average_precision(report_rs)</span>
+            
+<span class="c1">#             output[app][report][&#39;Report std rank&#39;] = report_rs_std</span>
+<span class="c1">#             output[app][report][&#39;Report mean rank&#39;] = report_rs_mean</span>
+<span class="c1">#             output[app][report][&#39;Report median rank&#39;] = report_rs_med</span>
+<span class="c1">#             output[app][report][&#39;Report mRR&#39;] = report_mRR</span>
+<span class="c1">#             output[app][report][&#39;Report mAP&#39;] = report_mAP</span>
+<span class="c1">#             for k in top_k:</span>
+<span class="c1">#                 report_hit_rate = hit_rate_at_k(report_rs, k)</span>
+<span class="c1">#                 output[app][f&#39;Report Hit@{k}&#39;] = report_hit_rate</span>
+<span class="c1">#             app_rs.extend(report_rs)</span>
+        
+<span class="c1">#         app_rs_std, app_rs_mean, app_rs_med, app_mRR = rank_stats(app_rs)</span>
+<span class="c1">#         app_mAP = mean_average_precision(app_rs)</span>
+        
+<span class="c1">#         output[app][&#39;App std rank&#39;] = app_rs_std</span>
+<span class="c1">#         output[app][&#39;App mean rank&#39;] = app_rs_mean</span>
+<span class="c1">#         output[app][&#39;App median rank&#39;] = app_rs_med</span>
+<span class="c1">#         output[app][&#39;App mRR&#39;] = app_mRR</span>
+<span class="c1">#         output[app][&#39;App mAP&#39;] = app_mAP</span>
+<span class="c1">#         print(f&#39;{app} σ Rank&#39;, app_rs_std)</span>
+<span class="c1">#         print(f&#39;{app} μ Rank&#39;, app_rs_mean)</span>
+<span class="c1">#         print(f&#39;{app} Median Rank&#39;, app_rs_med)</span>
+<span class="c1">#         print(f&#39;{app} mRR:&#39;, app_mRR)</span>
+<span class="c1">#         print(f&#39;{app} mAP:&#39;, app_mAP)</span>
+<span class="c1">#         for k in top_k:</span>
+<span class="c1">#             app_hit_rate = hit_rate_at_k(app_rs, k)</span>
+<span class="c1">#             output[app][f&#39;App Hit@{k}&#39;] = app_hit_rate</span>
+<span class="c1">#             print(f&#39;{app} Hit@{k}:&#39;, app_hit_rate)</span>
+            
+<span class="c1">#     return output</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="evaluate" class="doc_header"><code>evaluate</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>evaluate</code>(<strong><code>rankings</code></strong>, <strong><code>top_k</code></strong>=<em><code>[1, 5, 10]</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_eval_results" class="doc_header"><code>get_eval_results</code><a href="https://github.com/ncoop57/tango/tree/master/tango/eval.py#L260" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_eval_results</code>(<strong><code>evals</code></strong>, <strong><code>app</code></strong>, <strong><code>item</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -411,12 +572,1284 @@ Converted 02_eval.ipynb.
 Converted 03_cnn.ipynb.
 This cell doesn&#39;t have an export destination and was ignored:
  
-Converted 04_experiments.ipynb.
-Converted SimCLR.ipynb.
+Converted 04.0_experiments.ipynb.
+Converted 04.1_experiments.codebooks.ipynb.
+Converted 05_model.ipynb.
+Converted 06_approach.ipynb.
+This cell doesn&#39;t have an export destination and was ignored:
+ 
+Converted 07_results.ipynb.
+Converted 08_interp_results.ipynb.
+Converted SimCLR.old.ipynb.
+Converted [Scratch 1] Tango SimCLR.ipynb.
+Converted [Scratch 2] Tango SimCLR.ipynb.
 Converted index.ipynb.
 Converted lesson1-pets.ipynb.
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_00</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;car_report&#39;: {&#39;S0&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;),
+                 0.9954718971541773),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9945964770493874),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9939976838697654),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9931883158114038),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9929479446868809),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9928277720624915),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9924880112472121),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9916407619640583),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9916281614374629),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9908729735712648),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9904742624406746),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9896292570686976),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9869854517117607),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9865547211253137),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.986118447341411),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9850550846216436),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.983298468501515),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9793310935304032),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9771318857464869)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_1&#39;), 0.9939760064728501),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.991709901906428),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9904742624406746),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9900969954564913),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.987634883569076),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9864279725085953),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9848406230155002),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.982874308941409),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9822985850347496),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9816436210003336),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9809183343231481),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9800793012480498),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9791963174560211),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9782974652572856),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9748281122156977),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9736492828941036),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9720078072183509),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9667990747322316),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.956816922943277)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_2&#39;), 0.9931264369461513),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9929479446868809),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9921260740461447),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9921120643060815),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9914886090900727),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9904583386943098),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9903796871998533),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9900942565165725),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9875210450803086),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9867898652365249),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9864560334223405),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9860766382167924),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.985821130598569),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9843950771853749),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9839930213492247),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9838069407991138),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.982874308941409),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9824953804435322),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9696700577368045)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9974059001814481),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9959295871275722),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9933201683904901),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9921120643060815),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9917908941908286),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9916407619640583),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9905080166820779),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9898349457301875),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9894697689014701),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9892769761497341),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9879530613195405),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9863985376671571),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9822235248265262),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9820647143748119),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9816620643467094),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9809863474694873),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9782974652572856),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9776709494859072),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9632336344253393)])},
+  &#39;S1&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_0&#39;), 0.9978076749662013),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9974118768244423),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9964452467784782),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9956827878260711),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.995405613645992),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9939751972619978),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9886963124918657),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9880326873335907),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9865547211253137),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9864378563467566),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.985821130598569),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9846784657552048),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9845948113235389),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9843969414233615),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9839120403382219),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9822235248265262),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9788314617497509),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9754100286899446),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9748281122156977)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_1&#39;), 0.9954636375463118),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9890085663485645),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9862898071711405),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9847661099671035),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9843969414233615),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9839493288635129),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9837386222116336),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.983505032511075),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9814365191877356),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9804897009970619),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9800793012480498),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9793310935304032),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9718318808926901),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9713923283154741),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9696700577368045),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.968952071127772),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9638392711406231),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9632336344253393),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.956226478154077)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_0&#39;), 0.9974118768244423),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9961063407179793),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9956187390594999),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9944085836412244),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9942842536046907),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9936903771364994),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9882038197903414),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9869854517117607),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9864560334223405),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9862898071711405),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9852167042613263),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9839271505708713),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9836561509630044),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9821187370418336),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9819396024621053),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9809863474694873),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9797014070180224),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9755729978770716),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9736492828941036)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_0&#39;), 0.9958531517957929),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9956827878260711),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9956187390594999),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9943682182440733),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.993497017287237),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.992316581424298),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9907635469321225),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9890085663485645),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.986118447341411),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9856530304084851),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.984713266732355),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9843950771853749),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9841749347735265),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.984062658344715),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9829125632219373),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9817634459103736),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9816620643467094),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.980542588256201),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9791963174560211)])},
+  &#39;S2&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9981176444411879),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9978076749662013),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9966735357437558),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9961946017512691),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9961063407179793),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9958531517957929),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9924880112472121),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9909569955565029),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9905291542036742),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9904583386943098),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9901216626257316),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9896266623591522),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9885818233245256),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9879530613195405),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9867704256933298),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9859660863316162),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9847661099671035),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9826093332356703),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9816436210003336)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_3&#39;), 0.9958647148025594),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9944124655882961),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.993352509274838),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9918360169685073),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9917908941908286),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9896266623591522),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9893280658331286),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9889813883111798),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9877174497888898),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9864378563467566),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9860766382167924),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9856530304084851),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9850550846216436),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9836561509630044),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9825444985605408),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9823324526455168),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9779131499154022),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9720078072183509),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9718318808926901)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_3&#39;), 0.9978607746496041),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9944124655882961),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9892769761497341),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9885225740510036),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9865122651048643),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9859660863316162),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9852021275143051),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9846784657552048),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9838069407991138),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9836160384576512),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9835120243954472),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9819396024621053),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.980542588256201),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9771318857464869),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9682744644344105),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9680122935351543),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9607299055621779),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.956816922943277),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.956226478154077)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_2&#39;), 0.9978607746496041),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9958647148025594),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9933201683904901),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9929093069574945),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9911052991068987),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9905944859717206),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9901216626257316),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9891455911584464),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9886963124918657),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.988421470732429),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9867898652365249),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9852167042613263),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.984713266732355),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.983298468501515),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9754389121610022),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9751842088955954),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9699442375690813),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9667990747322316),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9638392711406231)])},
+  &#39;S3&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_1&#39;), 0.9979001831712689),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9939976838697654),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.991709901906428),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.991638748000079),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9908482721261079),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9904823038332438),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9901093101397656),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9885449089708414),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9875210450803086),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.986894381477449),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9867704256933298),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9863985376671571),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9841749347735265),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9825444985605408),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9804897009970619),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9797014070180224),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9788314617497509),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9754389121610022),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9682744644344105)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_0&#39;), 0.9979001831712689),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9939760064728501),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9913941983935679),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9908729735712648),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9880482054691171),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9876266003899643),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9873644109829743),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9860496500800805),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9855465921957184),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9826093332356703),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9824953804435322),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9820647143748119),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9817634459103736),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9814365191877356),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9779131499154022),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9755729978770716),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9754100286899446),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9699442375690813),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9607299055621779)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9974038726941241),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9959295871275722),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9936751823924261),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9935190270286357),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9931883158114038),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9918360169685073),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.991638748000079),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9911052991068987),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9908727497029006),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9905291542036742),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9903796871998533),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9876266003899643),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9865122651048643),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9845948113235389),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.984062658344715),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9839271505708713),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9836702232253675),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9822985850347496),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9713923283154741)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_3&#39;), 0.9974059001814481),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9974038726941241),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.993352509274838),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9929093069574945),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9920062102543633),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9918541339487025),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9917554350627623),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9916281614374629),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9900942565165725),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9885818233245256),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9885449089708414),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9885225740510036),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9860496500800805),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9839120403382219),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9829125632219373),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9821187370418336),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9819882145613756),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9809183343231481),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.968952071127772)])},
+  &#39;S4&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_2&#39;), 0.9981926939841615),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9981176444411879),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9973927727876962),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9954718971541773),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.995405613645992),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9936903771364994),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9935190270286357),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.993497017287237),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9921260740461447),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9920002130061832),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9918541339487025),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9905080166820779),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9904823038332438),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9891455911584464),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9889813883111798),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9880482054691171),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.987634883569076),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9839493288635129),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9835120243954472)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_1&#39;), 0.9954636375463118),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9920002130061832),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9916164089416419),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9913941983935679),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9909569955565029),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9908482721261079),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9908014516759064),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9907635469321225),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9900969954564913),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9896292570686976),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9882038197903414),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9880326873335907),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9839930213492247),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9836702232253675),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9823324526455168),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9819882145613756),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9776709494859072),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9751842088955954),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9680122935351543)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9981926939841615),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9969000832818001),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9961946017512691),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9945964770493874),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9944085836412244),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9939751972619978),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9936751823924261),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9931264369461513),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.992316581424298),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9917554350627623),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9916164089416419),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9901093101397656),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9894697689014701),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.988421470732429),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9877174497888898),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9873644109829743),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9864279725085953),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9837386222116336),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9836160384576512)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9973927727876962),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9969000832818001),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9966735357437558),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9964452467784782),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9943682182440733),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9942842536046907),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9928277720624915),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9920062102543633),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9914886090900727),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9908727497029006),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9908014516759064),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9905944859717206),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9898349457301875),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9893280658331286),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.986894381477449),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9855465921957184),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9852021275143051),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9848406230155002),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.983505032511075)])}},
+ &#39;king&#39;: {&#39;S0&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_3&#39;), 0.9946927070680343),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9911768666682733),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9905563866979017),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9894625726432261),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9887437082031948),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9861591058201726),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9844920579459651),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9764124771980941),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9724909388599494),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9704112222970074),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9677413637021177),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9609317562871551),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9538296530211637),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9421271984136864),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9418063345587459),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9128100769798846),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9086485932756452),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8296126343740728),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7606450419991634)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_1&#39;), 0.9791195403338671),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9707821477124874),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9673151859997042),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9665069243309089),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9609317562871551),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9589370724910041),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9511206589957525),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9488263818722651),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9478023879295503),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9443827191918972),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9374180717261661),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9340922691814776),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9338675123873617),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.933229449082228),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9319171947943459),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9318214844750631),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9253997389679176),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8902219478483933),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8885139475748741)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_3&#39;), 0.9901232233149901),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9877264036152222),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9861591058201726),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9809651176203339),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9804373728348378),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9804045841163121),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9774894698675971),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9774366266588606),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.967331813526989),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9589370724910041),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9426472287775836),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9415832193682879),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9383147964747551),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9313884263575211),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9289427959980472),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9074968437369121),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.895400452841099),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8326498841387876),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.77160119812226)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_0&#39;), 0.9946927070680343),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9939567042726747),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9931738036438619),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9904688445036202),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9901232233149901),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9878373062899111),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9842493571141122),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9707247712205801),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9701375253600009),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9621751708003807),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9617073078138529),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9488984088639809),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9478023879295503),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9402362029273823),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9340107773196851),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8931132016760223),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.88636376178519),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.804029680264808),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7329757731065041)])},
+  &#39;S1&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_3&#39;), 0.9927038711629331),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.991512586095354),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9894625726432261),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9878373062899111),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.987019733494524),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9676549989238649),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9673696041345744),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.967331813526989),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.964320413433799),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9568541894761301),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.956138268264427),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9535098083762813),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9437153779552075),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9340922691814776),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.930173489945426),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8926736564428107),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8654954044377112),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7842942906751117),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7088055453386497)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_3&#39;), 0.9970154813952679),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9905563866979017),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9904688445036202),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.987019733494524),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.983047258912808),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9804373728348378),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9773531538929083),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.972801669781024),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9661734439675285),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9633970622479552),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9620763223675163),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9554194970041016),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9511206589957525),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9243094289071627),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9172472104466796),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8936826012719047),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8925696142970555),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7980117224108817),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.726338538986263)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_2&#39;), 0.9804045841163121),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9773531538929083),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9764124771980941),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9727420253455995),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9707247712205801),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9670046628471012),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9665069243309089),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.956138268264427),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9546476984523513),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9543960149146631),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9541058763243173),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9490919557514615),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9479429747864343),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9264117144266496),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9194411721649673),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9127887940289308),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.908692761046329),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8407347913039687),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7837500818502109)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_1&#39;), 0.9970154813952679),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9939567042726747),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9927038711629331),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9911768666682733),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9897502897006653),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9809651176203339),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9748650336037856),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9727420253455995),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.966142917881777),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9623525475439249),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9596072790040189),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9589800999011451),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9443827191918972),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9356711873289434),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9252579918655507),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8912470067726067),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8806952735133659),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7926930482664652),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7197890607151542)])},
+  &#39;S2&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9826415889641368),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9731585941620622),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9677413637021177),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9661734439675285),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.966142917881777),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.964320413433799),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9617073078138529),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9577838437360183),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9543960149146631),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9415832193682879),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9403797309094883),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9319171947943459),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9151824512495391),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9082885898950158),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.907756844148708),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8970728808152824),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8851988381134286),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7934131089064037),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7187331527684226)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_1&#39;), 0.9791195403338671),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9722193333998201),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9443327355263664),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.942274775782599),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9298894336740997),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9293371590127483),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9264117144266496),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9086485932756452),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9074968437369121),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9065915412222763),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.89354269356576),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8925696142970555),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.88636376178519),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.8851988381134286),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8806952735133659),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.8685798781967906),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.8654954044377112),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.8628761570140712),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8367164400632268)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_3&#39;), 0.9918263506573154),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9443327355263664),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.8902219478483933),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8795319902044556),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.8424725164093341),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8331866678132078),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.8203059984697556),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.7837500818502109),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.77160119812226),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.7606450419991634),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.7399377967913511),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.7329757731065041),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.726338538986263),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.7197890607151542),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.7187331527684226),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.7175966143694648),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.7117614641652417),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.7088055453386497),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.7025926417677191)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_2&#39;), 0.9918263506573154),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9722193333998201),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.933229449082228),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9163194336300794),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.8931401347514466),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8806629963473573),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.8769683406662382),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8407347913039687),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.8326498841387876),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.8296126343740728),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.8110821143164675),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.804029680264808),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.7980117224108817),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.7934131089064037),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.7926930482664652),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.786080571135463),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.7842942906751117),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.7811654140895808),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.7713157911015942)])},
+  &#39;S3&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_3&#39;), 0.9931738036438619),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.991512586095354),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9897502897006653),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9887437082031948),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.983047258912808),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9804005270506404),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9774894698675971),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9679125746772159),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9598391311362661),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9577838437360183),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9546476984523513),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.948413482347278),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9444120365955799),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9332998733320956),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9318214844750631),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8896736250084637),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8628761570140712),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.786080571135463),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7117614641652417)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_0&#39;), 0.9731585941620622),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9633970622479552),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9606782341443603),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9596072790040189),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9568541894761301),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9538296530211637),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9488984088639809),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.948413482347278),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9479429747864343),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9297440417386554),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9289427959980472),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9253997389679176),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9185649229886406),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.904830302063968),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8909196854053824),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8794398169360724),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8685798781967906),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7713157911015942),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7025926417677191)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9954669108465063),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9877264036152222),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9844920579459651),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9842493571141122),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9804005270506404),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9748650336037856),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.972801669781024),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9707821477124874),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9676549989238649),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9670046628471012),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9598628726565767),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9444931930919495),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9403797309094883),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9394368558366473),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9298894336740997),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9297440417386554),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9244902594299174),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8769683406662382),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8203059984697556)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_2&#39;), 0.9954669108465063),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9774366266588606),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9704112222970074),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9701375253600009),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9679125746772159),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9673151859997042),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9660219643754848),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9589800999011451),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9554194970041016),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9535098083762813),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9490919557514615),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9353968229523716),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9293371590127483),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9226720831795294),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.920898758436818),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9151824512495391),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.904830302063968),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8931401347514466),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8424725164093341)])},
+  &#39;S4&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_0&#39;), 0.9826415889641368),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9724909388599494),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9673696041345744),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9623525475439249),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9621751708003807),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9620763223675163),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9606782341443603),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9598391311362661),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9541058763243173),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9444931930919495),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9426472287775836),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9374180717261661),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9275609082271911),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9264342546014919),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9226720831795294),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9219596429776475),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.89354269356576),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8110821143164675),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7399377967913511)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_1&#39;), 0.9488263818722651),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.942274775782599),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9275609082271911),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9244902594299174),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.920898758436818),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9201828970181634),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9185649229886406),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9163194336300794),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9128100769798846),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.908692761046329),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.907756844148708),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.895400452841099),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8936826012719047),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.8931132016760223),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.8926736564428107),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8912470067726067),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.8896736250084637),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8795319902044556),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8743075292970192)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_3&#39;), 0.9795094814272175),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9444120365955799),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9437153779552075),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9421271984136864),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9402362029273823),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9394368558366473),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9356711873289434),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9353968229523716),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9313884263575211),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9264342546014919),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9243094289071627),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9127887940289308),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9082885898950158),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.8909196854053824),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.8885139475748741),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8743075292970192),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8367164400632268),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.7811654140895808),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.7175966143694648)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_2&#39;), 0.9795094814272175),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9660219643754848),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9598628726565767),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9418063345587459),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9383147964747551),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9340107773196851),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9338675123873617),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9332998733320956),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.930173489945426),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9252579918655507),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9219596429776475),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9201828970181634),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9194411721649673),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9172472104466796),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9065915412222763),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.8970728808152824),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8806629963473573),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.8794398169360724),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8331866678132078)])}},
+ &#39;tasty&#39;: {&#39;S0&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9834207789278447),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.98050705527095),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9792411758945454),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9758082260604253),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.974820963999347),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.969292447373864),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9683745441324488),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9632054387694116),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9624007335641187),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9575075252716496),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9556637480724923),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9533220546806527),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.950411981722701),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9472515085583134),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9417254030660487),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9351894570150614),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9179220660718107),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8786675029407459),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8724156536209466)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_1&#39;), 0.9879650040655993),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9878239023732076),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9877018767204829),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.986711881731616),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9846073829203956),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9830627477269767),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9740109490642942),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9726008134428141),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9717147420759898),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.969292447373864),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.966085756659229),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9597154666941374),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9559786645943547),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9479234536904967),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9451185855140753),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9441025829110417),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9307837958098604),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9236456618652167),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9147237399531414)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_3&#39;), 0.9872563113254877),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.986711881731616),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9852014256654064),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9773778801581273),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9763032910987511),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9724499247854149),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9713171657812598),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9575075252716496),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9531336718528793),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9490267128741539),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9479409107390531),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9433282963761807),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9427441000318427),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.935992039446448),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9318391309894136),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9193515507060105),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9028190715814519),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8940122147488373),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8787348814510942)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S0&#39;, &#39;vid_2&#39;), 0.9872563113254877),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9830627477269767),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9792411758945454),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.973836781421395),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9699141449172012),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9697474805996094),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9664746731449502),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9631645164298248),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9626506117349174),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9621269220831888),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9620685405449789),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9592346923101398),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9490666479593696),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9332447496763628),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9328190564303066),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9327970136778448),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.920992542107529),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.914386385619433),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9133144044249544)])},
+  &#39;S1&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_3&#39;), 0.9960679045444346),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9930566029601389),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9901093812506466),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9869038603995554),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.982395873368275),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9809313064764896),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.974820963999347),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9661507808881857),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9490666479593696),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9479234536904967),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9397408249450991),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9342741877827283),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9204162175169062),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9193515507060105),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9180445019289015),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9048461801510782),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9008017559982046),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8490322465582186),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8326706897117355)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_3&#39;), 0.9930780183833575),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9925418583028922),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9901093812506466),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9760043729067316),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.962737664430605),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9562107842037049),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9472515085583134),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9467224507623243),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9147237399531414),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.914386385619433),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9001458535453254),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.8987390968788707),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.8787348814510942),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8755652796794626),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8740897149778375),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8727277477742972),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.8560394359139272),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8099925468826441),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.7860105064362544)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_3&#39;), 0.9935629145437467),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9930566029601389),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9925418583028922),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9799363434288876),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9674785251965567),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9635430824256876),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9556637480724923),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9497929455151644),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9327970136778448),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9307837958098604),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9155437301392577),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9127557064425836),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9028190715814519),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8974312901353182),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8952917588524804),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8903412123806079),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.8832076331169038),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8325166455180878),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8160683918192154)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_0&#39;), 0.9960679045444346),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9935629145437467),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9930780183833575),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9811660176889409),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9745904790169863),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9689278855276607),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9624007335641187),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9521433206781024),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9328190564303066),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9236456618652167),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9140994222377704),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9078600088938502),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.8940122147488373),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.8924789401430618),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.8894947407168692),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.8803087738310499),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.8718268497283432),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8128813894111827),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.7953358147665246)])},
+  &#39;S2&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_1&#39;), 0.9964057243505643),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9942519229338318),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9940000287305709),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9877018767204829),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9763032910987511),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9726613062630243),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9719739047911209),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.971553397803342),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9697474805996094),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9632054387694116),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9569616878869098),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9537180743531084),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9480836818546666),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9397408249450991),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9386134597308723),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9321656401154782),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9155437301392577),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9140994222377704),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9001458535453254)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_0&#39;), 0.9964057243505643),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9937797355331761),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9913352086444489),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9879650040655993),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9724499247854149),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9709910697548707),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9696483993086193),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9682999996568162),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9621269220831888),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9563926860878149),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9533220546806527),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.952378525525644),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.952345119972815),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9448003946814791),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9342741877827283),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9286133334439498),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9127557064425836),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9078600088938502),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8987390968788707)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_3&#39;), 0.9963661604880403),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9942519229338318),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9937797355331761),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9846073829203956),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9773778801581273),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.972453979164263),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9626506117349174),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.959757543697249),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9582834334797276),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9574218003637448),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9518634235036161),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9417254030660487),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9370139196027859),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9364076330233625),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.93101424039908),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9180445019289015),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8952917588524804),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8894947407168692),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8740897149778375)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S2&#39;, &#39;vid_2&#39;), 0.9963661604880403),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9940000287305709),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9913352086444489),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9878239023732076),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9852014256654064),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9758973142291463),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.973836781421395),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9600221784933631),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9589060048851409),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9586273653335132),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9519807569107188),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.950411981722701),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9402545153718134),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9391231422844987),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9335873350296224),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9204162175169062),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8974312901353182),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8924789401430618),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8755652796794626)])},
+  &#39;S3&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_1&#39;), 0.9820234305339588),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9734680338449345),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9719739047911209),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9717147420759898),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9696483993086193),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9683745441324488),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9661507808881857),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9628113357967918),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9620685405449789),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9600221784933631),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9574218003637448),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9531336718528793),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9521433206781024),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9497929455151644),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9467224507623243),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.934487885855028),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9035045009868052),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9033403967329525),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8828487039194406)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S1&#39;, &#39;vid_0&#39;), 0.9869038603995554),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9820528847293749),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9820234305339588),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9811660176889409),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9799363434288876),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.97946394588339),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9760043729067316),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9758082260604253),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9664746731449502),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.966085756659229),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9537180743531084),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.952345119972815),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9427441000318427),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9402545153718134),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9370139196027859),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9244676392249687),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9160776053121414),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.8857501067981431),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8683697318534729)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9932815733754697),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9820528847293749),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9809313064764896),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.98050705527095),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9734680338449345),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9726613062630243),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9726008134428141),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9699141449172012),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9689278855276607),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9682999996568162),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9635430824256876),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9586273653335132),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9582834334797276),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9562107842037049),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9496062351194372),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9490267128741539),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.936084082767117),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9058414444428156),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8940294442433289)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S3&#39;, &#39;vid_2&#39;), 0.9932815733754697),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9834207789278447),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.982395873368275),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.97946394588339),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.9745904790169863),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9674785251965567),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9631645164298248),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9628113357967918),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.962737664430605),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9597154666941374),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9569616878869098),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.952378525525644),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9391231422844987),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9364076330233625),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.935992039446448),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9325698509431968),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9174571345939161),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.880635416879949),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.8698843595891568)])},
+  &#39;S4&#39;: {&#39;vid_0&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_3&#39;), 0.9810330907724931),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9773772777400768),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9758973142291463),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9740109490642942),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.972453979164263),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.971553397803342),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9713171657812598),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9709910697548707),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9592346923101398),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9555497729612596),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9496062351194372),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9351894570150614),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.934487885855028),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9325698509431968),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9244676392249687),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9008017559982046),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8832076331169038),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8718268497283432),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8560394359139272)]),
+   &#39;vid_1&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_3&#39;), 0.9893331818581698),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9773772777400768),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.959757543697249),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9589060048851409),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9563926860878149),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9559786645943547),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9493196933673917),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9480836818546666),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9479409107390531),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.920992542107529),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9058414444428156),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9033403967329525),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.8857501067981431),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.880635416879949),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.8786675029407459),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.8490322465582186),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8325166455180878),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8128813894111827),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8099925468826441)]),
+   &#39;vid_2&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9555497729612596),
+                ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9493196933673917),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9451185855140753),
+                ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9448302173365558),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.936084082767117),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9335873350296224),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9332447496763628),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9321656401154782),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9318391309894136),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.93101424039908),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9286133334439498),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9179220660718107),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9174571345939161),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9160776053121414),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9048461801510782),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9035045009868052),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8903412123806079),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.8803087738310499),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.8727277477742972)]),
+   &#39;vid_3&#39;: OrderedDict([((&#39;S4&#39;, &#39;vid_1&#39;), 0.9893331818581698),
+                ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9810330907724931),
+                ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9519807569107188),
+                ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9518634235036161),
+                ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9448302173365558),
+                ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9448003946814791),
+                ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9441025829110417),
+                ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9433282963761807),
+                ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9386134597308723),
+                ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9133144044249544),
+                ((&#39;S3&#39;, &#39;vid_2&#39;), 0.8940294442433289),
+                ((&#39;S3&#39;, &#39;vid_0&#39;), 0.8828487039194406),
+                ((&#39;S0&#39;, &#39;vid_0&#39;), 0.8724156536209466),
+                ((&#39;S3&#39;, &#39;vid_3&#39;), 0.8698843595891568),
+                ((&#39;S3&#39;, &#39;vid_1&#39;), 0.8683697318534729),
+                ((&#39;S1&#39;, &#39;vid_0&#39;), 0.8326706897117355),
+                ((&#39;S1&#39;, &#39;vid_2&#39;), 0.8160683918192154),
+                ((&#39;S1&#39;, &#39;vid_3&#39;), 0.7953358147665246),
+                ((&#39;S1&#39;, &#39;vid_1&#39;), 0.7860105064362544)])}}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_00</span><span class="p">[</span><span class="s1">&#39;car_report&#39;</span><span class="p">][</span><span class="s1">&#39;S0&#39;</span><span class="p">][</span><span class="s1">&#39;vid_0&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>OrderedDict([((&#39;S4&#39;, &#39;vid_0&#39;), 0.9954718971541773),
+             ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9945964770493874),
+             ((&#39;S3&#39;, &#39;vid_0&#39;), 0.9939976838697654),
+             ((&#39;S3&#39;, &#39;vid_2&#39;), 0.9931883158114038),
+             ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9929479446868809),
+             ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9928277720624915),
+             ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9924880112472121),
+             ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9916407619640583),
+             ((&#39;S3&#39;, &#39;vid_3&#39;), 0.9916281614374629),
+             ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9908729735712648),
+             ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9904742624406746),
+             ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9896292570686976),
+             ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9869854517117607),
+             ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9865547211253137),
+             ((&#39;S1&#39;, &#39;vid_3&#39;), 0.986118447341411),
+             ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9850550846216436),
+             ((&#39;S2&#39;, &#39;vid_3&#39;), 0.983298468501515),
+             ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9793310935304032),
+             ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9771318857464869)])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_00</span><span class="p">[</span><span class="s1">&#39;car_report&#39;</span><span class="p">][</span><span class="s1">&#39;S3&#39;</span><span class="p">][</span><span class="s1">&#39;vid_2&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>OrderedDict([((&#39;S3&#39;, &#39;vid_3&#39;), 0.9974038726941241),
+             ((&#39;S0&#39;, &#39;vid_3&#39;), 0.9959295871275722),
+             ((&#39;S4&#39;, &#39;vid_2&#39;), 0.9936751823924261),
+             ((&#39;S4&#39;, &#39;vid_0&#39;), 0.9935190270286357),
+             ((&#39;S0&#39;, &#39;vid_0&#39;), 0.9931883158114038),
+             ((&#39;S2&#39;, &#39;vid_1&#39;), 0.9918360169685073),
+             ((&#39;S3&#39;, &#39;vid_0&#39;), 0.991638748000079),
+             ((&#39;S2&#39;, &#39;vid_3&#39;), 0.9911052991068987),
+             ((&#39;S4&#39;, &#39;vid_3&#39;), 0.9908727497029006),
+             ((&#39;S2&#39;, &#39;vid_0&#39;), 0.9905291542036742),
+             ((&#39;S0&#39;, &#39;vid_2&#39;), 0.9903796871998533),
+             ((&#39;S3&#39;, &#39;vid_1&#39;), 0.9876266003899643),
+             ((&#39;S2&#39;, &#39;vid_2&#39;), 0.9865122651048643),
+             ((&#39;S1&#39;, &#39;vid_0&#39;), 0.9845948113235389),
+             ((&#39;S1&#39;, &#39;vid_3&#39;), 0.984062658344715),
+             ((&#39;S1&#39;, &#39;vid_2&#39;), 0.9839271505708713),
+             ((&#39;S4&#39;, &#39;vid_1&#39;), 0.9836702232253675),
+             ((&#39;S0&#39;, &#39;vid_1&#39;), 0.9822985850347496),
+             ((&#39;S1&#39;, &#39;vid_1&#39;), 0.9713923283154741)])</pre>
+</div>
+
 </div>
 
 </div>

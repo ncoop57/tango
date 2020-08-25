@@ -23,6 +23,481 @@ summary: "This module contains all the necessary functions for extracting and or
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> pip install opencv-python ffmpeg pytesseract
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: opencv-python in /usr/local/lib/python3.6/dist-packages (4.2.0.34)
+Requirement already satisfied: ffmpeg in /usr/local/lib/python3.6/dist-packages (1.4)
+Collecting pytesseract
+  Downloading pytesseract-0.3.4.tar.gz (13 kB)
+Requirement already satisfied: numpy&gt;=1.11.3 in /usr/local/lib/python3.6/dist-packages (from opencv-python) (1.18.5)
+Requirement already satisfied: Pillow in /usr/local/lib/python3.6/dist-packages (from pytesseract) (7.2.0)
+Building wheels for collected packages: pytesseract
+  Building wheel for pytesseract (setup.py) ... done
+  Created wheel for pytesseract: filename=pytesseract-0.3.4-py2.py3-none-any.whl size=13811 sha256=a24c68ec6ec933495efe66c45dada7161cc09e9dfa80da5aa87512f171ab082d
+  Stored in directory: /root/.cache/pip/wheels/df/da/38/ab64f024f69d2c013ae96b75003fd874460698362ccdc054e1
+Successfully built pytesseract
+Installing collected packages: pytesseract
+Successfully installed pytesseract-0.3.4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> apt-get install git wget vim libsm6 libxext6 libxrender-dev libx264-dev tesseract-ocr libtesseract-dev -y
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+git is already the newest version (1:2.17.1-1ubuntu0.7).
+The following additional packages will be installed:
+  fontconfig fontconfig-config fonts-dejavu-core libbsd0 libcairo2 libdatrie1
+  libfontconfig1 libgif7 libgpm2 libgraphite2-3 libharfbuzz0b libice6 libicu60
+  libjbig0 liblept5 libleptonica-dev libopenjp2-7 libpango-1.0-0
+  libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 libpthread-stubs0-dev
+  libtesseract4 libthai-data libthai0 libtiff5 libwebp6 libx11-6 libx11-data
+  libx11-dev libx11-doc libx264-152 libxau-dev libxau6 libxcb-render0
+  libxcb-shm0 libxcb1 libxcb1-dev libxdmcp-dev libxdmcp6 libxrender1
+  tesseract-ocr-eng tesseract-ocr-osd ucf vim-common vim-runtime x11-common
+  x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev xxd
+Suggested packages:
+  gpm libxcb-doc ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  fontconfig fontconfig-config fonts-dejavu-core libbsd0 libcairo2 libdatrie1
+  libfontconfig1 libgif7 libgpm2 libgraphite2-3 libharfbuzz0b libice6 libicu60
+  libjbig0 liblept5 libleptonica-dev libopenjp2-7 libpango-1.0-0
+  libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 libpthread-stubs0-dev
+  libsm6 libtesseract-dev libtesseract4 libthai-data libthai0 libtiff5
+  libwebp6 libx11-6 libx11-data libx11-dev libx11-doc libx264-152 libx264-dev
+  libxau-dev libxau6 libxcb-render0 libxcb-shm0 libxcb1 libxcb1-dev
+  libxdmcp-dev libxdmcp6 libxext6 libxrender-dev libxrender1 tesseract-ocr
+  tesseract-ocr-eng tesseract-ocr-osd ucf vim vim-common vim-runtime wget
+  x11-common x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev xxd
+0 upgraded, 60 newly installed, 0 to remove and 33 not upgraded.
+Need to get 33.4 MB of archives.
+After this operation, 135 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libbsd0 amd64 0.8.7-1ubuntu0.1 [41.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxdmcp6 amd64 1:1.1.2-3 [10.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxcb1 amd64 1.13-2~ubuntu18.04 [45.5 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-data all 2:1.6.4-3ubuntu0.2 [113 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-6 amd64 2:1.6.4-3ubuntu0.2 [569 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxext6 amd64 2:1.3.3-1 [29.4 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/main amd64 ucf all 3.0038 [50.5 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/main amd64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfontconfig1 amd64 2.12.6-0ubuntu2 [137 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/main amd64 fontconfig amd64 2.12.6-0ubuntu2 [169 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 x11-common all 1:7.7+19ubuntu7.1 [22.5 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic/main amd64 libice6 amd64 2:1.0.9-2 [40.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic/main amd64 libsm6 amd64 2:1.2.2-1 [15.8 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libicu60 amd64 60.2-3ubuntu3.1 [8054 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 xxd amd64 2:8.0.1453-1ubuntu1.3 [49.4 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim-common all 2:8.0.1453-1ubuntu1.3 [70.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 wget amd64 1.19.4-1ubuntu2.2 [316 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpixman-1-0 amd64 0.34.0-2 [229 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxcb-render0 amd64 1.13-2~ubuntu18.04 [14.7 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxcb-shm0 amd64 1.13-2~ubuntu18.04 [5600 B]
+Get:23 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxrender1 amd64 1:0.9.10-1 [18.7 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcairo2 amd64 1.15.10-2ubuntu0.1 [580 kB]
+Get:25 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdatrie1 amd64 0.2.10-7 [17.8 kB]
+Get:26 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgif7 amd64 5.1.4-2ubuntu0.1 [30.9 kB]
+Get:27 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgpm2 amd64 1.20.7-5 [15.1 kB]
+Get:28 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgraphite2-3 amd64 1.3.11-2 [78.7 kB]
+Get:29 http://archive.ubuntu.com/ubuntu bionic/main amd64 libharfbuzz0b amd64 1.7.2-1ubuntu1 [232 kB]
+Get:30 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 libopenjp2-7 amd64 2.3.0-2build0.18.04.1 [145 kB]
+Get:31 http://archive.ubuntu.com/ubuntu bionic/main amd64 libjbig0 amd64 2.1-3.1build1 [26.7 kB]
+Get:32 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libtiff5 amd64 4.0.9-5ubuntu0.3 [153 kB]
+Get:33 http://archive.ubuntu.com/ubuntu bionic/main amd64 libwebp6 amd64 0.6.1-2 [185 kB]
+Get:34 http://archive.ubuntu.com/ubuntu bionic/universe amd64 liblept5 amd64 1.75.3-3 [929 kB]
+Get:35 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libleptonica-dev amd64 1.75.3-3 [1308 kB]
+Get:36 http://archive.ubuntu.com/ubuntu bionic/main amd64 libthai-data all 0.1.27-2 [133 kB]
+Get:37 http://archive.ubuntu.com/ubuntu bionic/main amd64 libthai0 amd64 0.1.27-2 [18.0 kB]
+Get:38 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpango-1.0-0 amd64 1.40.14-1ubuntu0.1 [153 kB]
+Get:39 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpangoft2-1.0-0 amd64 1.40.14-1ubuntu0.1 [33.2 kB]
+Get:40 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpangocairo-1.0-0 amd64 1.40.14-1ubuntu0.1 [20.8 kB]
+Get:41 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpthread-stubs0-dev amd64 0.3-4 [4068 B]
+Get:42 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libtesseract4 amd64 4.00~git2288-10f4998a-2 [1163 kB]
+Get:43 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libtesseract-dev amd64 4.00~git2288-10f4998a-2 [1447 kB]
+Get:44 http://archive.ubuntu.com/ubuntu bionic/main amd64 xorg-sgml-doctools all 1:1.11-1 [12.9 kB]
+Get:45 http://archive.ubuntu.com/ubuntu bionic/main amd64 x11proto-dev all 2018.4-4 [251 kB]
+Get:46 http://archive.ubuntu.com/ubuntu bionic/main amd64 x11proto-core-dev all 2018.4-4 [2620 B]
+Get:47 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau-dev amd64 1:1.0.8-1 [11.1 kB]
+Get:48 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxdmcp-dev amd64 1:1.1.2-3 [25.1 kB]
+Get:49 http://archive.ubuntu.com/ubuntu bionic/main amd64 xtrans-dev all 1.3.5-1 [70.5 kB]
+Get:50 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxcb1-dev amd64 1.13-2~ubuntu18.04 [80.0 kB]
+Get:51 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-dev amd64 2:1.6.4-3ubuntu0.2 [640 kB]
+Get:52 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-doc all 2:1.6.4-3ubuntu0.2 [2065 kB]
+Get:53 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libx264-152 amd64 2:0.152.2854+gite9a5903-2 [609 kB]
+Get:54 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libx264-dev amd64 2:0.152.2854+gite9a5903-2 [461 kB]
+Get:55 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxrender-dev amd64 1:0.9.10-1 [24.9 kB]
+Get:56 http://archive.ubuntu.com/ubuntu bionic/universe amd64 tesseract-ocr-eng all 4.00~git24-0e00fe6-1.2 [1588 kB]
+Get:57 http://archive.ubuntu.com/ubuntu bionic/universe amd64 tesseract-ocr-osd all 4.00~git24-0e00fe6-1.2 [2989 kB]
+Get:58 http://archive.ubuntu.com/ubuntu bionic/universe amd64 tesseract-ocr amd64 4.00~git2288-10f4998a-2 [218 kB]
+Get:59 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim-runtime all 2:8.0.1453-1ubuntu1.3 [5436 kB]
+Get:60 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim amd64 2:8.0.1453-1ubuntu1.3 [1153 kB]
+Fetched 33.4 MB in 2s (15.5 MB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libxau6:amd64.
+(Reading database ... 17013 files and directories currently installed.)
+Preparing to unpack .../00-libxau6_1%3a1.0.8-1_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.8-1) ...
+Selecting previously unselected package libbsd0:amd64.
+Preparing to unpack .../01-libbsd0_0.8.7-1ubuntu0.1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.8.7-1ubuntu0.1) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../02-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../03-libxcb1_1.13-2~ubuntu18.04_amd64.deb ...
+Unpacking libxcb1:amd64 (1.13-2~ubuntu18.04) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../04-libx11-data_2%3a1.6.4-3ubuntu0.2_all.deb ...
+Unpacking libx11-data (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../05-libx11-6_2%3a1.6.4-3ubuntu0.2_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package libxext6:amd64.
+Preparing to unpack .../06-libxext6_2%3a1.3.3-1_amd64.deb ...
+Unpacking libxext6:amd64 (2:1.3.3-1) ...
+Selecting previously unselected package ucf.
+Preparing to unpack .../07-ucf_3.0038_all.deb ...
+Moving old data out of the way
+Unpacking ucf (3.0038) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../08-fonts-dejavu-core_2.37-1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../09-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../10-libfontconfig1_2.12.6-0ubuntu2_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Selecting previously unselected package fontconfig.
+Preparing to unpack .../11-fontconfig_2.12.6-0ubuntu2_amd64.deb ...
+Unpacking fontconfig (2.12.6-0ubuntu2) ...
+Selecting previously unselected package x11-common.
+Preparing to unpack .../12-x11-common_1%3a7.7+19ubuntu7.1_all.deb ...
+dpkg-query: no packages found matching nux-tools
+Unpacking x11-common (1:7.7+19ubuntu7.1) ...
+Selecting previously unselected package libice6:amd64.
+Preparing to unpack .../13-libice6_2%3a1.0.9-2_amd64.deb ...
+Unpacking libice6:amd64 (2:1.0.9-2) ...
+Selecting previously unselected package libsm6:amd64.
+Preparing to unpack .../14-libsm6_2%3a1.2.2-1_amd64.deb ...
+Unpacking libsm6:amd64 (2:1.2.2-1) ...
+Selecting previously unselected package libicu60:amd64.
+Preparing to unpack .../15-libicu60_60.2-3ubuntu3.1_amd64.deb ...
+Unpacking libicu60:amd64 (60.2-3ubuntu3.1) ...
+Selecting previously unselected package xxd.
+Preparing to unpack .../16-xxd_2%3a8.0.1453-1ubuntu1.3_amd64.deb ...
+Unpacking xxd (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../17-vim-common_2%3a8.0.1453-1ubuntu1.3_all.deb ...
+Unpacking vim-common (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../18-wget_1.19.4-1ubuntu2.2_amd64.deb ...
+Unpacking wget (1.19.4-1ubuntu2.2) ...
+Selecting previously unselected package libpixman-1-0:amd64.
+Preparing to unpack .../19-libpixman-1-0_0.34.0-2_amd64.deb ...
+Unpacking libpixman-1-0:amd64 (0.34.0-2) ...
+Selecting previously unselected package libxcb-render0:amd64.
+Preparing to unpack .../20-libxcb-render0_1.13-2~ubuntu18.04_amd64.deb ...
+Unpacking libxcb-render0:amd64 (1.13-2~ubuntu18.04) ...
+Selecting previously unselected package libxcb-shm0:amd64.
+Preparing to unpack .../21-libxcb-shm0_1.13-2~ubuntu18.04_amd64.deb ...
+Unpacking libxcb-shm0:amd64 (1.13-2~ubuntu18.04) ...
+Selecting previously unselected package libxrender1:amd64.
+Preparing to unpack .../22-libxrender1_1%3a0.9.10-1_amd64.deb ...
+Unpacking libxrender1:amd64 (1:0.9.10-1) ...
+Selecting previously unselected package libcairo2:amd64.
+Preparing to unpack .../23-libcairo2_1.15.10-2ubuntu0.1_amd64.deb ...
+Unpacking libcairo2:amd64 (1.15.10-2ubuntu0.1) ...
+Selecting previously unselected package libdatrie1:amd64.
+Preparing to unpack .../24-libdatrie1_0.2.10-7_amd64.deb ...
+Unpacking libdatrie1:amd64 (0.2.10-7) ...
+Selecting previously unselected package libgif7:amd64.
+Preparing to unpack .../25-libgif7_5.1.4-2ubuntu0.1_amd64.deb ...
+Unpacking libgif7:amd64 (5.1.4-2ubuntu0.1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../26-libgpm2_1.20.7-5_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-5) ...
+Selecting previously unselected package libgraphite2-3:amd64.
+Preparing to unpack .../27-libgraphite2-3_1.3.11-2_amd64.deb ...
+Unpacking libgraphite2-3:amd64 (1.3.11-2) ...
+Selecting previously unselected package libharfbuzz0b:amd64.
+Preparing to unpack .../28-libharfbuzz0b_1.7.2-1ubuntu1_amd64.deb ...
+Unpacking libharfbuzz0b:amd64 (1.7.2-1ubuntu1) ...
+Selecting previously unselected package libopenjp2-7:amd64.
+Preparing to unpack .../29-libopenjp2-7_2.3.0-2build0.18.04.1_amd64.deb ...
+Unpacking libopenjp2-7:amd64 (2.3.0-2build0.18.04.1) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../30-libjbig0_2.1-3.1build1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1build1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../31-libtiff5_4.0.9-5ubuntu0.3_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Selecting previously unselected package libwebp6:amd64.
+Preparing to unpack .../32-libwebp6_0.6.1-2_amd64.deb ...
+Unpacking libwebp6:amd64 (0.6.1-2) ...
+Selecting previously unselected package liblept5.
+Preparing to unpack .../33-liblept5_1.75.3-3_amd64.deb ...
+Unpacking liblept5 (1.75.3-3) ...
+Selecting previously unselected package libleptonica-dev.
+Preparing to unpack .../34-libleptonica-dev_1.75.3-3_amd64.deb ...
+Unpacking libleptonica-dev (1.75.3-3) ...
+Selecting previously unselected package libthai-data.
+Preparing to unpack .../35-libthai-data_0.1.27-2_all.deb ...
+Unpacking libthai-data (0.1.27-2) ...
+Selecting previously unselected package libthai0:amd64.
+Preparing to unpack .../36-libthai0_0.1.27-2_amd64.deb ...
+Unpacking libthai0:amd64 (0.1.27-2) ...
+Selecting previously unselected package libpango-1.0-0:amd64.
+Preparing to unpack .../37-libpango-1.0-0_1.40.14-1ubuntu0.1_amd64.deb ...
+Unpacking libpango-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Selecting previously unselected package libpangoft2-1.0-0:amd64.
+Preparing to unpack .../38-libpangoft2-1.0-0_1.40.14-1ubuntu0.1_amd64.deb ...
+Unpacking libpangoft2-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Selecting previously unselected package libpangocairo-1.0-0:amd64.
+Preparing to unpack .../39-libpangocairo-1.0-0_1.40.14-1ubuntu0.1_amd64.deb ...
+Unpacking libpangocairo-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Selecting previously unselected package libpthread-stubs0-dev:amd64.
+Preparing to unpack .../40-libpthread-stubs0-dev_0.3-4_amd64.deb ...
+Unpacking libpthread-stubs0-dev:amd64 (0.3-4) ...
+Selecting previously unselected package libtesseract4.
+Preparing to unpack .../41-libtesseract4_4.00~git2288-10f4998a-2_amd64.deb ...
+Unpacking libtesseract4 (4.00~git2288-10f4998a-2) ...
+Selecting previously unselected package libtesseract-dev.
+Preparing to unpack .../42-libtesseract-dev_4.00~git2288-10f4998a-2_amd64.deb ...
+Unpacking libtesseract-dev (4.00~git2288-10f4998a-2) ...
+Selecting previously unselected package xorg-sgml-doctools.
+Preparing to unpack .../43-xorg-sgml-doctools_1%3a1.11-1_all.deb ...
+Unpacking xorg-sgml-doctools (1:1.11-1) ...
+Selecting previously unselected package x11proto-dev.
+Preparing to unpack .../44-x11proto-dev_2018.4-4_all.deb ...
+Unpacking x11proto-dev (2018.4-4) ...
+Selecting previously unselected package x11proto-core-dev.
+Preparing to unpack .../45-x11proto-core-dev_2018.4-4_all.deb ...
+Unpacking x11proto-core-dev (2018.4-4) ...
+Selecting previously unselected package libxau-dev:amd64.
+Preparing to unpack .../46-libxau-dev_1%3a1.0.8-1_amd64.deb ...
+Unpacking libxau-dev:amd64 (1:1.0.8-1) ...
+Selecting previously unselected package libxdmcp-dev:amd64.
+Preparing to unpack .../47-libxdmcp-dev_1%3a1.1.2-3_amd64.deb ...
+Unpacking libxdmcp-dev:amd64 (1:1.1.2-3) ...
+Selecting previously unselected package xtrans-dev.
+Preparing to unpack .../48-xtrans-dev_1.3.5-1_all.deb ...
+Unpacking xtrans-dev (1.3.5-1) ...
+Selecting previously unselected package libxcb1-dev:amd64.
+Preparing to unpack .../49-libxcb1-dev_1.13-2~ubuntu18.04_amd64.deb ...
+Unpacking libxcb1-dev:amd64 (1.13-2~ubuntu18.04) ...
+Selecting previously unselected package libx11-dev:amd64.
+Preparing to unpack .../50-libx11-dev_2%3a1.6.4-3ubuntu0.2_amd64.deb ...
+Unpacking libx11-dev:amd64 (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package libx11-doc.
+Preparing to unpack .../51-libx11-doc_2%3a1.6.4-3ubuntu0.2_all.deb ...
+Unpacking libx11-doc (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package libx264-152:amd64.
+Preparing to unpack .../52-libx264-152_2%3a0.152.2854+gite9a5903-2_amd64.deb ...
+Unpacking libx264-152:amd64 (2:0.152.2854+gite9a5903-2) ...
+Selecting previously unselected package libx264-dev:amd64.
+Preparing to unpack .../53-libx264-dev_2%3a0.152.2854+gite9a5903-2_amd64.deb ...
+Unpacking libx264-dev:amd64 (2:0.152.2854+gite9a5903-2) ...
+Selecting previously unselected package libxrender-dev:amd64.
+Preparing to unpack .../54-libxrender-dev_1%3a0.9.10-1_amd64.deb ...
+Unpacking libxrender-dev:amd64 (1:0.9.10-1) ...
+Selecting previously unselected package tesseract-ocr-eng.
+Preparing to unpack .../55-tesseract-ocr-eng_4.00~git24-0e00fe6-1.2_all.deb ...
+Unpacking tesseract-ocr-eng (4.00~git24-0e00fe6-1.2) ...
+Selecting previously unselected package tesseract-ocr-osd.
+Preparing to unpack .../56-tesseract-ocr-osd_4.00~git24-0e00fe6-1.2_all.deb ...
+Unpacking tesseract-ocr-osd (4.00~git24-0e00fe6-1.2) ...
+Selecting previously unselected package tesseract-ocr.
+Preparing to unpack .../57-tesseract-ocr_4.00~git2288-10f4998a-2_amd64.deb ...
+Unpacking tesseract-ocr (4.00~git2288-10f4998a-2) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../58-vim-runtime_2%3a8.0.1453-1ubuntu1.3_all.deb ...
+Adding &#39;diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/doc/help.txt.vim-tiny by vim-runtime&#39;
+Adding &#39;diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/tags.vim-tiny by vim-runtime&#39;
+Unpacking vim-runtime (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../59-vim_2%3a8.0.1453-1ubuntu1.3_amd64.deb ...
+Unpacking vim (2:8.0.1453-1ubuntu1.3) ...
+Setting up libicu60:amd64 (60.2-3ubuntu3.1) ...
+Setting up libx264-152:amd64 (2:0.152.2854+gite9a5903-2) ...
+Setting up libopenjp2-7:amd64 (2.3.0-2build0.18.04.1) ...
+Setting up xxd (2:8.0.1453-1ubuntu1.3) ...
+Setting up libjbig0:amd64 (2.1-3.1build1) ...
+Setting up libgpm2:amd64 (1.20.7-5) ...
+Setting up libpthread-stubs0-dev:amd64 (0.3-4) ...
+Setting up fonts-dejavu-core (2.37-1) ...
+Setting up xorg-sgml-doctools (1:1.11-1) ...
+Setting up libdatrie1:amd64 (0.2.10-7) ...
+Setting up libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Setting up libgif7:amd64 (5.1.4-2ubuntu0.1) ...
+Setting up libbsd0:amd64 (0.8.7-1ubuntu0.1) ...
+Setting up ucf (3.0038) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Setting up x11proto-dev (2018.4-4) ...
+Setting up libgraphite2-3:amd64 (1.3.11-2) ...
+Setting up tesseract-ocr-osd (4.00~git24-0e00fe6-1.2) ...
+Setting up libpixman-1-0:amd64 (0.34.0-2) ...
+Setting up tesseract-ocr-eng (4.00~git24-0e00fe6-1.2) ...
+Setting up xtrans-dev (1.3.5-1) ...
+Setting up wget (1.19.4-1ubuntu2.2) ...
+Setting up vim-common (2:8.0.1453-1ubuntu1.3) ...
+Setting up libx11-doc (2:1.6.4-3ubuntu0.2) ...
+Setting up vim-runtime (2:8.0.1453-1ubuntu1.3) ...
+Setting up libthai-data (0.1.27-2) ...
+Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+Setting up x11-common (1:7.7+19ubuntu7.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up libx11-data (2:1.6.4-3ubuntu0.2) ...
+Setting up libxau6:amd64 (1:1.0.8-1) ...
+Setting up libwebp6:amd64 (0.6.1-2) ...
+Setting up libx264-dev:amd64 (2:0.152.2854+gite9a5903-2) ...
+Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+Setting up x11proto-core-dev (2018.4-4) ...
+Setting up vim (2:8.0.1453-1ubuntu1.3) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn&#39;t exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn&#39;t exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn&#39;t exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn&#39;t exist
+Setting up libharfbuzz0b:amd64 (1.7.2-1ubuntu1) ...
+Setting up libxau-dev:amd64 (1:1.0.8-1) ...
+Setting up libthai0:amd64 (0.1.27-2) ...
+Setting up liblept5 (1.75.3-3) ...
+Setting up libxdmcp-dev:amd64 (1:1.1.2-3) ...
+Setting up libice6:amd64 (2:1.0.9-2) ...
+Setting up libxcb1:amd64 (1.13-2~ubuntu18.04) ...
+Setting up libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Setting up libsm6:amd64 (2:1.2.2-1) ...
+Setting up libxcb-render0:amd64 (1.13-2~ubuntu18.04) ...
+Setting up libleptonica-dev (1.75.3-3) ...
+Setting up libx11-6:amd64 (2:1.6.4-3ubuntu0.2) ...
+Setting up libtesseract4 (4.00~git2288-10f4998a-2) ...
+Setting up libtesseract-dev (4.00~git2288-10f4998a-2) ...
+Setting up libxcb-shm0:amd64 (1.13-2~ubuntu18.04) ...
+Setting up libxrender1:amd64 (1:0.9.10-1) ...
+Setting up libxcb1-dev:amd64 (1.13-2~ubuntu18.04) ...
+Setting up libx11-dev:amd64 (2:1.6.4-3ubuntu0.2) ...
+Setting up fontconfig (2.12.6-0ubuntu2) ...
+Regenerating fonts cache... done.
+Setting up libxext6:amd64 (2:1.3.3-1) ...
+Setting up libxrender-dev:amd64 (1:0.9.10-1) ...
+Setting up libpango-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Setting up libcairo2:amd64 (1.15.10-2ubuntu0.1) ...
+Setting up libpangoft2-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Setting up libpangocairo-1.0-0:amd64 (1.40.14-1ubuntu0.1) ...
+Setting up tesseract-ocr (4.00~git2288-10f4998a-2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;1.7.0.dev20200702&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -103,8 +578,9 @@ summary: "This module contains all the necessary functions for extracting and or
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">sample</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">sampled_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="n">img_paths</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 10_000</span>
+<span class="c1"># sampled_imgs = [np.array(Image.open(img)) for img in sample(img_paths, n)]</span>
+<span class="n">sampled_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">(</span><span class="n">img_paths</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">sampled_imgs</span><span class="p">)</span>
 </pre></div>
 
@@ -120,7 +596,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>10000</pre>
+<pre>10</pre>
 </div>
 
 </div>
@@ -141,9 +617,10 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Extractor" class="doc_header"><code>class</code> <code>Extractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/cnn.py#L108" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Extractor</code>(<strong><code>learn</code></strong>, <strong><code>linear_output_layer</code></strong>, <strong><code>model</code></strong>, <strong><code>isFT</code></strong>)</p>
+<h2 id="Extractor" class="doc_header"><code>class</code> <code>Extractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L41" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Extractor</code>(<strong><code>extractor</code></strong>) :: <code>ABC</code></p>
 </blockquote>
-<p>Low level implementation of Extractor class for non-layered models only.</p>
+<p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
 
 </div>
 
@@ -165,7 +642,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="SIFTExtractor" class="doc_header"><code>class</code> <code>SIFTExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L52" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIFTExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
 <p>Exposed SIFTExtractor class used for retrieving features.</p>
 
@@ -186,7 +663,7 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L55" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+<h2 id="CNNExtractor" class="doc_header"><code>class</code> <code>CNNExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L65" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CNNExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
 </blockquote>
 <p>Exposed CNNExtractor class used for retrieving features.</p>
 
@@ -194,6 +671,98 @@ summary: "This module contains all the necessary functions for extracting and or
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="imagenet_normalize_transform" class="doc_header"><code>imagenet_normalize_transform</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imagenet_normalize_transform</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_transforms" class="doc_header"><code>get_transforms</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L80" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_transforms</code>(<strong><code>size</code></strong>=<em><code>224</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="SimCLRExtractor" class="doc_header"><code>class</code> <code>SimCLRExtractor</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L87" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimCLRExtractor</code>(<strong><code>extractor</code></strong>) :: <a href="cnn.html#Extractor"><code>Extractor</code></a></p>
+</blockquote>
+<p>Exposed CNNExtractor class used for retrieving features.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SimCLRModel</span><span class="o">.</span><span class="n">load_from_checkpoint</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="s1">&#39;/tf/data/models/simclr/checkpointepoch=98.ckpt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">simclr_extractor</span> <span class="o">=</span> <span class="n">SimCLRExtractor</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features_0</span> <span class="o">=</span> <span class="n">simclr_extractor</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">sampled_imgs</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">features_1</span> <span class="o">=</span> <span class="n">simclr_extractor</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">sampled_imgs</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -363,10 +932,105 @@ summary: "This module contains all the necessary functions for extracting and or
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L65" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>=<em><code>10000</code></em>)</p>
+<h4 id="gen_vcodebook" class="doc_header"><code>gen_vcodebook</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_vcodebook</code>(<strong><code>path</code></strong>, <strong><code>img_paths</code></strong>, <strong><code>model_name</code></strong>, <strong><code>extractor</code></strong>, <strong><code>vwords</code></strong>)</p>
 </blockquote>
 <p>Constructs a visual codebook based on the given images.
 You can change vwords to increase the vocabulary of the codebook.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/tf/data/models/features/M00/15000n_features.pkl&#39;</span>
+<span class="n">features_list</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">features_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1504405</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">features_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>46683923</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="gen_codebooks" class="doc_header"><code>gen_codebooks</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_codebooks</code>(<strong><code>path</code></strong>, <strong><code>models</code></strong>, <strong><code>vwords</code></strong>, <strong><code>samples</code></strong>=<em><code>15000</code></em>)</p>
+</blockquote>
 
 </div>
 
@@ -395,11 +1059,85 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/tf/data/models/cookbook_M00_1000n_100vw.model&#39;</span>
+<span class="n">codebook_00</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vwords</span> <span class="o">=</span> <span class="mi">1_000</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/tf/data/models/cookbook_{len(sampled_imgs)}n_</span><span class="si">{vwords}</span><span class="s1">vw.model&#39;</span>
 <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">codebook</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
 
 <span class="c1"># load the model from disk</span>
-<span class="c1"># codebook = pickle.load(open(fname, &#39;rb&#39;))</span>
+<span class="n">codebook</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-93-fce7a5303eee&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> fname <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">f&#39;/tf/data/models/cookbook_{len(sampled_imgs)}n_{vwords}vw.model&#39;</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>pickle<span class="ansi-blue-fg">.</span>dump<span class="ansi-blue-fg">(</span>codebook<span class="ansi-blue-fg">,</span> open<span class="ansi-blue-fg">(</span>fname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;wb&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg"># load the model from disk</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> codebook <span class="ansi-blue-fg">=</span> pickle<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>open<span class="ansi-blue-fg">(</span>fname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;rb&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;codebook&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># #export</span>
+<span class="c1"># def get_df(imgs, extractor, codebook, vwords):</span>
+<span class="c1">#     &quot;&quot;&quot;Generates the document frequency for the visual words&quot;&quot;&quot;</span>
+<span class="c1">#     arr = []</span>
+<span class="c1">#     for img in imgs:</span>
+<span class="c1">#         features = extractor.extract(img)</span>
+<span class="c1">#         vw = codebook.predict(features)</span>
+<span class="c1">#         arr.extend(vw)</span>
+<span class="c1">#     arr = np.asarray(arr)</span>
+    
+<span class="c1">#     return np.histogram(arr, bins = range(vwords))</span>
 </pre></div>
 
     </div>
@@ -419,7 +1157,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>)</p>
+<h4 id="get_df" class="doc_header"><code>get_df</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_df</code>(<strong><code>imgs</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>)</p>
 </blockquote>
 <p>Generates the document frequency for the visual words</p>
 
@@ -456,10 +1194,146 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>, <strong><code>n</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_bovw" class="doc_header"><code>get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_bovw</code>(<strong><code>vid_path</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>, <strong><code>n</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Generates the bag of visual words (bovw) for an entire video.</p>
 
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># #export</span>
+<span class="c1"># def new_get_bovw(vid, extractor, codebook, vwords, fps = 30, frames_to_keep = 1):</span>
+<span class="c1">#     bovw = []</span>
+<span class="c1">#     for i in range(0, len(vid), int(fps / frames_to_keep)):</span>
+<span class="c1">#         img = vid[i]</span>
+<span class="c1">#         if not img: continue</span>
+<span class="c1">#         features = extractor.extract(img)</span>
+<span class="c1">#         vw = codebook.predict(features)</span>
+<span class="c1">#         bovw.extend(vw)</span>
+    
+<span class="c1">#     bovw = np.array(bovw)</span>
+<span class="c1">#     bovw = np.histogram(bovw, bins = range(vwords + 1))[0]</span>
+<span class="c1">#     return bovw</span>
+<span class="c1"># #         bovw = np.concatenate((bovw, vw))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="extract_features" class="doc_header"><code>extract_features</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>extract_features</code>(<strong><code>vid</code></strong>, <strong><code>extractor</code></strong>, <strong><code>fps</code></strong>=<em><code>30</code></em>, <strong><code>frames_to_keep</code></strong>=<em><code>1</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 4, 8, 12, 16, 20, 24, 28]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="mi">4</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 4, 8, 12, 16, 20, 24]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">30</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7.5</pre>
 </div>
 
 </div>
@@ -480,7 +1354,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="new_get_bovw" class="doc_header"><code>new_get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_get_bovw</code>(<strong><code>vid</code></strong>, <strong><code>extractor</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>, <strong><code>fps</code></strong>=<em><code>30</code></em>, <strong><code>frames_to_keep</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="new_get_bovw" class="doc_header"><code>new_get_bovw</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L194" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_get_bovw</code>(<strong><code>features</code></strong>, <strong><code>codebook</code></strong>, <strong><code>vwords</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -497,7 +1371,8 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vid</span> <span class="o">=</span> <span class="n">Video</span><span class="p">(</span><span class="n">video_paths</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">hist</span><span class="p">,</span> <span class="n">bovw</span> <span class="o">=</span> <span class="n">new_get_bovw</span><span class="p">(</span><span class="n">vid</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">codebook</span><span class="p">,</span> <span class="n">vwords</span><span class="p">,</span> <span class="n">frames_to_keep</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">extract_features</span><span class="p">(</span><span class="n">vid</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">frames_to_keep</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">bovw</span> <span class="o">=</span> <span class="n">new_get_bovw</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">codebook</span><span class="p">,</span> <span class="n">vwords</span><span class="p">,</span> <span class="n">frames_to_keep</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -546,7 +1421,7 @@ You can change vwords to increase the vocabulary of the codebook.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
+<h4 id="calc_tf_idf" class="doc_header"><code>calc_tf_idf</code><a href="https://github.com/ncoop57/tango/tree/master/tango/features.py#L205" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_tf_idf</code>(<strong><code>tfs</code></strong>, <strong><code>dfs</code></strong>)</p>
 </blockquote>
 
 </div>
