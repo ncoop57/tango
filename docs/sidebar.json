@@ -1,0 +1,14 @@
+{
+  "tango": {
+    "Overview": "/",
+    "Prep": "/prep",
+    "Features": "/features",
+    "Eval": "/eval",
+    "Model": "/model",
+    "Approach": "/approach",
+    "CLI": "/cli",
+    "Results": "/results",
+    "Utilities": "/utils",
+    "Combinations": "/combo"
+  }
+}
