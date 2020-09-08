@@ -13,27 +13,29 @@
 > Tango is a research tool for automatically detecting duplicate video-based bug reports by combining visual and textual information present in the videos.
 
 
+**Note: All results can be reproduced through this package. However, we are only including results for our best performing visual (SimCLR-bovw-5fps-1,000vw) and combined model (SimCLR-bovw-5fps-1,000vw and OCR+IR-all_text-5fps). We will provide the rest of the results upon acceptance**
+
 ## Data
 
-We provide all of our data, models, and results. You can download the zip here: https://drive.google.com/file/d/1pqyye7iQv8PaTExjr52Ryu2PDGidf8iZ/view?usp=sharing
+
+
+We provide all of our data, models, and results. You can download the zip here: https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing
 
 In this data package, you will find two folders: `artifacts` and `outputs`
 
-`artifacts` contains the videos we collected in our user study, the model files for the different models we evaluated, and the detailed results that we generated (See `Detailed Results` section for more information). The `videos` folder is broken down by user, where each user has a folder contain the apps they were given to create videos for. Each of the apps contain folders that denote the bug they generated a report for. Finally, instead these bug folders there is the actual video-based bug report as an mp4 file. The `user_assignment.csv` just contains the pairs of video-based bug reports that will be calculating by our approach.
+`artifacts` contains the videos we collected in our user study, the model files for the different models we evaluated, and the detailed results that we generated (See `Detailed Results` section for more information). The `videos` folder is broken down by user, where each user has a folder contain the apps they were given to create videos for. Each of the apps contain folders that denote the bug they generated a report for. Finally, instead these bug folders there is the actual video-based bug report as an mp4 file. The `user_assignment.csv` just contains the finalized assignments of users to corresponding bug reports.
 
 In the `models` folder, you will find the two models we evaluated (SIFT, SimCLR, and OCR+IR). In each folder you will find the corresponding trained codebook files that we generated for SIFT and SimCLR. These codebook files are pickle files that contain the binary representation of the trained codebooks. Additionally, in the SimCLR folder, you will find a checkpoint and pytorch model file that contains all the necessary information for reloading our trained SimCLR model. For the `OCR+IR` folder, you will find all of the code for the OCR+IR model as well as the intermediate output for this particular model, other models' outputs are stored in the `outputs` folder.
 
-The `outputs` folder contains all of the intermediate outputs of our code, except for OCR+IR. In the `results` folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. `evaluation_setting` contains a json file that has the format we used for evaluating our models, i.e. `setting 2` (See paper for more details). `user_rankings_weighted_all` and `user_results_weighted_all` contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match `setting 2`. `extracted_text` contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, `combined` contains the results of the combined tango approach.
+The `outputs` folder contains all of the intermediate outputs of our code, except for OCR+IR. In the `results` folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. `evaluation_setting` contains a json file that contains all of the duplicate detection tasks we used for evaluating our models, i.e. `setting 2` (See paper for more details). `user_rankings_weighted_all` and `user_results_weighted_all` contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match `setting 2`. `extracted_text` contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, `combined` contains the results of the combined tango approach.
 
 ## Reproduce Results
-
-**Note we will release additional data from our evaluation upon acceptance**
 
 We have created our reproduction package using Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
 
 Steps to Reproduce:
 1. Download the repository: `git clone https://github.com/two-to-tango/tango.git`
-2. Download the data from our gdrive: https://drive.google.com/file/d/1pqyye7iQv8PaTExjr52Ryu2PDGidf8iZ/view?usp=sharing
+2. Download the data from our gdrive: https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing
 3. Unzip the data file
 2. Navigate to the root of the repo and run the start script, passing in the location of the data folder: `./start <data_path>`
 3. Once the docker container has finished spinning up, jump into it: `docker exec -it tango bash`
@@ -46,7 +48,7 @@ Steps to Reproduce:
 
 You can find a spreadsheet containing the results for all of the different configurations we tested at `tango_reproduction_package/artifacts/detailed_results.xlsx`.
 
-In this excel file, we have multiple sheets. `overall` shows the performance of the different model configurations averaged across all apps. `model-analysis` is a more indepth analysis looking at how the choice of model (SIFT, SimCLR, and OCR+IR) impacts performance. The same analysis is done for the number of visual words, `vw-analysis`, frames per second, `fps-analysis`, and technique (bovw, f-lcs, and w-lcs), `tech-analysis`. `overall_comb` shows the combined performance of the visual and textual model configurations averaged across all apps. Additionally, `per-app` and `per-app-comb` has the performance of the single and combined model configurations per app, respectively. Lastly, we provide the overall performance in sheet `overall_user_study` and `overall_user_study_comb` of the single and combined model configurations on the settings (used only APOD app) given to the users for evaluating how much time and effort tango can save developers.
+In this excel file, we have multiple sheets. `overall` shows the performance of the different model configurations averaged across all apps. `overall_comb` shows the combined performance of the visual and textual model configurations averaged across all apps. Additionally, `per-app` and `per-app-comb` has the performance of the single and combined model configurations per app, respectively. Lastly, we provide the overall performance in sheet `overall_user_study` and `overall_user_study_comb` of the single and combined model configurations on the settings (used only APOD app) given to the users for evaluating how much time and effort tango can save developers.
 
 All sheets show the performance in terms of mRR (`avg_rr`), the standard deviation of recipical rank, median (`med_rr`), and quartile 1 and 3 (`q#_rr`). The same is true for mAP (`avg_ap`). We also show the performance in terms of average rank including standard deviation, and quartiles. Lastly, we providing HIT@1-5, 7, and 10 (`h#`).
 
