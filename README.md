@@ -13,7 +13,7 @@
 > Tango is a research tool for automatically detecting duplicate video-based bug reports by combining visual and textual information present in the videos.
 
 
-**Note: We provide all results and all rankings can be reproduced through this package. However, we are only including rankings for our best performing visual (SimCLR-bovw-5fps-1,000vw) and combined model (SimCLR-bovw-5fps-1,000vw and OCR+IR-all_text-5fps). We will provide the rest of the results upon acceptance**
+**Note: We provide all results, and all rankings can be reproduced through this package. However, we are only including rankings for our best performing visual (SimCLR-bovw-5fps-1,000vw) and combined model (SimCLR-bovw-5fps-1,000vw and OCR+IR-all_text-5fps). We will provide the rest of the results upon acceptance**
 
 ## Data
 
