@@ -11,32 +11,32 @@ entries:
       url: /
     - output: web,pdf
       title: Prep
-      url: /prep
+      url: prep.html
     - output: web,pdf
       title: Features
-      url: /features
+      url: features.html
     - output: web,pdf
       title: Eval
-      url: /eval
+      url: eval.html
     - output: web,pdf
       title: Model
-      url: /model
+      url: model.html
     - output: web,pdf
       title: Approach
-      url: /approach
+      url: approach.html
     - output: web,pdf
       title: CLI
-      url: /cli
+      url: cli.html
     - output: web,pdf
       title: Results
-      url: /results
+      url: results.html
     - output: web,pdf
       title: Utilities
-      url: /utils
+      url: utils.html
     - output: web,pdf
       title: Combinations
-      url: /combo
+      url: combo.html
     output: web
-    title: tango
+    title: two_to_tango
   output: web
   title: Sidebar

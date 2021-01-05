@@ -2,10 +2,13 @@
 
 title: Results
 
+
 keywords: fastai
 sidebar: home_sidebar
 
 summary: "This module contains all the code for running our experiments for Tango. To reproduce our results, please run each of the cells in this notebook."
+description: "This module contains all the code for running our experiments for Tango. To reproduce our results, please run each of the cells in this notebook."
+nb_path: "nbs/06_results.ipynb"
 ---
 <!--
 
@@ -18,10 +21,16 @@ summary: "This module contains all the code for running our experiments for Tang
 -->
 
 <div class="container" id="notebook-container">
+        
+    {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -36,9 +45,11 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Setup">Data Setup<a class="anchor-link" href="#Data-Setup">&#182;</a></h1><h3 id="Description:">Description:<a class="anchor-link" href="#Description:">&#182;</a></h3><ul>
+<h1 id="Data-Setup">Data Setup<a class="anchor-link" href="#Data-Setup"> </a></h1><h3 id="Description:">Description:<a class="anchor-link" href="#Description:"> </a></h3><ul>
 <li>Number of Participants: 14 (10 Ph.D. Students/Developers and 4 authors)</li>
 <li>Number of Applications: 6</li>
 <li>Number of Bug Reports per Application: 10</li>
@@ -47,6 +58,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -60,6 +73,10 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -75,15 +92,17 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Run-Visual-Based-Models">Run Visual-Based Models<a class="anchor-link" href="#Run-Visual-Based-Models">&#182;</a></h2>
+<h2 id="Run-Visual-Based-Models">Run Visual-Based Models<a class="anchor-link" href="#Run-Visual-Based-Models"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Model-Setup">Model Setup<a class="anchor-link" href="#Model-Setup">&#182;</a></h1><h3 id="Configurations:">Configurations:<a class="anchor-link" href="#Configurations:">&#182;</a></h3><ul>
+<h1 id="Model-Setup">Model Setup<a class="anchor-link" href="#Model-Setup"> </a></h1><h3 id="Configurations:">Configurations:<a class="anchor-link" href="#Configurations:"> </a></h3><ul>
 <li>Number of Visual Words: 1,000, 5,000, 10,000</li>
 <li>Codebook Number of Image Samples: MAX ~50,000</li>
 <li>Number of frames kept: 1, 5</li>
@@ -99,10 +118,12 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="SIFT---M00">SIFT - M00<a class="anchor-link" href="#SIFT---M00">&#182;</a></h1>
+<h1 id="SIFT---M00">SIFT - M00<a class="anchor-link" href="#SIFT---M00"> </a></h1>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -117,12 +138,16 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="SimCLR---M01">SimCLR - M01<a class="anchor-link" href="#SimCLR---M01">&#182;</a></h1>
+<h1 id="SimCLR---M01">SimCLR - M01<a class="anchor-link" href="#SimCLR---M01"> </a></h1>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -138,6 +163,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Change these parameters if you want to only run a subset of our experiments</p>
@@ -145,6 +172,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -160,6 +189,10 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -173,7 +206,7 @@ summary: "This module contains all the code for running our experiments for Tang
     <span class="k">for</span> <span class="n">vw</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">vwords</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">ftk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">n_frames_to_keep</span><span class="p">):</span>
             <span class="n">evaluation_metrics</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">fname</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="n">f</span><span class="s1">&#39;artifacts/models/</span><span class="si">{model_name}</span><span class="s1">/cookbook_</span><span class="si">{model_name}</span><span class="s1">_</span><span class="si">{vw}</span><span class="s1">vw.model&#39;</span>
+            <span class="n">fname</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;artifacts/models/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">/cookbook_</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">vw</span><span class="si">}</span><span class="s1">vw.model&#39;</span>
             <span class="n">codebook</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
             <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
             <span class="n">vid_ds_features</span> <span class="o">=</span> <span class="n">gen_extracted_features</span><span class="p">(</span><span class="n">vid_ds</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="n">ftk</span><span class="p">)</span>
@@ -204,11 +237,11 @@ summary: "This module contains all the code for running our experiments for Tang
                 <span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;bovw_weighted_lcs&#39;</span><span class="p">]</span>
             <span class="p">)</span>
             
-            <span class="n">id_name</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{ds_name}</span><span class="s1">_</span><span class="si">{n_imgs}</span><span class="s1">n_</span><span class="si">{vw}</span><span class="s1">vw_</span><span class="si">{ftk}</span><span class="s1">ftk&#39;</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="n">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{model_name}</span><span class="s1">/rankings_</span><span class="si">{id_name}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">id_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ds_name</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">n_imgs</span><span class="si">}</span><span class="s1">n_</span><span class="si">{</span><span class="n">vw</span><span class="si">}</span><span class="s1">vw_</span><span class="si">{</span><span class="n">ftk</span><span class="si">}</span><span class="s1">ftk&#39;</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">/rankings_</span><span class="si">{</span><span class="n">id_name</span><span class="si">}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
 
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="n">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{model_name}</span><span class="s1">/evaluation_metrics_</span><span class="si">{id_name}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">/evaluation_metrics_</span><span class="si">{</span><span class="n">id_name</span><span class="si">}</span><span class="s1">.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">evaluation_metrics</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
 </pre></div>
 
@@ -217,9 +250,11 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="User-Data">User Data<a class="anchor-link" href="#User-Data">&#182;</a></h1>
+<h1 id="User-Data">User Data<a class="anchor-link" href="#User-Data"> </a></h1>
 </div>
 </div>
 </div>
@@ -230,6 +265,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -246,6 +283,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>SimCLR (M01) model is a lot faster than SIFT (~6 hours) on our machines</p>
@@ -253,6 +292,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -269,12 +310,16 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reviewing-Results">Reviewing Results<a class="anchor-link" href="#Reviewing-Results">&#182;</a></h2>
+<h2 id="Reviewing-Results">Reviewing Results<a class="anchor-link" href="#Reviewing-Results"> </a></h2>
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -299,13 +344,17 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">id_name</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{ds_user}</span><span class="s1">_15000n_1000vw_5ftk&#39;</span>
-<span class="n">fname</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="n">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{model_01}</span><span class="s1">/evaluation_metrics_</span><span class="si">{id_name}</span><span class="s1">.pkl&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">id_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ds_user</span><span class="si">}</span><span class="s1">_15000n_1000vw_5ftk&#39;</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;outputs/results/</span><span class="si">{</span><span class="n">model_01</span><span class="si">}</span><span class="s1">/evaluation_metrics_</span><span class="si">{</span><span class="n">id_name</span><span class="si">}</span><span class="s1">.pkl&#39;</span>
 <span class="n">evals</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
 </pre></div>
 
@@ -314,6 +363,10 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -327,9 +380,11 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Run-Textual-Based-Model">Run Textual-Based Model<a class="anchor-link" href="#Run-Textual-Based-Model">&#182;</a></h2>
+<h2 id="Run-Textual-Based-Model">Run Textual-Based Model<a class="anchor-link" href="#Run-Textual-Based-Model"> </a></h2>
 </div>
 </div>
 </div>
@@ -342,6 +397,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -358,6 +415,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
@@ -367,6 +426,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -383,6 +444,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
@@ -392,6 +455,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -408,6 +473,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
@@ -417,6 +484,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -431,6 +500,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Outputs results to /tf/data/artifacts/tango_txt/tango_txt_results</p>
@@ -440,13 +511,15 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Combining-Textual-Information">Combining Textual Information<a class="anchor-link" href="#Combining-Textual-Information">&#182;</a></h2><ol>
+<h2 id="Combining-Textual-Information">Combining Textual Information<a class="anchor-link" href="#Combining-Textual-Information"> </a></h2><ol>
 <li>Compute the combination of visual and textual information</li>
 </ol>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -473,6 +546,8 @@ summary: "This module contains all the code for running our experiments for Tang
 </div>
 
 </div>
+    {% endraw %}
+
 </div>
  
 

@@ -2,10 +2,13 @@
 
 title: Model
 
+
 keywords: fastai
 sidebar: home_sidebar
 
 summary: "This module contains all the code for extracting features and comparing features from SimCLR and SIFT models."
+description: "This module contains all the code for extracting features and comparing features from SimCLR and SIFT models."
+nb_path: "nbs/03_model.ipynb"
 ---
 <!--
 
@@ -18,16 +21,23 @@ summary: "This module contains all the code for extracting features and comparin
 -->
 
 <div class="container" id="notebook-container">
+        
+    {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+    {% endraw %}
 
-</div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -37,7 +47,7 @@ summary: "This module contains all the code for extracting features and comparin
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sift_frame_sim" class="doc_header"><code>sift_frame_sim</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sift_frame_sim</code>(<strong><code>features_i</code></strong>, <strong><code>features_j</code></strong>, <strong><code>codebook</code></strong>, <strong><code>df</code></strong>, <strong><code>vw</code></strong>)</p>
+<h4 id="sift_frame_sim" class="doc_header"><code>sift_frame_sim</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sift_frame_sim</code>(<strong><code>features_i</code></strong>, <strong><code>features_j</code></strong>, <strong><code>codebook</code></strong>, <strong><code>df</code></strong>, <strong><code>vw</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -48,9 +58,17 @@ summary: "This module contains all the code for extracting features and comparin
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -60,7 +78,7 @@ summary: "This module contains all the code for extracting features and comparin
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="simclr_frame_sim" class="doc_header"><code>simclr_frame_sim</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simclr_frame_sim</code>(<strong><code>features_i</code></strong>, <strong><code>features_j</code></strong>, <strong><code>codebook</code></strong>, <strong><code>df</code></strong>, <strong><code>vw</code></strong>)</p>
+<h4 id="simclr_frame_sim" class="doc_header"><code>simclr_frame_sim</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simclr_frame_sim</code>(<strong><code>features_i</code></strong>, <strong><code>features_j</code></strong>, <strong><code>codebook</code></strong>, <strong><code>df</code></strong>, <strong><code>vw</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -71,9 +89,17 @@ summary: "This module contains all the code for extracting features and comparin
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -83,7 +109,7 @@ summary: "This module contains all the code for extracting features and comparin
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SimCLRDataset" class="doc_header"><code>class</code> <code>SimCLRDataset</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L48" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimCLRDataset</code>(<strong><code>dataset</code></strong>) :: <code>Dataset</code></p>
+<h2 id="SimCLRDataset" class="doc_header"><code>class</code> <code>SimCLRDataset</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimCLRDataset</code>(<strong><code>dataset</code></strong>) :: <code>Dataset</code></p>
 </blockquote>
 <p>An abstract class representing a :class:<code>Dataset</code>.</p>
 <p>All datasets that represent a map from keys to data samples should subclass
@@ -105,6 +131,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -114,7 +144,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="imagenet_normalize_transform" class="doc_header"><code>imagenet_normalize_transform</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/features.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imagenet_normalize_transform</code>()</p>
+<h4 id="imagenet_normalize_transform" class="doc_header"><code>imagenet_normalize_transform</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/features.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>imagenet_normalize_transform</code>()</p>
 </blockquote>
 
 </div>
@@ -125,6 +155,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -134,7 +168,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_train_transforms" class="doc_header"><code>get_train_transforms</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_train_transforms</code>(<strong><code>size</code></strong>=<em><code>224</code></em>, <strong><code>color_jitter_prob</code></strong>=<em><code>0.8</code></em>, <strong><code>grayscale_prob</code></strong>=<em><code>0.2</code></em>)</p>
+<h4 id="get_train_transforms" class="doc_header"><code>get_train_transforms</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_train_transforms</code>(<strong><code>size</code></strong>=<em><code>224</code></em>, <strong><code>color_jitter_prob</code></strong>=<em><code>0.8</code></em>, <strong><code>grayscale_prob</code></strong>=<em><code>0.2</code></em>)</p>
 </blockquote>
 
 </div>
@@ -145,6 +179,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -154,7 +192,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_val_transforms" class="doc_header"><code>get_val_transforms</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_val_transforms</code>(<strong><code>size</code></strong>=<em><code>224</code></em>)</p>
+<h4 id="get_val_transforms" class="doc_header"><code>get_val_transforms</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_val_transforms</code>(<strong><code>size</code></strong>=<em><code>224</code></em>)</p>
 </blockquote>
 
 </div>
@@ -165,6 +203,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -174,7 +216,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NTXEntCriterion" class="doc_header"><code>class</code> <code>NTXEntCriterion</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L121" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NTXEntCriterion</code>(<strong><code>temperature</code></strong>=<em><code>0.5</code></em>) :: <code>Module</code></p>
+<h2 id="NTXEntCriterion" class="doc_header"><code>class</code> <code>NTXEntCriterion</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L119" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NTXEntCriterion</code>(<strong><code>temperature</code></strong>=<em><code>0.5</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Normalized, temperature-scaled cross-entropy criterion, as suggested in the SimCLR paper.</p>
 <p>Parameters:
@@ -188,6 +230,10 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -197,7 +243,7 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SimCLRModel" class="doc_header"><code>class</code> <code>SimCLRModel</code><a href="https://github.com/two-to-tango/tango/tree/master/tango/model.py#L209" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimCLRModel</code>(<strong><code>model_name</code></strong>=<em><code>'resnet18'</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>projection_dim</code></strong>=<em><code>64</code></em>, <strong><code>temperature</code></strong>=<em><code>0.5</code></em>, <strong><code>batch_size</code></strong>=<em><code>128</code></em>, <strong><code>image_size</code></strong>=<em><code>224</code></em>, <strong><code>save_hparams</code></strong>=<em><code>True</code></em>) :: <code>LightningModule</code></p>
+<h2 id="SimCLRModel" class="doc_header"><code>class</code> <code>SimCLRModel</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/model.py#L207" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SimCLRModel</code>(<strong><code>model_name</code></strong>=<em><code>'resnet18'</code></em>, <strong><code>pretrained</code></strong>=<em><code>True</code></em>, <strong><code>projection_dim</code></strong>=<em><code>64</code></em>, <strong><code>temperature</code></strong>=<em><code>0.5</code></em>, <strong><code>batch_size</code></strong>=<em><code>128</code></em>, <strong><code>image_size</code></strong>=<em><code>224</code></em>, <strong><code>save_hparams</code></strong>=<em><code>True</code></em>) :: <code>LightningModule</code></p>
 </blockquote>
 <p>SimCLR training network for a generic torchvision model (restricted to <code>allowed_models</code>).</p>
 
@@ -209,6 +255,15 @@ of :class:<code>~torch.utils.data.DataLoader</code>.</p>
 </div>
 
 </div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
 </div>
  
 

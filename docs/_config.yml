@@ -1,8 +1,8 @@
-repository: two-to-tango/tango
+repository: ncoop57/tango
 output: web
 topnav_title: tango
 site_title: tango
-company_name: Tango
+company_name: Semeru Lab
 description: Tango automatically detects duplicate bugs that are captured in bug reports that contain videos detailing the bug
 # Set to false to disable KaTeX math
 use_math: true
