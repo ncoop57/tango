@@ -13,7 +13,7 @@ import torch.nn as nn
 
 from pytorch_lightning import Trainer
 from pytorch_lightning.core.lightning import LightningModule
-from two_to_tango.features import *
+from .features import *
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, models, transforms

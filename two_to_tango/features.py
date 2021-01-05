@@ -17,7 +17,7 @@ import numpy as np
 from abc import ABC, abstractmethod
 from pathlib import Path
 from PIL import Image
-from two_to_tango.prep import *
+from .prep import *
 from tqdm.auto import tqdm
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import cosine_similarity

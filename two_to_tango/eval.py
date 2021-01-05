@@ -14,7 +14,7 @@ import numpy as np
 from fastprogress.fastprogress import progress_bar
 from matplotlib import pyplot as plt
 from pathlib import Path
-from two_to_tango.prep import *
+from .prep import *
 from sklearn.cluster import KMeans
 
 # Cell

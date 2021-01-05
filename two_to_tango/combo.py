@@ -16,8 +16,8 @@ import pandas as pd
 
 from collections import OrderedDict
 from pathlib import Path
-from two_to_tango.eval import *
-from two_to_tango.utils import *
+from .eval import *
+from .utils import *
 
 # Cell
 def execute_retrieval_run(run, similarities):

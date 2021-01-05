@@ -23,7 +23,7 @@ import pandas as pd
 from collections import defaultdict, OrderedDict
 from pathlib import Path
 from PIL import Image
-from two_to_tango.utils import *
+from .utils import *
 from shutil import copyfile
 from tqdm.auto import tqdm
 

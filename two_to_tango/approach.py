@@ -16,10 +16,10 @@ from collections import defaultdict, OrderedDict
 from itertools import combinations, combinations_with_replacement, permutations
 from joblib import Parallel, delayed
 from pathlib import Path
-from two_to_tango.eval import *
-from two_to_tango.features import *
-from two_to_tango.model import *
-from two_to_tango.prep import *
+from .eval import *
+from .features import *
+from .model import *
+from .prep import *
 from tqdm.auto import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
 

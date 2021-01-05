@@ -15,12 +15,12 @@ import zipfile
 
 from fastcore.script import call_parse, Param
 from pathlib import Path
-from two_to_tango.prep import *
-from two_to_tango.features import *
-from two_to_tango.eval import *
-from two_to_tango.model import *
-from two_to_tango.approach import *
-from two_to_tango.combo import *
+from .prep import *
+from .features import *
+from .eval import *
+from .model import *
+from .approach import *
+from .combo import *
 from tqdm.auto import tqdm
 
 logger = logging.getLogger()
@@ -135,7 +135,7 @@ def _generate_txt_results(vid_ds, out_path, art_path, vis_model):
 # Cell
 @call_parse
 def reproduce(
-    down_path: Param("The directory where all the files will be downloaded and extracted to.", str)
+    down_path: Param("The directory where all the files will be downloaded and extracted to.", str),
     out_path: Param("The output path to place all results in.", str),
     vis_model: Param("The type of visual model. Can be either SimCLR or SIFT, taking ~6h or >24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.", str)
 ):
