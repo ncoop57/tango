@@ -55,7 +55,25 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2>
+<h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2><p>The prefered method to reproduce our paper's results is to use Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
+<p>Reproduce via Docker:</p>
+<div class="highlight"><pre><span></span>docker build -f Dockerfile.prod -t tango .
+docker run -d -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
+</pre></div>
+<ul>
+<li><strong>out_path</strong>: The directory on your machine you want all files to be saved to</li>
+<li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
+</ul>
+<p>Reproduce without Docker:</p>
+<div class="highlight"><pre><span></span>pip install tango
+tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
+</pre></div>
+<ul>
+<li><strong>down_path</strong>: The directory where all the files will be downloaded and extracted to.</li>
+<li><strong>out_path</strong>: The output path to place all results in.</li>
+<li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -102,10 +120,17 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Download our repo:
-<code>git clone https://github.com/two-to-tango/tango.git</code></p>
-<p>Navigate to the root of the project and run:
-<code>pip install .</code></p>
+<h4 id="From-pypi:">From pypi:<a class="anchor-link" href="#From-pypi:"> </a></h4><p><code>pip install tango</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="From-source:">From source:<a class="anchor-link" href="#From-source:"> </a></h4><div class="highlight"><pre><span></span>git clone https://github.com/ncoop57/tango.git
+<span class="nb">cd</span> tango
+pip install .
+</pre></div>
 
 </div>
 </div>
@@ -134,6 +159,16 @@ nb_path: "nbs/index.ipynb"
                 (('APOD', 'CC2', 'U2'), 0.11940588516361622),
                 (('APOD', 'CC3', 'U1'), 0.07206934454930929),
                 (('APOD', 'CC2', 'U1'), 0.03426603336985401)])</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Download-our-dataset-and-artifacts:">Download our dataset and artifacts:<a class="anchor-link" href="#Download-our-dataset-and-artifacts:"> </a></h4><p><code>tango_download &lt;out_path&gt;</code></p>
+<ul>
+<li><strong>out_path</strong>: The output path to save and unzip all files.</li>
+</ul>
 
 </div>
 </div>
