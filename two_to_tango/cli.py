@@ -32,10 +32,11 @@ URLs = {
 }
 
 # Cell
-@call_parse
+# @call_parse
 def download(
-    out_path: Param("The output path to save and unzip all files.", str)
+    out_path#: Param("The output path to save and unzip all files.", str)
 ):
+    """Function for downloading all data and results related to this tool's paper"""
     out_path = Path(out_path)
     out_path.mkdir(parents=True, exist_ok=True)
 
@@ -139,26 +140,28 @@ def reproduce(
     vis_model: Param("The type of visual model. Can be either SimCLR or SIFT, taking ~6h or >24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.", str)
 ):
     """Function for reproducing all results related to this tool's paper"""
+    print(down_path, out_path, vis_model)
     random.seed(42)
     download(down_path)
-    down_path = Path(down_path)
-    out_path = Path(out_path)
-    art_path = down_path/"tango_reproduction_package"/"artifacts"
+#     down_path = Path(down_path)
+#     out_path = Path(out_path)
+#     art_path = down_path/"tango_reproduction_package"/"artifacts"
 
-    logging.info("Loading videos.")
-    vid_ds = VideoDataset.from_path(
-        art_path/"videos", fr = FPS
-    ).label_from_paths()
+#     logging.info("Loading videos.")
+#     vid_ds = VideoDataset.from_path(
+#         art_path/"videos", fr = FPS
+#     ).label_from_paths()
 
-    _generate_vis_results(vid_ds, out_path, art_path, vis_model)
-    _generate_txt_results(out_path, art_path, vis_model)
+#     _generate_vis_results(vid_ds, out_path, art_path, vis_model)
+#     _generate_txt_results(out_path, art_path, vis_model)
 
-    combo_out_path = out_path/"combined"
-    dl_ranking_path = out_path/"user_rankings_weighted_all"/"all_rankings.csv"
-    ir_rankings_path = txt_path/"tango_txt_rankings"/"all_rankings.json"
+#     combo_out_path = out_path/"combined"
+#     dl_ranking_path = out_path/"user_rankings_weighted_all"/"all_rankings.csv"
+#     txt_path = art_path/"models"/"OCR+IR"
+#     ir_rankings_path = txt_path/"tango_txt_rankings"/"all_rankings.json"
+#     settings_path = out_path/"evaluation_settings"
 
-    tango_combined(combo_out_path, dl_ranking_path, ir_rankings_path, settings_path, BEST_DL_MODELS, BEST_IR_MODELS)
-    pass
+#     tango_combined(combo_out_path, dl_ranking_path, ir_rankings_path, settings_path, BEST_DL_MODELS, BEST_IR_MODELS)
 
 # Cell
 @call_parse
