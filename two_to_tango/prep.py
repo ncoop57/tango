@@ -250,8 +250,7 @@ def get_all_texts(vid_ds, out_path, fps):
     video_output_path = os.path.join(out_path, "text_" + str(fps))
     Path(video_output_path).mkdir(parents=True, exist_ok=True)
 
-    videos = [vid.vid_path for vid in vid_ds.videos]# find_file("*.mp4", vid_path)
-    print(videos)
+    videos = [vid.vid_path for vid in vid_ds.videos]
     for video_path in videos:
         video_path_obj = Path(video_path)
 

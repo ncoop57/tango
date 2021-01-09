@@ -106,7 +106,7 @@ def _generate_vis_results(vid_ds, out_path, art_path, vis_model):
             with open(results_path/f"rankings_{id_name}.pkl", "wb") as f:
                 pickle.dump(rankings, f, protocol=pickle.HIGHEST_PROTOCOL)
 
-            with open(results_path/f"evaluation_metrics_{id_name}.pkl", 'wb') as f:
+            with open(results_path/f"evalhttp://localhost:8888/notebooks/main/nbs/05_cli.ipynb#uation_metrics_{id_name}.pkl", 'wb') as f:
                 pickle.dump(evaluation_metrics, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 # Cell
@@ -119,18 +119,17 @@ def _generate_txt_results(vid_ds, out_path, art_path, vis_model):
     generate_setting2(video_data, settings_path)
     convert_results_format(out_path/"results", settings_path, out_path, [vis_model])
 
+    # Check if files already exist and skip if they do because it takes a long time
     txt_out_path = out_path/"extracted_text"
     for ftk in N_FRAMES_TO_KEEP:
-        get_all_texts(vid_ds, txt_out_path, fps = ftk)
+        if not (txt_out_path/f"text_{ftk}").exists():
+            get_all_texts(vid_ds, txt_out_path, fps = ftk)
 
     txt_path = art_path/"models"/"OCR+IR"
-    try:
-        subprocess.check_output(
-            ["sh", "build_run.sh", str(txt_out_path), str(settings_path)],
-            cwd=str(txt_path),
-        )
-    except subprocess.CalledProcessError as e:
-        print(e)
+    subprocess.check_output(
+        ["sh", "build_run.sh", str(txt_out_path), str(settings_path)],
+        cwd=str(txt_path),
+    )
 
 # Cell
 @call_parse
