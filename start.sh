@@ -14,6 +14,6 @@ fi
 # Run the docker container. Add additional -v if
 # you need to mount more volumes into the container
 # Also, make sure to edit the ports to fix your needs.
-docker run -d --gpus all --shm-size=100g -v $(pwd):/tf/main	\
+docker run -d --gpus all -u $(id -u):$(id -g) -v $(pwd):/tf/main	\
 	-v $DATA:/tf/data		\
 	-p 8888:8888 --name $TAG $TAG
