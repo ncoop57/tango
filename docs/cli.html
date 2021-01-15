@@ -47,6 +47,13 @@ nb_path: "nbs/05_cli.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -54,9 +61,8 @@ nb_path: "nbs/05_cli.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download" class="doc_header"><code>download</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download</code>(<strong><code>out_path</code></strong>)</p>
+<h4 id="download" class="doc_header"><code>download</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download</code>(<strong><code>out_path</code></strong>:"The output path to save and unzip all files.")</p>
 </blockquote>
-<p>Function for downloading all data and results related to this tool's paper</p>
 
 </div>
 
@@ -349,7 +355,7 @@ Writing data
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L136" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
+<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L143" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
 </blockquote>
 <p>Function for reproducing all results related to this tool's paper</p>
 
@@ -381,8 +387,12 @@ Writing data
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>cb_path</code></strong>:"Path to the codebook", <strong><code>vis_path</code></strong>:"Path to SimCLR checkpoint", <strong><code>fps</code></strong>:"FPS to set the vidoes to"=<em><code>30</code></em>, <strong><code>approach</code></strong>:"Approach to use: vis, txt, comb"=<em><code>'vis'</code></em>)</p>
+<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L174" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>simclr_path</code></strong>:"Path to the SimCLR model directory")</p>
 </blockquote>
+<p>Function for calculating similarity scores of a corpus of video-based bug
+reports to a query video-based bug report. Currently only uses the top
+performing SimCLR model from our paper
+"It Takes Two to TANGO: Combining Visual andTextual Information for Detecting DuplicateVideo-Based Bug Reports".</p>
 
 </div>
 
@@ -397,6 +407,119 @@ Writing data
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">corpus_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/tango_reproduction_package.mod/artifacts/cli_videos&quot;</span><span class="p">)</span>
+<span class="n">query_path</span> <span class="o">=</span> <span class="n">corpus_path</span><span class="o">/</span><span class="s2">&quot;U1&quot;</span><span class="o">/</span><span class="s2">&quot;APOD&quot;</span><span class="o">/</span><span class="s2">&quot;CC1&quot;</span><span class="o">/</span><span class="s2">&quot;APOD-CC1.mp4&quot;</span>
+<span class="n">simclr_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/tango_reproduction_package.mod/artifacts/models/SimCLR&quot;</span><span class="p">)</span>
+<span class="n">tango</span><span class="p">(</span><span class="n">query_path</span><span class="p">,</span> <span class="n">corpus_path</span><span class="p">,</span> <span class="n">simclr_path</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Downloading: &#34;https://download.pytorch.org/models/resnet50-19c8e357.pth&#34; to /.cache/torch/hub/checkpoints/resnet50-19c8e357.pth
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+
+OrderedDict([   ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U12&#39;), 0.7996704325393119),
+                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U12&#39;), 0.7364922718579903),
+                ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U1&#39;), 0.7332507342941189),
+                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U12&#39;), 0.6771152833856062),
+                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U8&#39;), 0.6507815428194939),
+                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U12&#39;), 0.5841917588438166),
+                ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U2&#39;), 0.5544971299942728),
+                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U5&#39;), 0.5334441824755306),
+                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U9&#39;), 0.45347669958173925),
+                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U7&#39;), 0.3297032943580328),
+                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U7&#39;), 0.2642996863611519),
+                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U2&#39;), 0.2303172035345576),
+                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U8&#39;), 0.21686658074782778),
+                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U8&#39;), 0.12601272446475553),
+                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U2&#39;), 0.1244614376844308),
+                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U5&#39;), 0.1112754764096246),
+                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U8&#39;), 0.10532449257759816),
+                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U12&#39;), 0.10306407241657699),
+                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U1&#39;), 0.08703351841311421),
+                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U7&#39;), 0.078095938555396),
+                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U12&#39;), 0.06853184449467153),
+                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U5&#39;), 0.06675366259781142),
+                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U1&#39;), 0.06249489483830017),
+                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U12&#39;), 0.05806132202221084),
+                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U12&#39;), 0.05778136085915167),
+                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U1&#39;), 0.04392865549478352),
+                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U12&#39;), 0.03856166009012557),
+                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U7&#39;), 0.0356791725386482),
+                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U10&#39;), 0.0352537704749028),
+                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U12&#39;), 0.024031821359592725)])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @call_parse</span>
+<span class="c1"># def tango(</span>
+<span class="c1">#     q_path:Param(&quot;Path to the query video&quot;, str),</span>
+<span class="c1">#     cor_path:Param(&quot;Path to the corpus&quot;, str),</span>
+<span class="c1">#     cb_path:Param(&quot;Path to the codebook&quot;, str),</span>
+<span class="c1">#     vis_path:Param(&quot;Path to SimCLR checkpoint&quot;, str),</span>
+<span class="c1">#     fps:Param(&quot;FPS to set the vidoes to&quot;, int) = 30,</span>
+<span class="c1">#     approach:Param(&quot;Approach to use: vis, txt, comb&quot;, str) = &#39;vis&#39;</span>
+<span class="c1"># ):</span>
+<span class="c1">#     q_path = Path(q_path)</span>
+<span class="c1">#     cor_path = Path(cor_path)</span>
+<span class="c1">#     cb_path = Path(cb_path)</span>
+<span class="c1">#     vis_path = Path(vis_path)</span>
+    
+<span class="c1">#     q_vid = Video(q_path, fps)</span>
+<span class="c1">#     codebook = pickle.load(open(cb_path, &#39;rb&#39;))</span>
+<span class="c1">#     simclr = SimCLRModel.load_from_checkpoint(checkpoint_path = str(vis_path)).eval()</span>
+<span class="c1">#     model = SimCLRExtractor(simclr)</span>
+
+<span class="c1">#     vid_ds = VideoDataset.from_path(cor_path).label_from_paths()</span>
+<span class="c1">#     sorted_rankings = compute_sims(q_vid, vid_ds, model, codebook, 1_000, fps, 5)</span>
+<span class="c1">#     pp = pprint.PrettyPrinter(indent=4)</span>
+<span class="c1">#     pp.pprint(sorted_rankings)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}

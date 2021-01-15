@@ -65,7 +65,7 @@ docker run -d -u <span class="k">$(</span>id -u<span class="k">)</span>:<span cl
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
 <p>Reproduce without Docker:</p>
-<div class="highlight"><pre><span></span>pip install tango
+<div class="highlight"><pre><span></span>pip install two-to-tango
 tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
 </pre></div>
 <ul>
@@ -120,14 +120,16 @@ tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="From-pypi:">From pypi:<a class="anchor-link" href="#From-pypi:"> </a></h4><p><code>pip install tango</code></p>
+<p><strong>From pypi:</strong></p>
+<p><code>pip install two-to-tango</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="From-source:">From source:<a class="anchor-link" href="#From-source:"> </a></h4><div class="highlight"><pre><span></span>git clone https://github.com/ncoop57/tango.git
+<p><strong>From source:</strong></p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ncoop57/tango.git
 <span class="nb">cd</span> tango
 pip install .
 </pre></div>

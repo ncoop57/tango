@@ -31,7 +31,7 @@ docker run -d -u $(id -u):$(id -g) -v <out_path>:/data tango <vis_model>
 
 Reproduce without Docker:
 ```bash
-pip install tango
+pip install two-to-tango
 tango_reproduce <down_path> <out_path> <vis_model>
 ```
 * **down_path**: The directory where all the files will be downloaded and extracted to.
@@ -63,11 +63,11 @@ Sheets that contain the `weight` column have information regarding how much weig
 
 ## Install
 
-#### From pypi:
+**From pypi:**
 
-`pip install tango`
+`pip install two-to-tango`
 
-#### From source:
+**From source:**
 ```bash
 git clone https://github.com/ncoop57/tango.git
 cd tango

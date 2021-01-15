@@ -28,12 +28,12 @@ logger.setLevel(logging.INFO)
 
 # Cell
 URLs = {
-    "reproduction_package": "",
+    "reproduction_package": "https://zenodo.org/record/<record_num>/files/<file_name>",
 }
 
 # Cell
 # @call_parse
-def download(
+def _download(
     out_path#: Param("The output path to save and unzip all files.", str)
 ):
     """Function for downloading all data and results related to this tool's paper"""
@@ -44,6 +44,13 @@ def download(
     r = requests.get(URLs["reproduction_package"])
     z = zipfile.ZipFile(io.BytesIO(r.content))
     z.extractall(out_path / "reproduction_package")
+
+# Cell
+@call_parse
+def download(
+    out_path: Param("The output path to save and unzip all files.", str)
+):
+    _download(out_path)
 
 # Cell
 # all hyperparameters used
@@ -107,7 +114,7 @@ def _generate_vis_results(vid_ds, out_path, art_path, vis_model):
             with open(results_path/f"rankings_{id_name}.pkl", "wb") as f:
                 pickle.dump(rankings, f, protocol=pickle.HIGHEST_PROTOCOL)
 
-            with open(results_path/f"evalhttp://localhost:8888/notebooks/main/nbs/05_cli.ipynb#uation_metrics_{id_name}.pkl", 'wb') as f:
+            with open(results_path/f"evaluation_metrics_{id_name}.pkl", 'wb') as f:
                 pickle.dump(evaluation_metrics, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 # Cell
@@ -142,7 +149,7 @@ def reproduce(
     """Function for reproducing all results related to this tool's paper"""
     print(down_path, out_path, vis_model)
     random.seed(42)
-    download(down_path)
+    _download(down_path)
 #     down_path = Path(down_path)
 #     out_path = Path(out_path)
 #     art_path = down_path/"tango_reproduction_package"/"artifacts"
@@ -166,24 +173,30 @@ def reproduce(
 # Cell
 @call_parse
 def tango(
-    q_path:Param("Path to the query video", str),
-    cor_path:Param("Path to the corpus", str),
-    cb_path:Param("Path to the codebook", str),
-    vis_path:Param("Path to SimCLR checkpoint", str),
-    fps:Param("FPS to set the vidoes to", int) = 30,
-    approach:Param("Approach to use: vis, txt, comb", str) = 'vis'
+    q_path: Param("Path to the query video", str),
+    cor_path: Param("Path to the corpus", str),
+    simclr_path: Param("Path to the SimCLR model directory", str)
 ):
+    """
+    Function for calculating similarity scores of a corpus of video-based bug
+    reports to a query video-based bug report. Currently only uses the top
+    performing SimCLR model from our paper
+    "It Takes Two to TANGO: Combining Visual andTextual Information for Detecting DuplicateVideo-Based Bug Reports".
+    """
     q_path = Path(q_path)
     cor_path = Path(cor_path)
-    cb_path = Path(cb_path)
-    vis_path = Path(vis_path)
+    simclr_path = Path(simclr_path)
+    best_vw = 1_000
+    best_ftk = 5
 
-    q_vid = Video(q_path, fps)
-    codebook = pickle.load(open(cb_path, 'rb'))
-    simclr = SimCLRModel.load_from_checkpoint(checkpoint_path = str(vis_path)).eval()
+    q_vid = Video(q_path, FPS)
+    codebook = pickle.load(open(simclr_path/f"cookbook_SimCLR_{best_vw}vw.model", 'rb'))
+    simclr = SimCLRModel.load_from_checkpoint(
+        checkpoint_path=str(simclr_path/"checkpointepoch=98.ckpt")
+    ).eval()
     model = SimCLRExtractor(simclr)
 
     vid_ds = VideoDataset.from_path(cor_path).label_from_paths()
-    sorted_rankings = compute_sims(q_vid, vid_ds, model, codebook, 1_000, fps, 5)
+    sorted_rankings = compute_sims(q_vid, vid_ds, model, codebook, best_vw, FPS, best_ftk)
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(sorted_rankings)
