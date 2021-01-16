@@ -28,7 +28,7 @@ logger.setLevel(logging.INFO)
 
 # Cell
 URLs = {
-    "reproduction_package": "https://zenodo.org/record/<record_num>/files/<file_name>",
+    "reproduction_package": "https://sandbox.zenodo.org/record/716797/files/tango_reproduction_package.zip",
 }
 
 # Cell
@@ -196,7 +196,7 @@ def tango(
     ).eval()
     model = SimCLRExtractor(simclr)
 
-    vid_ds = VideoDataset.from_path(cor_path).label_from_paths()
+    vid_ds = VideoDataset.from_path(cor_path, fr=FPS).label_from_paths()
     sorted_rankings = compute_sims(q_vid, vid_ds, model, codebook, best_vw, FPS, best_ftk)
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(sorted_rankings)
