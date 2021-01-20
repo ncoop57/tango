@@ -27,7 +27,7 @@ docker build -f Dockerfile.prod -t tango .
 docker run -d -u $(id -u):$(id -g) -v <out_path>:/data tango <vis_model>
 ```
 * **out_path**: The directory on your machine you want all files to be saved to
-* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6h or >24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
+* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
 
 Reproduce without Docker:
 ```bash
@@ -36,7 +36,7 @@ tango_reproduce <down_path> <out_path> <vis_model>
 ```
 * **down_path**: The directory where all the files will be downloaded and extracted to.
 * **out_path**: The output path to place all results in.
-* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6h or >24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
+* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
 
 We have created our reproduction package using Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
 

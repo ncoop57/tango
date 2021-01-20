@@ -61,7 +61,7 @@ nb_path: "nbs/05_cli.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download" class="doc_header"><code>download</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download</code>(<strong><code>out_path</code></strong>:"The output path to save and unzip all files.")</p>
+<h4 id="download" class="doc_header"><code>download</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L53" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download</code>(<strong><code>out_path</code></strong>:"The output path to save and unzip all files.")</p>
 </blockquote>
 
 </div>
@@ -77,6 +77,37 @@ nb_path: "nbs/05_cli.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;/tf/main/data&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:root:Downloading and extracting datasets and models to /tf/main/data.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -115,7 +146,7 @@ nb_path: "nbs/05_cli.ipynb"
     <span class="n">art_path</span><span class="o">/</span><span class="s2">&quot;videos&quot;</span><span class="p">,</span> <span class="n">fr</span> <span class="o">=</span> <span class="n">FPS</span>
 <span class="p">)</span><span class="o">.</span><span class="n">label_from_paths</span><span class="p">()</span>
 
-<span class="c1"># _generate_vis_results(vid_ds, out_path, art_path, vis_model)</span>
+<span class="n">_generate_vis_results</span><span class="p">(</span><span class="n">vid_ds</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">art_path</span><span class="p">,</span> <span class="n">vis_model</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -348,6 +379,98 @@ Writing data
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vis_model</span> <span class="o">=</span> <span class="s2">&quot;SimCLR&quot;</span>
+<span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/tango_reproduction_package/outputs&quot;</span><span class="p">)</span>
+<span class="n">_output_performance</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="n">BEST_MODEL_CONFIGS</span><span class="p">[</span><span class="n">vis_model</span><span class="p">],</span> <span class="n">BEST_MODEL_CONFIGS</span><span class="p">[</span><span class="s2">&quot;OCR+IR&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:18: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>        Model: M01-1000vw-5ftk-bovw,ocr+ir-5-all_text,weight=0.2-0
+        Overall mRR: 0.7978683662016994
+        Overall mAP: 0.7324409215612918
+        Overall Mean Rank: 1.733127572016461
+        
+        Model: M01-1000vw-5ftk-bovw
+        Overall mRR: 0.7565689857455435
+        Overall mAP: 0.6790426129261438
+        Overall Mean Rank: 1.9712166172106824
+        
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:27: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>        Model: ocr+ir-5-all_text
+        Overall mRR: 0.6908344787424905
+        Overall mAP: 0.6321311560183961
+        Overall Mean Rank: 2.346587537091988
+        
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:35: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -355,7 +478,7 @@ Writing data
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L143" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6h or &gt;24h, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
+<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
 </blockquote>
 <p>Function for reproducing all results related to this tool's paper</p>
 
@@ -379,6 +502,48 @@ Writing data
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">VWORDS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1_000</span><span class="p">]</span>
+<span class="n">N_IMGS</span> <span class="o">=</span> <span class="mi">15_000</span>
+<span class="n">N_FRAMES_TO_KEEP</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">FPS</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">down_path</span> <span class="o">=</span> <span class="s2">&quot;/tf/main/data&quot;</span>
+<span class="n">out_path</span> <span class="o">=</span> <span class="s2">&quot;/tf/main/data/tango_reproduction_package/outputs&quot;</span>
+<span class="n">vis_model</span> <span class="o">=</span> <span class="s2">&quot;SimCLR&quot;</span>
+
+<span class="n">reproduce</span><span class="p">(</span><span class="n">down_path</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">vis_model</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:root:Downloading and extracting datasets and models to /tf/main/data.
+INFO:root:Loading videos.
+INFO:root:Computing rankings and calculating metrics for SimCLR visual model.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -387,7 +552,7 @@ Writing data
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L174" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>simclr_path</code></strong>:"Path to the SimCLR model directory")</p>
+<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L239" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>simclr_path</code></strong>:"Path to the SimCLR model directory")</p>
 </blockquote>
 <p>Function for calculating similarity scores of a corpus of video-based bug
 reports to a query video-based bug report. Currently only uses the top
