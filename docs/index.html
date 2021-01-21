@@ -1,6 +1,6 @@
 ---
 
-title: Tango
+title: Tango 🕺💃
 
 
 keywords: fastai
@@ -31,7 +31,11 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note: We provide all results. However, for the rankings, we provide all of them except for the visual information models, which we only provide the best performing one (SimCLR-bovw-5fps-1,000vw). We will provide the rest of the rankings for the visual information models upon acceptance</strong></p>
+<p><a href="https://doi.org/10.5281/zenodo.4453765"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4453765.svg" alt="DOI"></a>
+<a href="https://pypi.org/project/two-to-tango/"><img src="https://img.shields.io/pypi/pyversions/two-to-tango" alt="PyPI - Python Version"></a>
+<a href="https://badge.fury.io/py/two-to-tango"><img src="https://badge.fury.io/py/two-to-tango.svg" alt="PyPI Status"></a>
+<a href="https://pepy.tech/project/two-to-tango"><img src="https://pepy.tech/badge/two-to-tango" alt="PyPI Status"></a>
+<a href="https://github.com/ncoop57/tango/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a></p>
 
 </div>
 </div>
@@ -44,11 +48,11 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We provide all of our data, models, and results. You can download the zip here: <a href="https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing">https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing</a></p>
+<p>We provide all of our data, models, and results. You can download the zip here: <a href="https://doi.org/10.5281/zenodo.4439661">https://doi.org/10.5281/zenodo.4439661</a></p>
 <p>In this data package, you will find two folders: <code>artifacts</code> and <code>outputs</code></p>
 <p><code>artifacts</code> contains the videos we collected in our user study, the model files for the different models we evaluated, and the detailed results that we generated (See <code>Detailed Results</code> section for more information). The <code>videos</code> folder is broken down by user, where each user has a folder contain the apps they were given to create videos for. Each of the apps contain folders that denote the bug they generated a report for. Finally, instead these bug folders there is the actual video-based bug report as an mp4 file. The <code>user_assignment.csv</code> just contains the finalized assignments of users to corresponding bug reports.</p>
 <p>In the <code>models</code> folder, you will find the two models we evaluated (SIFT, SimCLR, and OCR+IR). In each folder you will find the corresponding trained codebook files that we generated for SIFT and SimCLR. These codebook files are pickle files that contain the binary representation of the trained codebooks. Additionally, in the SimCLR folder, you will find a checkpoint and pytorch model file that contains all the necessary information for reloading our trained SimCLR model. For the <code>OCR+IR</code> folder, you will find all of the code for the OCR+IR model as well as the intermediate output for this particular model, other models' outputs are stored in the <code>outputs</code> folder.</p>
-<p>The <code>outputs</code> folder contains all of the intermediate outputs of our code, except for OCR+IR. In the <code>results</code> folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. <code>evaluation_setting</code> contains a json file that contains all of the duplicate detection tasks we used for evaluating our models, i.e. <code>setting 2</code> (See paper for more details). <code>user_rankings_weighted_all</code> and <code>user_results_weighted_all</code> contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match <code>setting 2</code>. <code>extracted_text</code> contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, <code>combined</code> contains the results of the combined tango approach.</p>
+<p>The <code>outputs</code> folder contains all of the intermediate outputs of our code, except for OCR+IR. In the <code>results</code> folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. <strong>NOTE: SIFT is missing the 10k raw ranking and metrics, but will be provided in a future version.</strong> <code>evaluation_setting</code> contains a json file that contains all of the duplicate detection tasks we used for evaluating our models, i.e. <code>setting 2</code> (See paper for more details). <code>user_rankings_weighted_all</code> and <code>user_results_weighted_all</code> contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match <code>setting 2</code>. <code>extracted_text</code> contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, <code>combined</code> contains the results of the combined tango approach.</p>
 
 </div>
 </div>
@@ -56,7 +60,7 @@ nb_path: "nbs/index.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2><p>The prefered method to reproduce our paper's results is to use Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
-<p>Reproduce via Docker:</p>
+<p><strong>Reproduce via Docker:</strong></p>
 <div class="highlight"><pre><span></span>docker build -f Dockerfile.prod -t tango .
 docker run -d -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
 </pre></div>
@@ -64,7 +68,7 @@ docker run -d -u <span class="k">$(</span>id -u<span class="k">)</span>:<span cl
 <li><strong>out_path</strong>: The directory on your machine you want all files to be saved to</li>
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
-<p>Reproduce without Docker:</p>
+<p><strong>Reproduce without Docker:</strong></p>
 <div class="highlight"><pre><span></span>pip install two-to-tango
 tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
 </pre></div>
@@ -73,25 +77,6 @@ tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
 <li><strong>out_path</strong>: The output path to place all results in.</li>
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have created our reproduction package using Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
-<p>Steps to Reproduce:</p>
-<ol>
-<li>Download the repository: <code>git clone https://github.com/two-to-tango/tango.git</code></li>
-<li>Download the data from our gdrive: <a href="https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing">https://drive.google.com/file/d/1VFxzNXlldGDoCkyNeiLrrHCnAPaqJPpH/view?usp=sharing</a></li>
-<li>Unzip the data file</li>
-<li>Navigate to the root of the repo and run the start script, passing in the location of the data folder: <code>./start &lt;data_path&gt;</code></li>
-<li>Once the docker container has finished spinning up, jump into it: <code>docker exec -it tango bash</code></li>
-<li>Change directory into the main folder (<code>cd main</code>) and install tango locally: <code>pip install -e .</code></li>
-<li>Locate the Jupyter Notebook token by running the following command inside the docker container: <code>jupyter notebook list</code></li>
-<li>Open a browser to <code>localhost:8888</code> and paste the token into the correct field</li>
-<li>Navigate to <code>main/nbs/06_results.ipynb</code> and follow the rest of the instructions provided in that notebook</li>
-</ol>
 
 </div>
 </div>
@@ -145,32 +130,66 @@ pip install .
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>tango &lt;query_vid_path&gt; &lt;corpus_path&gt; &lt;codebook_path&gt; &lt;simclr_checkpoint_path&gt;</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Example Output:</p>
-
-<pre><code>OrderedDict([   (('APOD', 'CC1', 'U2'), 1.0),
-                (('APOD', 'CC1', 'U1'), 0.7101319783997799),
-                (('APOD', 'CC3', 'U2'), 0.19613202363022775),
-                (('APOD', 'RB', 'U1'), 0.1261138231868554),
-                (('APOD', 'CC2', 'U2'), 0.11940588516361622),
-                (('APOD', 'CC3', 'U1'), 0.07206934454930929),
-                (('APOD', 'CC2', 'U1'), 0.03426603336985401)])</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Download-our-dataset-and-artifacts:">Download our dataset and artifacts:<a class="anchor-link" href="#Download-our-dataset-and-artifacts:"> </a></h4><p><code>tango_download &lt;out_path&gt;</code></p>
+<p><strong>Download Data CLI Tool</strong></p>
+<p><code>tango_download &lt;out_path&gt;</code></p>
 <ul>
 <li><strong>out_path</strong>: The output path to save and unzip all files.</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Duplicate Detection CLI Tool</strong></p>
+<p><code>tango &lt;query_path&gt; &lt;corpus_path&gt; &lt;simclr_path&gt;</code></p>
+<ul>
+<li><strong>query_path</strong>: The path to a video you want to detect duplicates for.<ul>
+<li>Example: <code>&lt;out_path&gt;/tango_reproduction_package/artifacts/cli_videos/U1/APOD/CC1/APOD-CC1_fixed_30.mp4</code></li>
+</ul>
+</li>
+<li><strong>corpus_path</strong>: The path to a video you want to detect duplicates for.<ul>
+<li>Example: <code>&lt;out_path&gt;/tango_reproduction_package/artifacts/cli_videos</code></li>
+</ul>
+</li>
+<li><strong>simclr_path</strong>: The path to a video you want to detect duplicates for.<ul>
+<li>Example: <code>&lt;out_path&gt;/tango_reproduction_package/artifacts/models/SimCLR</code></li>
+</ul>
+</li>
+</ul>
+<p>Example Output:</p>
+<div class="highlight"><pre><span></span><span class="n">OrderedDict</span><span class="p">([</span>   <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC1&#39;</span><span class="p">,</span> <span class="s1">&#39;U1&#39;</span><span class="p">),</span> <span class="mf">0.9838350837260246</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC1&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.9193482983504456</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC1&#39;</span><span class="p">,</span> <span class="s1">&#39;U2&#39;</span><span class="p">),</span> <span class="mf">0.3723964243572911</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC6&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.3718521026630344</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC9&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.36803837161265085</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC6&#39;</span><span class="p">,</span> <span class="s1">&#39;U8&#39;</span><span class="p">),</span> <span class="mf">0.33589710905277315</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC4&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.3118613303188616</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC9&#39;</span><span class="p">,</span> <span class="s1">&#39;U5&#39;</span><span class="p">),</span> <span class="mf">0.2718403622668689</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC4&#39;</span><span class="p">,</span> <span class="s1">&#39;U7&#39;</span><span class="p">),</span> <span class="mf">0.25082093055745974</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC9&#39;</span><span class="p">,</span> <span class="s1">&#39;U9&#39;</span><span class="p">),</span> <span class="mf">0.22580393621884165</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC5&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.1768510685792533</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC6&#39;</span><span class="p">,</span> <span class="s1">&#39;U7&#39;</span><span class="p">),</span> <span class="mf">0.1682816804179776</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC4&#39;</span><span class="p">,</span> <span class="s1">&#39;U8&#39;</span><span class="p">),</span> <span class="mf">0.13915926428362999</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC2&#39;</span><span class="p">,</span> <span class="s1">&#39;U2&#39;</span><span class="p">),</span> <span class="mf">0.1354447367818957</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC3&#39;</span><span class="p">,</span> <span class="s1">&#39;U2&#39;</span><span class="p">),</span> <span class="mf">0.12004454785432789</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC5&#39;</span><span class="p">,</span> <span class="s1">&#39;U7&#39;</span><span class="p">),</span> <span class="mf">0.11235793525631509</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC5&#39;</span><span class="p">,</span> <span class="s1">&#39;U8&#39;</span><span class="p">),</span> <span class="mf">0.10867946897348428</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC7&#39;</span><span class="p">,</span> <span class="s1">&#39;U8&#39;</span><span class="p">),</span> <span class="mf">0.09014217805772731</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;RB&#39;</span><span class="p">,</span> <span class="s1">&#39;U1&#39;</span><span class="p">),</span> <span class="mf">0.08324154319710894</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC8&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.08179046960502091</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC8&#39;</span><span class="p">,</span> <span class="s1">&#39;U5&#39;</span><span class="p">),</span> <span class="mf">0.07290831091450554</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;RB&#39;</span><span class="p">,</span> <span class="s1">&#39;U5&#39;</span><span class="p">),</span> <span class="mf">0.07194441953180176</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC3&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.06729098674201965</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC7&#39;</span><span class="p">,</span> <span class="s1">&#39;U7&#39;</span><span class="p">),</span> <span class="mf">0.06326635817907807</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC7&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.05922061313241868</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC8&#39;</span><span class="p">,</span> <span class="s1">&#39;U10&#39;</span><span class="p">),</span> <span class="mf">0.05328420969145727</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC2&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.04707548776015297</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC3&#39;</span><span class="p">,</span> <span class="s1">&#39;U1&#39;</span><span class="p">),</span> <span class="mf">0.04342630487280919</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC2&#39;</span><span class="p">,</span> <span class="s1">&#39;U1&#39;</span><span class="p">),</span> <span class="mf">0.04211602057931267</span><span class="p">),</span>
+                <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;RB&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.029766244020504186</span><span class="p">)])</span>
+</pre></div>
+<p>If you would like to do this on your own data, look at the <code>tango_reproduction_package/artifacts/cli_videos</code> directory structure for how you need to formate your data to work with <a href="/tango/cli.html#tango"><code>tango</code></a></p>
 
 </div>
 </div>

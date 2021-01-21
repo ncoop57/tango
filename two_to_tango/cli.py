@@ -32,7 +32,7 @@ logger.setLevel(logging.INFO)
 
 # Cell
 URLs = {
-    "tango_reproduction_package": "https://sandbox.zenodo.org/record/716797/files/tango_reproduction_package.zip",
+    "tango_reproduction_package": "https://zenodo.org/record/4453765/files/tango_reproduction_package.zip",
 }
 
 # Cell
