@@ -1,14 +1,14 @@
 {
   "two_to_tango": {
     "Overview": "/",
-    "Prep": "prep.html",
-    "Features": "features.html",
-    "Eval": "eval.html",
-    "Model": "model.html",
-    "Approach": "approach.html",
-    "CLI": "cli.html",
-    "Results": "results.html",
-    "Utilities": "utils.html",
-    "Combinations": "combo.html"
+    "Prep": "prep",
+    "Features": "features",
+    "Eval": "eval",
+    "Model": "model",
+    "Approach": "approach",
+    "CLI": "cli",
+    "Results": "results",
+    "Utilities": "utils",
+    "Combinations": "combo"
   }
 }
