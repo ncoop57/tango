@@ -60,12 +60,17 @@ nb_path: "nbs/index.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2><p>The prefered method to reproduce our paper's results is to use Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ncoop57/tango.git
+<span class="nb">cd</span> tango
+</pre></div>
 <p><strong>Reproduce via Docker:</strong></p>
-<div class="highlight"><pre><span></span>docker build -f Dockerfile.prod -t tango .
-docker run -d -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
+<div class="highlight"><pre><span></span><span class="nb">cd</span> docker_build
+docker build -f Dockerfile.prod -t tango .
+<span class="nb">cd</span> ..
+docker run -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
 </pre></div>
 <ul>
-<li><strong>out_path</strong>: The directory on your machine you want all files to be saved to</li>
+<li><strong>out_path</strong>: The absolute path on your machine you want all files to be saved to</li>
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
 <p><strong>Reproduce without Docker:</strong></p>

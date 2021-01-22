@@ -25,12 +25,19 @@ The `outputs` folder contains all of the intermediate outputs of our code, excep
 ## Reproduce Results
 The prefered method to reproduce our paper's results is to use Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
 
+```bash
+git clone https://github.com/ncoop57/tango.git
+cd tango
+```
+
 **Reproduce via Docker:**
 ```bash
+cd docker_build
 docker build -f Dockerfile.prod -t tango .
-docker run -d -u $(id -u):$(id -g) -v <out_path>:/data tango <vis_model>
+cd ..
+docker run -v <out_path>:/data tango <vis_model>
 ```
-* **out_path**: The directory on your machine you want all files to be saved to
+* **out_path**: The absolute path on your machine you want all files to be saved to
 * **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
 
 **Reproduce without Docker:**
