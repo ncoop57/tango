@@ -5,4 +5,4 @@ ENV PATH="/.local/bin:${PATH}"
 RUN apt-get update -y && apt-get install git wget vim libsm6 libxext6 libxrender-dev libx264-dev ffmpeg tesseract-ocr libtesseract-dev openjdk-11-jdk-headless maven -y
 RUN pip install two-to-tango
 
-ENTRYPOINT ["tango_reproduce" "/data/downloads" "/data/output"]
+ENTRYPOINT ["tango_reproduce", "/data/downloads", "/data/output"]
