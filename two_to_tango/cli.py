@@ -65,9 +65,9 @@ FPS = 30
 
 # Fix naming issue and number of models reported...
 BEST_DL_MODELS= [
-    "M00-10000vw-1ftk-bovw_weighted_lcs",
-    "M01-1000vw-5ftk-bovw", "M01-5000vw-5ftk-bovw_lcs",
-    "M01-5000vw-5ftk-bovw_weighted_lcs", "M01-1000vw-5ftk-bovw_weighted_lcs"
+    "SIFT-10000vw-1ftk-bovw_weighted_lcs",
+    "SimCLR-1000vw-5ftk-bovw", "SimCLR-5000vw-5ftk-bovw_lcs",
+    "SimCLR-5000vw-5ftk-bovw_weighted_lcs", "SimCLR-1000vw-5ftk-bovw_weighted_lcs"
 ]
 BEST_IR_MODELS = [
     "ocr+ir-1ftk-all_text", "ocr+ir-5ftk-all_text",
@@ -75,14 +75,15 @@ BEST_IR_MODELS = [
 ]
 
 BEST_MODEL_CONFIGS = {
-    "SimCLR": "M01-1000vw-5ftk-bovw",
-    "SIFT": "M00-10000vw-1ftk-bovw_weighted_lcs",
+    "SimCLR": "SimCLR-1000vw-5ftk-bovw",
+    "SIFT": "SIFT-10000vw-1ftk-bovw_weighted_lcs",
     "OCR+IR": "ocr+ir-5-all_text"
 }
 
 # Cell
 def _generate_vis_results(vid_ds, out_path, art_path, vis_model):
     if vis_model == "SimCLR":
+        vis_model = "M01"
         simclr = SimCLRModel.load_from_checkpoint(
             checkpoint_path = str(
                 art_path/"models"/"SimCLR"/"checkpointepoch=98.ckpt"
@@ -91,6 +92,7 @@ def _generate_vis_results(vid_ds, out_path, art_path, vis_model):
         model = SimCLRExtractor(simclr)
         sim_func = simclr_frame_sim
     else:
+        vis_model = "M00"
         model = SIFTExtractor(cv2.xfeatures2d.SIFT_create(nfeatures = 10))
         sim_func = sift_frame_sim
 
