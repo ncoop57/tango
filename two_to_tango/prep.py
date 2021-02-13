@@ -275,6 +275,7 @@ def get_all_texts(vid_ds, out_path, fps):
 
         frames_text = sorted(frames_text, key=lambda t: t["f"])
 
+        video_name = video_name.replace("_fixed_30", "")
         out_file = os.path.join(video_output_path, video_name + '.json')
         write_json_line_by_line(frames_text, out_file)
 

@@ -95,20 +95,6 @@ nb_path: "nbs/05_cli.ipynb"
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:root:Downloading and extracting datasets and models to /tf/main/data.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -133,20 +119,19 @@ nb_path: "nbs/05_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">VWORDS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1_000</span><span class="p">]</span>
-<span class="n">N_IMGS</span> <span class="o">=</span> <span class="mi">15_000</span>
-<span class="n">N_FRAMES_TO_KEEP</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># N_IMGS = 15_000</span>
+<span class="c1"># N_FRAMES_TO_KEEP = [1]</span>
 <span class="n">FPS</span> <span class="o">=</span> <span class="mi">30</span>
 
-<span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/tango_reproduction_package/outputs&quot;</span><span class="p">)</span>
-<span class="n">art_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/tango_reproduction_package/artifacts&quot;</span><span class="p">)</span>
+<span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/output&quot;</span><span class="p">)</span>
+<span class="n">art_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/tango_reproduction_package/artifacts&quot;</span><span class="p">)</span>
 <span class="n">vis_model</span> <span class="o">=</span> <span class="s2">&quot;SimCLR&quot;</span>
 
-<span class="n">vid_ds</span> <span class="o">=</span> <span class="n">VideoDataset</span><span class="o">.</span><span class="n">from_path</span><span class="p">(</span>
-    <span class="n">art_path</span><span class="o">/</span><span class="s2">&quot;videos&quot;</span><span class="p">,</span> <span class="n">fr</span> <span class="o">=</span> <span class="n">FPS</span>
-<span class="p">)</span><span class="o">.</span><span class="n">label_from_paths</span><span class="p">()</span>
+<span class="c1"># vid_ds = VideoDataset.from_path(</span>
+<span class="c1">#     art_path/&quot;videos&quot;, fr = FPS</span>
+<span class="c1"># ).label_from_paths()</span>
 
-<span class="n">_generate_vis_results</span><span class="p">(</span><span class="n">vid_ds</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">art_path</span><span class="p">,</span> <span class="n">vis_model</span><span class="p">)</span>
+<span class="c1"># _generate_vis_results(vid_ds, out_path, art_path, vis_model)</span>
 </pre></div>
 
     </div>
@@ -171,7 +156,7 @@ nb_path: "nbs/05_cli.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">N_FRAMES_TO_KEEP</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">_generate_txt_results</span><span class="p">(</span><span class="n">vid_ds</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">art_path</span><span class="p">,</span> <span class="n">vis_model</span><span class="p">)</span>
+<span class="n">_generate_txt_results</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">art_path</span><span class="p">,</span> <span class="n">vis_model</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -192,130 +177,35 @@ nb_path: "nbs/05_cli.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;CC1&#39;: [(&#39;U1&#39;, &#39;APOD-CC1-U1&#39;), (&#39;U2&#39;, &#39;APOD-CC1-U2&#39;), (&#39;U12&#39;, &#39;APOD-CC1-U12&#39;)],
- &#39;CC2&#39;: [(&#39;U1&#39;, &#39;APOD-CC2-U1&#39;), (&#39;U2&#39;, &#39;APOD-CC2-U2&#39;), (&#39;U12&#39;, &#39;APOD-CC2-U12&#39;)],
- &#39;CC3&#39;: [(&#39;U1&#39;, &#39;APOD-CC3-U1&#39;), (&#39;U2&#39;, &#39;APOD-CC3-U2&#39;), (&#39;U12&#39;, &#39;APOD-CC3-U12&#39;)],
- &#39;CC4&#39;: [(&#39;U7&#39;, &#39;APOD-CC4-U7&#39;), (&#39;U8&#39;, &#39;APOD-CC4-U8&#39;), (&#39;U12&#39;, &#39;APOD-CC4-U12&#39;)],
- &#39;CC5&#39;: [(&#39;U7&#39;, &#39;APOD-CC5-U7&#39;), (&#39;U8&#39;, &#39;APOD-CC5-U8&#39;), (&#39;U12&#39;, &#39;APOD-CC5-U12&#39;)],
- &#39;CC6&#39;: [(&#39;U7&#39;, &#39;APOD-CC6-U7&#39;), (&#39;U8&#39;, &#39;APOD-CC6-U8&#39;), (&#39;U12&#39;, &#39;APOD-CC6-U12&#39;)],
- &#39;CC7&#39;: [(&#39;U7&#39;, &#39;APOD-CC7-U7&#39;), (&#39;U8&#39;, &#39;APOD-CC7-U8&#39;), (&#39;U12&#39;, &#39;APOD-CC7-U12&#39;)],
- &#39;CC8&#39;: [(&#39;U5&#39;, &#39;APOD-CC8-U5&#39;),
-         (&#39;U10&#39;, &#39;APOD-CC8-U10&#39;),
-         (&#39;U12&#39;, &#39;APOD-CC8-U12&#39;)],
- &#39;CC9&#39;: [(&#39;U5&#39;, &#39;APOD-CC9-U5&#39;), (&#39;U9&#39;, &#39;APOD-CC9-U9&#39;), (&#39;U12&#39;, &#39;APOD-CC9-U12&#39;)],
- &#39;RB&#39;: [(&#39;U1&#39;, &#39;APOD-RB-U1&#39;), (&#39;U5&#39;, &#39;APOD-RB-U5&#39;), (&#39;U12&#39;, &#39;APOD-RB-U12&#39;)]}
-{&#39;CC1&#39;: [(&#39;U6&#39;, &#39;DROID-CC1-U6&#39;),
-         (&#39;U10&#39;, &#39;DROID-CC1-U10&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC1-U13&#39;)],
- &#39;CC11&#39;: [(&#39;U7&#39;, &#39;DROID-CC11-U7&#39;),
-          (&#39;U10&#39;, &#39;DROID-CC11-U10&#39;),
-          (&#39;U13&#39;, &#39;DROID-CC11-U13&#39;)],
- &#39;CC2&#39;: [(&#39;U7&#39;, &#39;DROID-CC2-U7&#39;),
-         (&#39;U10&#39;, &#39;DROID-CC2-U10&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC2-U13&#39;)],
- &#39;CC3&#39;: [(&#39;U6&#39;, &#39;DROID-CC3-U6&#39;),
-         (&#39;U9&#39;, &#39;DROID-CC3-U9&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC3-U13&#39;)],
- &#39;CC4&#39;: [(&#39;U7&#39;, &#39;DROID-CC4-U7&#39;),
-         (&#39;U10&#39;, &#39;DROID-CC4-U10&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC4-U13&#39;)],
- &#39;CC5&#39;: [(&#39;U7&#39;, &#39;DROID-CC5-U7&#39;),
-         (&#39;U8&#39;, &#39;DROID-CC5-U8&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC5-U13&#39;)],
- &#39;CC6&#39;: [(&#39;U7&#39;, &#39;DROID-CC6-U7&#39;),
-         (&#39;U8&#39;, &#39;DROID-CC6-U8&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC6-U13&#39;)],
- &#39;CC7&#39;: [(&#39;U7&#39;, &#39;DROID-CC7-U7&#39;),
-         (&#39;U8&#39;, &#39;DROID-CC7-U8&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC7-U13&#39;)],
- &#39;CC8&#39;: [(&#39;U9&#39;, &#39;DROID-CC8-U9&#39;),
-         (&#39;U10&#39;, &#39;DROID-CC8-U10&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC8-U13&#39;)],
- &#39;CC9&#39;: [(&#39;U9&#39;, &#39;DROID-CC9-U9&#39;),
-         (&#39;U10&#39;, &#39;DROID-CC9-U10&#39;),
-         (&#39;U13&#39;, &#39;DROID-CC9-U13&#39;)]}
-{&#39;CC1&#39;: [(&#39;U2&#39;, &#39;TIME-CC1-U2&#39;), (&#39;U3&#39;, &#39;TIME-CC1-U3&#39;), (&#39;U11&#39;, &#39;TIME-CC1-U11&#39;)],
- &#39;CC2&#39;: [(&#39;U2&#39;, &#39;TIME-CC2-U2&#39;), (&#39;U3&#39;, &#39;TIME-CC2-U3&#39;), (&#39;U11&#39;, &#39;TIME-CC2-U11&#39;)],
- &#39;CC3&#39;: [(&#39;U2&#39;, &#39;TIME-CC3-U2&#39;), (&#39;U3&#39;, &#39;TIME-CC3-U3&#39;), (&#39;U11&#39;, &#39;TIME-CC3-U11&#39;)],
- &#39;CC4&#39;: [(&#39;U9&#39;, &#39;TIME-CC4-U9&#39;),
-         (&#39;U10&#39;, &#39;TIME-CC4-U10&#39;),
-         (&#39;U11&#39;, &#39;TIME-CC4-U11&#39;)],
- &#39;CC5&#39;: [(&#39;U9&#39;, &#39;TIME-CC5-U9&#39;),
-         (&#39;U10&#39;, &#39;TIME-CC5-U10&#39;),
-         (&#39;U11&#39;, &#39;TIME-CC5-U11&#39;)],
- &#39;CC6&#39;: [(&#39;U9&#39;, &#39;TIME-CC6-U9&#39;),
-         (&#39;U10&#39;, &#39;TIME-CC6-U10&#39;),
-         (&#39;U11&#39;, &#39;TIME-CC6-U11&#39;)],
- &#39;CC7&#39;: [(&#39;U9&#39;, &#39;TIME-CC7-U9&#39;),
-         (&#39;U10&#39;, &#39;TIME-CC7-U10&#39;),
-         (&#39;U11&#39;, &#39;TIME-CC7-U11&#39;)],
- &#39;CC8&#39;: [(&#39;U2&#39;, &#39;TIME-CC8-U2&#39;), (&#39;U3&#39;, &#39;TIME-CC8-U3&#39;), (&#39;U11&#39;, &#39;TIME-CC8-U11&#39;)],
- &#39;CC9&#39;: [(&#39;U5&#39;, &#39;TIME-CC9-U5&#39;), (&#39;U9&#39;, &#39;TIME-CC9-U9&#39;), (&#39;U11&#39;, &#39;TIME-CC9-U11&#39;)],
- &#39;RC&#39;: [(&#39;U2&#39;, &#39;TIME-RC-U2&#39;), (&#39;U5&#39;, &#39;TIME-RC-U5&#39;), (&#39;U11&#39;, &#39;TIME-RC-U11&#39;)]}
-{&#39;CC1&#39;: [(&#39;U4&#39;, &#39;GNU-CC1-U4&#39;), (&#39;U5&#39;, &#39;GNU-CC1-U5&#39;), (&#39;U13&#39;, &#39;GNU-CC1-U13&#39;)],
- &#39;CC2&#39;: [(&#39;U4&#39;, &#39;GNU-CC2-U4&#39;), (&#39;U5&#39;, &#39;GNU-CC2-U5&#39;), (&#39;U13&#39;, &#39;GNU-CC2-U13&#39;)],
- &#39;CC3&#39;: [(&#39;U4&#39;, &#39;GNU-CC3-U4&#39;), (&#39;U5&#39;, &#39;GNU-CC3-U5&#39;), (&#39;U13&#39;, &#39;GNU-CC3-U13&#39;)],
- &#39;CC4&#39;: [(&#39;U1&#39;, &#39;GNU-CC4-U1&#39;), (&#39;U3&#39;, &#39;GNU-CC4-U3&#39;), (&#39;U13&#39;, &#39;GNU-CC4-U13&#39;)],
- &#39;CC5&#39;: [(&#39;U10&#39;, &#39;GNU-CC5-U10&#39;), (&#39;U3&#39;, &#39;GNU-CC5-U3&#39;), (&#39;U13&#39;, &#39;GNU-CC5-U13&#39;)],
- &#39;CC6&#39;: [(&#39;U1&#39;, &#39;GNU-CC6-U1&#39;), (&#39;U3&#39;, &#39;GNU-CC6-U3&#39;), (&#39;U13&#39;, &#39;GNU-CC6-U13&#39;)],
- &#39;CC7&#39;: [(&#39;U1&#39;, &#39;GNU-CC7-U1&#39;), (&#39;U3&#39;, &#39;GNU-CC7-U3&#39;), (&#39;U13&#39;, &#39;GNU-CC7-U13&#39;)],
- &#39;CC8&#39;: [(&#39;U6&#39;, &#39;GNU-CC8-U6&#39;), (&#39;U10&#39;, &#39;GNU-CC8-U10&#39;), (&#39;U13&#39;, &#39;GNU-CC8-U13&#39;)],
- &#39;CC9&#39;: [(&#39;U6&#39;, &#39;GNU-CC9-U6&#39;), (&#39;U10&#39;, &#39;GNU-CC9-U10&#39;), (&#39;U13&#39;, &#39;GNU-CC9-U13&#39;)],
- &#39;RC&#39;: [(&#39;U4&#39;, &#39;GNU-RC-U4&#39;), (&#39;U6&#39;, &#39;GNU-RC-U6&#39;), (&#39;U13&#39;, &#39;GNU-RC-U13&#39;)]}
-{&#39;CC1&#39;: [(&#39;U5&#39;, &#39;GROW-CC1-U5&#39;), (&#39;U6&#39;, &#39;GROW-CC1-U6&#39;), (&#39;U14&#39;, &#39;GROW-CC1-U14&#39;)],
- &#39;CC2&#39;: [(&#39;U10&#39;, &#39;GROW-CC2-U10&#39;),
-         (&#39;U6&#39;, &#39;GROW-CC2-U6&#39;),
-         (&#39;U14&#39;, &#39;GROW-CC2-U14&#39;)],
- &#39;CC3&#39;: [(&#39;U5&#39;, &#39;GROW-CC3-U5&#39;), (&#39;U6&#39;, &#39;GROW-CC3-U6&#39;), (&#39;U14&#39;, &#39;GROW-CC3-U14&#39;)],
- &#39;CC4&#39;: [(&#39;U4&#39;, &#39;GROW-CC4-U4&#39;), (&#39;U6&#39;, &#39;GROW-CC4-U6&#39;), (&#39;U14&#39;, &#39;GROW-CC4-U14&#39;)],
- &#39;CC5&#39;: [(&#39;U4&#39;, &#39;GROW-CC5-U4&#39;), (&#39;U8&#39;, &#39;GROW-CC5-U8&#39;), (&#39;U14&#39;, &#39;GROW-CC5-U14&#39;)],
- &#39;CC6&#39;: [(&#39;U4&#39;, &#39;GROW-CC6-U4&#39;), (&#39;U7&#39;, &#39;GROW-CC6-U7&#39;), (&#39;U14&#39;, &#39;GROW-CC6-U14&#39;)],
- &#39;CC7&#39;: [(&#39;U4&#39;, &#39;GROW-CC7-U4&#39;), (&#39;U6&#39;, &#39;GROW-CC7-U6&#39;), (&#39;U14&#39;, &#39;GROW-CC7-U14&#39;)],
- &#39;CC8&#39;: [(&#39;U7&#39;, &#39;GROW-CC8-U7&#39;), (&#39;U8&#39;, &#39;GROW-CC8-U8&#39;), (&#39;U14&#39;, &#39;GROW-CC8-U14&#39;)],
- &#39;CC9&#39;: [(&#39;U7&#39;, &#39;GROW-CC9-U7&#39;), (&#39;U8&#39;, &#39;GROW-CC9-U8&#39;), (&#39;U14&#39;, &#39;GROW-CC9-U14&#39;)],
- &#39;RC&#39;: [(&#39;U5&#39;, &#39;GROW-RC-U5&#39;),
-        (&#39;U7&#39;, &#39;GROW-RC-U7&#39;),
-        (&#39;U8&#39;, &#39;GROW-RC-U8&#39;),
-        (&#39;U14&#39;, &#39;GROW-RC-U14&#39;)]}
-{&#39;CC1&#39;: [(&#39;U3&#39;, &#39;TOK-CC1-U3&#39;), (&#39;U4&#39;, &#39;TOK-CC1-U4&#39;), (&#39;U11&#39;, &#39;TOK-CC1-U11&#39;)],
- &#39;CC2&#39;: [(&#39;U3&#39;, &#39;TOK-CC2-U3&#39;), (&#39;U4&#39;, &#39;TOK-CC2-U4&#39;), (&#39;U11&#39;, &#39;TOK-CC2-U11&#39;)],
- &#39;CC3&#39;: [(&#39;U3&#39;, &#39;TOK-CC3-U3&#39;), (&#39;U4&#39;, &#39;TOK-CC3-U4&#39;), (&#39;U11&#39;, &#39;TOK-CC3-U11&#39;)],
- &#39;CC4&#39;: [(&#39;U1&#39;, &#39;TOK-CC4-U1&#39;), (&#39;U2&#39;, &#39;TOK-CC4-U2&#39;), (&#39;U11&#39;, &#39;TOK-CC4-U11&#39;)],
- &#39;CC5&#39;: [(&#39;U1&#39;, &#39;TOK-CC5-U1&#39;), (&#39;U2&#39;, &#39;TOK-CC5-U2&#39;), (&#39;U11&#39;, &#39;TOK-CC5-U11&#39;)],
- &#39;CC6&#39;: [(&#39;U1&#39;, &#39;TOK-CC6-U1&#39;), (&#39;U2&#39;, &#39;TOK-CC6-U2&#39;), (&#39;U11&#39;, &#39;TOK-CC6-U11&#39;)],
- &#39;CC7&#39;: [(&#39;U1&#39;, &#39;TOK-CC7-U1&#39;), (&#39;U2&#39;, &#39;TOK-CC7-U2&#39;), (&#39;U11&#39;, &#39;TOK-CC7-U11&#39;)],
- &#39;CC8&#39;: [(&#39;U9&#39;, &#39;TOK-CC8-U9&#39;), (&#39;U10&#39;, &#39;TOK-CC8-U10&#39;), (&#39;U11&#39;, &#39;TOK-CC8-U11&#39;)],
- &#39;CC9&#39;: [(&#39;U9&#39;, &#39;TOK-CC9-U9&#39;), (&#39;U10&#39;, &#39;TOK-CC9-U10&#39;), (&#39;U11&#39;, &#39;TOK-CC9-U11&#39;)],
- &#39;RB&#39;: [(&#39;U3&#39;, &#39;TOK-RB-U3&#39;), (&#39;U4&#39;, &#39;TOK-RB-U4&#39;), (&#39;U11&#39;, &#39;TOK-RB-U11&#39;)]}
-dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;weighted_lcs&#39;}
+<pre>dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;weighted_lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw_lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw_lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw_weighted_lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw_weighted_lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;weighted_lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;weighted_lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw_lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw_lcs&#39;}
 Running setting setting2
 dict_keys([&#39;lcs&#39;, &#39;weighted_lcs&#39;, &#39;bovw&#39;, &#39;bovw_lcs&#39;, &#39;bovw_weighted_lcs&#39;])
-Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;1ftk&#39;, &#39;technique&#39;: &#39;bovw_weighted_lcs&#39;}
+Running config:  {&#39;model&#39;: &#39;SimCLR&#39;, &#39;vwords&#39;: &#39;1000vw&#39;, &#39;fps&#39;: &#39;30fps&#39;, &#39;ftk&#39;: &#39;5ftk&#39;, &#39;technique&#39;: &#39;bovw_weighted_lcs&#39;}
 Running setting setting2
 Writing results and rankings
 done
@@ -336,7 +226,9 @@ done
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">combo_out_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;combined&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/output&quot;</span><span class="p">)</span>
+
+<span class="n">combo_out_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;combined&quot;</span>
 <span class="n">dl_ranking_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;user_rankings_weighted_all&quot;</span><span class="o">/</span><span class="s2">&quot;all_rankings.csv&quot;</span>
 <span class="n">txt_path</span> <span class="o">=</span> <span class="n">art_path</span><span class="o">/</span><span class="s2">&quot;models&quot;</span><span class="o">/</span><span class="s2">&quot;OCR+IR&quot;</span>
 <span class="n">ir_rankings_path</span> <span class="o">=</span> <span class="n">txt_path</span><span class="o">/</span><span class="s2">&quot;tango_txt_rankings&quot;</span><span class="o">/</span><span class="s2">&quot;all_rankings.json&quot;</span>
@@ -354,18 +246,30 @@ done
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;1&#39;, &#39;all_text&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;all_text&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;unique_frames&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;unique_words&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;1&#39;, &#39;all_text&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;all_text&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;unique_frames&#39;)
-(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5&#39;, &#39;unique_words&#39;)
---- 269.1505823135376 seconds ---
-Writing data
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-29-53e994fd6274&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> settings_path <span class="ansi-blue-fg">=</span> out_path<span class="ansi-blue-fg">/</span><span class="ansi-blue-fg">&#34;evaluation_settings&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> 
+<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> </span>tango_combined<span class="ansi-blue-fg">(</span>combo_out_path<span class="ansi-blue-fg">,</span> dl_ranking_path<span class="ansi-blue-fg">,</span> ir_rankings_path<span class="ansi-blue-fg">,</span> settings_path<span class="ansi-blue-fg">,</span> BEST_DL_MODELS<span class="ansi-blue-fg">,</span> BEST_IR_MODELS<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~tf/main/two_to_tango/combo.py</span> in <span class="ansi-cyan-fg">tango_combined</span><span class="ansi-blue-fg">(out_path, dl_rankings_path, ir_rankings_path, settings_path, dl_models, ir_models)</span>
+<span class="ansi-green-intense-fg ansi-bold">    208</span>                                                                     rec[&#39;technique&#39;],))
+<span class="ansi-green-intense-fg ansi-bold">    209</span> 
+<span class="ansi-green-fg">--&gt; 210</span><span class="ansi-red-fg">     </span>ir_rankings <span class="ansi-blue-fg">=</span> read_json<span class="ansi-blue-fg">(</span>ir_rankings_path<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    211</span>     ir_rankings_by_config = group_dict(ir_rankings, lambda rec: (rec[&#39;model&#39;], rec[&#39;fps&#39;],
+<span class="ansi-green-intense-fg ansi-bold">    212</span>                                                                     rec[&#39;technique&#39;],))
+
+<span class="ansi-green-fg">~tf/main/two_to_tango/utils.py</span> in <span class="ansi-cyan-fg">read_json</span><span class="ansi-blue-fg">(file_path)</span>
+<span class="ansi-green-intense-fg ansi-bold">     37</span> 
+<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">def</span> read_json<span class="ansi-blue-fg">(</span>file_path<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>file_path<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> file<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     40</span>         <span class="ansi-green-fg">return</span> json<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>file<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     41</span> 
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/tf/main/data/tango_reproduction_package/artifacts/models/OCR+IR/tango_txt_rankings/all_rankings.json&#39;</pre>
 </div>
 </div>
 
@@ -397,7 +301,7 @@ Writing data
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vis_model</span> <span class="o">=</span> <span class="s2">&quot;SimCLR&quot;</span>
-<span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/tango_reproduction_package/outputs&quot;</span><span class="p">)</span>
+<span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/output&quot;</span><span class="p">)</span>
 <span class="n">_output_performance</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="n">BEST_MODEL_CONFIGS</span><span class="p">[</span><span class="n">vis_model</span><span class="p">],</span> <span class="n">BEST_MODEL_CONFIGS</span><span class="p">[</span><span class="s2">&quot;OCR+IR&quot;</span><span class="p">])</span>
 </pre></div>
 
@@ -410,53 +314,32 @@ Writing data
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>        Model: SimCLR-1000vw-5ftk-bovw,ocr+ir-5ftk-all_text,weight=0.2-0
+        Overall mRR: 0.7521122972820503
+        Overall mAP: 0.6843871569103048
+        Overall Mean Rank: 1.9419753086419753
+        
+        Model: SimCLR-1000vw-5ftk-bovw
+        Overall mRR: 0.708187709862351
+        Overall mAP: 0.6392624653390201
+        Overall Mean Rank: 2.105794790005316
+        
+        Model: ocr+ir-5ftk-all_text
+        Overall mRR: 0.725243535246192
+        Overall mAP: 0.6499718806108282
+        Overall Mean Rank: 2.0563230605738574
+        
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:18: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>        Model: M01-1000vw-5ftk-bovw,ocr+ir-5-all_text,weight=0.2-0
-        Overall mRR: 0.7978683662016994
-        Overall mAP: 0.7324409215612918
-        Overall Mean Rank: 1.733127572016461
-        
-        Model: M01-1000vw-5ftk-bovw
-        Overall mRR: 0.7565689857455435
-        Overall mAP: 0.6790426129261438
-        Overall Mean Rank: 1.9712166172106824
-        
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:27: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>        Model: ocr+ir-5-all_text
-        Overall mRR: 0.6908344787424905
-        Overall mAP: 0.6321311560183961
-        Overall Mean Rank: 2.346587537091988
-        
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:35: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:27: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:35: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
 </pre>
 </div>
 </div>
@@ -478,7 +361,7 @@ Writing data
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L210" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
+<h4 id="reproduce" class="doc_header"><code>reproduce</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reproduce</code>(<strong><code>down_path</code></strong>:"The directory where all the files will be downloaded and extracted to.", <strong><code>out_path</code></strong>:"The output path to place all results in.", <strong><code>vis_model</code></strong>:"The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.")</p>
 </blockquote>
 <p>Function for reproducing all results related to this tool's paper</p>
 
@@ -522,22 +405,6 @@ Writing data
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:root:Downloading and extracting datasets and models to /tf/main/data.
-INFO:root:Loading videos.
-INFO:root:Computing rankings and calculating metrics for SimCLR visual model.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -552,7 +419,7 @@ INFO:root:Computing rankings and calculating metrics for SimCLR visual model.
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>simclr_path</code></strong>:"Path to the SimCLR model directory")</p>
+<h4 id="tango" class="doc_header"><code>tango</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/cli.py#L239" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango</code>(<strong><code>q_path</code></strong>:"Path to the query video", <strong><code>cor_path</code></strong>:"Path to the corpus", <strong><code>simclr_path</code></strong>:"Path to the SimCLR model directory")</p>
 </blockquote>
 <p>Function for calculating similarity scores of a corpus of video-based bug
 reports to a query video-based bug report. Currently only uses the top
@@ -590,51 +457,6 @@ performing SimCLR model from our paper
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-
-OrderedDict([   ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U1&#39;), 0.9838350837260246),
-                ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U12&#39;), 0.9193482983504456),
-                ((&#39;APOD&#39;, &#39;CC1&#39;, &#39;U2&#39;), 0.3723964243572911),
-                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U12&#39;), 0.3718521026630344),
-                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U12&#39;), 0.36803837161265085),
-                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U8&#39;), 0.33589710905277315),
-                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U12&#39;), 0.3118613303188616),
-                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U5&#39;), 0.2718403622668689),
-                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U7&#39;), 0.25082093055745974),
-                ((&#39;APOD&#39;, &#39;CC9&#39;, &#39;U9&#39;), 0.22580393621884165),
-                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U12&#39;), 0.1768510685792533),
-                ((&#39;APOD&#39;, &#39;CC6&#39;, &#39;U7&#39;), 0.1682816804179776),
-                ((&#39;APOD&#39;, &#39;CC4&#39;, &#39;U8&#39;), 0.13915926428362999),
-                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U2&#39;), 0.1354447367818957),
-                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U2&#39;), 0.12004454785432789),
-                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U7&#39;), 0.11235793525631509),
-                ((&#39;APOD&#39;, &#39;CC5&#39;, &#39;U8&#39;), 0.10867946897348428),
-                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U8&#39;), 0.09014217805772731),
-                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U1&#39;), 0.08324154319710894),
-                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U12&#39;), 0.08179046960502091),
-                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U5&#39;), 0.07290831091450554),
-                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U5&#39;), 0.07194441953180176),
-                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U12&#39;), 0.06729098674201965),
-                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U7&#39;), 0.06326635817907807),
-                ((&#39;APOD&#39;, &#39;CC7&#39;, &#39;U12&#39;), 0.05922061313241868),
-                ((&#39;APOD&#39;, &#39;CC8&#39;, &#39;U10&#39;), 0.05328420969145727),
-                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U12&#39;), 0.04707548776015297),
-                ((&#39;APOD&#39;, &#39;CC3&#39;, &#39;U1&#39;), 0.04342630487280919),
-                ((&#39;APOD&#39;, &#39;CC2&#39;, &#39;U1&#39;), 0.04211602057931267),
-                ((&#39;APOD&#39;, &#39;RB&#39;, &#39;U12&#39;), 0.029766244020504186)])
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

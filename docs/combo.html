@@ -202,7 +202,7 @@ nb_path: "nbs/08_combo.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_info_to_ranking_results" class="doc_header"><code>get_info_to_ranking_results</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/combo.py#L149" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_info_to_ranking_results</code>(<strong><code>ranking</code></strong>, <strong><code>ranking_results</code></strong>, <strong><code>run</code></strong>, <strong><code>dl_model</code></strong>, <strong><code>ir_model</code></strong>, <strong><code>weight_str</code></strong>, <strong><code>setting</code></strong>)</p>
+<h4 id="get_info_to_ranking_results" class="doc_header"><code>get_info_to_ranking_results</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/combo.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_info_to_ranking_results</code>(<strong><code>ranking</code></strong>, <strong><code>ranking_results</code></strong>, <strong><code>run</code></strong>, <strong><code>dl_model</code></strong>, <strong><code>ir_model</code></strong>, <strong><code>weight_str</code></strong>, <strong><code>setting</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -233,7 +233,7 @@ nb_path: "nbs/08_combo.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tango_combined" class="doc_header"><code>tango_combined</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/combo.py#L180" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango_combined</code>(<strong><code>out_path</code></strong>, <strong><code>dl_rankings_path</code></strong>, <strong><code>ir_rankings_path</code></strong>, <strong><code>settings_path</code></strong>, <strong><code>dl_models</code></strong>, <strong><code>ir_models</code></strong>)</p>
+<h4 id="tango_combined" class="doc_header"><code>tango_combined</code><a href="https://github.com/ncoop57/tango/tree/main/two_to_tango/combo.py#L182" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tango_combined</code>(<strong><code>out_path</code></strong>, <strong><code>dl_rankings_path</code></strong>, <strong><code>ir_rankings_path</code></strong>, <strong><code>settings_path</code></strong>, <strong><code>dl_models</code></strong>, <strong><code>ir_models</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -260,14 +260,93 @@ nb_path: "nbs/08_combo.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dl_ranking_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;outputs/user_rankings_weighted_all/all_rankings.csv&#39;</span>
-<span class="n">ir_rankings_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;models/tango_txt/tango_txt_rankings/all_rankings.json&#39;</span>
-<span class="n">settings_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;outputs/evaluation_settings&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ir_rankings_path = path/&#39;models/tango_txt/tango_txt_rankings/all_rankings.json&#39;</span>
+<span class="c1"># settings_path = path/&#39;outputs/evaluation_settings&#39;</span>
 
-<span class="n">tango_combined</span><span class="p">(</span><span class="n">dl_ranking_path</span><span class="p">,</span> <span class="n">ir_rankings_path</span><span class="p">,</span> <span class="n">settings_path</span><span class="p">)</span>
+<span class="c1"># tango_combined(dl_ranking_path, ir_rankings_path, settings_path)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">BEST_DL_MODELS</span><span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;SIFT-10000vw-1ftk-bovw_weighted_lcs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SimCLR-1000vw-5ftk-bovw&quot;</span><span class="p">,</span> <span class="s2">&quot;SimCLR-5000vw-5ftk-bovw_lcs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SimCLR-5000vw-5ftk-bovw_weighted_lcs&quot;</span><span class="p">,</span> <span class="s2">&quot;SimCLR-1000vw-5ftk-bovw_weighted_lcs&quot;</span>
+<span class="p">]</span>
+<span class="n">BEST_IR_MODELS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;ocr+ir-1ftk-all_text&quot;</span><span class="p">,</span> <span class="s2">&quot;ocr+ir-5ftk-all_text&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ocr+ir-5ftk-unique_frames&quot;</span><span class="p">,</span> <span class="s2">&quot;ocr+ir-5ftk-unique_words&quot;</span>
+<span class="p">]</span>
+
+<span class="n">BEST_MODEL_CONFIGS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;SimCLR&quot;</span><span class="p">:</span> <span class="s2">&quot;SimCLR-1000vw-5ftk-bovw&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SIFT&quot;</span><span class="p">:</span> <span class="s2">&quot;SIFT-10000vw-1ftk-bovw_weighted_lcs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;OCR+IR&quot;</span><span class="p">:</span> <span class="s2">&quot;ocr+ir-5-all_text&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/output&quot;</span><span class="p">)</span>
+<span class="n">art_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tf/main/data/downloads/tango_reproduction_package/artifacts&quot;</span><span class="p">)</span>
+
+<span class="n">combo_out_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;combined&quot;</span>
+<span class="n">dl_ranking_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;user_rankings_weighted_all&quot;</span><span class="o">/</span><span class="s2">&quot;all_rankings.csv&quot;</span>
+<span class="n">txt_path</span> <span class="o">=</span> <span class="n">art_path</span><span class="o">/</span><span class="s2">&quot;models&quot;</span><span class="o">/</span><span class="s2">&quot;OCR+IR&quot;</span>
+<span class="n">ir_rankings_path</span> <span class="o">=</span> <span class="n">txt_path</span><span class="o">/</span><span class="s2">&quot;tango_txt_rankings&quot;</span><span class="o">/</span><span class="s2">&quot;all_rankings.json&quot;</span>
+<span class="n">settings_path</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">/</span><span class="s2">&quot;evaluation_settings&quot;</span>
+
+<span class="n">tango_combined</span><span class="p">(</span><span class="n">combo_out_path</span><span class="p">,</span> <span class="n">dl_ranking_path</span><span class="p">,</span> <span class="n">ir_rankings_path</span><span class="p">,</span> <span class="n">settings_path</span><span class="p">,</span> <span class="n">BEST_DL_MODELS</span><span class="p">,</span> <span class="n">BEST_IR_MODELS</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;1ftk&#39;, &#39;all_text&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;all_text&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;unique_frames&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;unique_words&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;1ftk&#39;, &#39;all_text&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;all_text&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;unique_frames&#39;)
+(&#39;SimCLR&#39;, &#39;1000vw&#39;, &#39;5ftk&#39;, &#39;bovw_weighted_lcs&#39;) (&#39;ocr+ir&#39;, &#39;5ftk&#39;, &#39;unique_words&#39;)
+--- 199.70875334739685 seconds ---
+Writing data
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -286,6 +365,29 @@ nb_path: "nbs/08_combo.ipynb"
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converted 00_prep.ipynb.
+Converted 01_features.ipynb.
+Converted 02_eval.ipynb.
+Converted 03_model.ipynb.
+Converted 04_approach.ipynb.
+Converted 05_cli.ipynb.
+Converted 06_results.ipynb.
+Converted 07_utils.ipynb.
+Converted 08_combo.ipynb.
+Converted index.ipynb.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

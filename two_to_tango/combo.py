@@ -116,6 +116,7 @@ def convert_results_format(sim_path, settings_path, out_path, models):
 
             vwords = file_tokens[3]
             frames_per_sec = file_tokens[4]
+            ftk = file_tokens[5]
 
             model_similarities = pickle.load(open(sim_file, 'rb'))
 
@@ -126,6 +127,7 @@ def convert_results_format(sim_path, settings_path, out_path, models):
                     "model": model,
                     "vwords": vwords,
                     "fps": frames_per_sec,
+                    "ftk": ftk,
                     "technique": technique
                 }
 
@@ -177,7 +179,10 @@ def get_info_to_ranking_results(ranking, ranking_results, run, dl_model, ir_mode
     return ranking_info, ranking_results
 
 # Cell
-def tango_combined(out_path, dl_rankings_path, ir_rankings_path, settings_path, dl_models, ir_models):
+def tango_combined(
+    out_path, dl_rankings_path, ir_rankings_path,
+    settings_path, dl_models, ir_models
+):
     # all_data
     results_out_path = out_path/"tango_comb_results"
     rankings_out_path = out_path/"tango_comb_rankings"
@@ -199,11 +204,11 @@ def tango_combined(out_path, dl_rankings_path, ir_rankings_path, settings_path, 
     settings = load_settings(settings_path)
 
     dl_rankings = read_json_line_by_line(dl_rankings_path)
-    dl_rankings_by_config = group_dict(dl_rankings, lambda rec: (rec['model'], rec['vwords'], rec['fps'],
+    dl_rankings_by_config = group_dict(dl_rankings, lambda rec: (rec['model'], rec['vwords'], rec['ftk'],
                                                                     rec['technique'],))
 
     ir_rankings = read_json(ir_rankings_path)
-    ir_rankings_by_config = group_dict(ir_rankings, lambda rec: (rec['model'], rec['fps'],
+    ir_rankings_by_config = group_dict(ir_rankings, lambda rec: (rec['model'], rec['fps'] + "ftk",
                                                                     rec['technique'],))
 
 #     best_dl_models = [
@@ -226,9 +231,8 @@ def tango_combined(out_path, dl_rankings_path, ir_rankings_path, settings_path, 
 
     dl_models = list(filter(lambda rec: "-".join([rec[0], rec[1], rec[2], rec[3]]) in dl_models,
                             dl_rankings_by_config.keys()))
-    ir_models = list(filter(lambda rec: "-".join([rec[0], "", rec[1] + "ftk", rec[2]]) in ir_models,
+    ir_models = list(filter(lambda rec: "-".join([rec[0], rec[1], rec[2]]) in ir_models,
                             ir_rankings_by_config.keys()))
-
     # run combinations
 
     start_time = time.time()
@@ -242,7 +246,7 @@ def tango_combined(out_path, dl_rankings_path, ir_rankings_path, settings_path, 
 
             print(dl_model, ir_model)
 
-            app_for_comb = ir_model_apps_for_comb["-".join([ir_model[1] + "ftk", ir_model[2]])]
+            app_for_comb = ir_model_apps_for_comb["-".join([ir_model[1], ir_model[2]])]
 
             for setting in settings_to_run:
                 dl_runs = group_dict(dl_mod_rankings[setting], lambda rec: rec["run_id"])
