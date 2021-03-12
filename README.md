@@ -23,6 +23,7 @@ In the `models` folder, you will find the two models we evaluated (SIFT, SimCLR,
 The `outputs` folder contains all of the intermediate outputs of our code, except for OCR+IR. In the `results` folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. **NOTE: SIFT is missing the 10k raw ranking and metrics, but will be provided in a future version.** `evaluation_setting` contains a json file that contains all of the duplicate detection tasks we used for evaluating our models, i.e. `setting 2` (See paper for more details). `user_rankings_weighted_all` and `user_results_weighted_all` contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match `setting 2`. `extracted_text` contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, `combined` contains the results of the combined tango approach.
 
 ## Reproduce Results
+{% include important.html content='All code has only been tested on Ubuntu 20.04. Additionally, there is an issue when attempting to reproduce tango via Docker on MacOS. If you are using MacOS, please look at our steps for how to reproduce without Docker.' %}
 The prefered method to reproduce our paper's results is to use Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
 
 ```bash
@@ -32,13 +33,18 @@ cd tango
 
 **Reproduce via Docker:**
 ```bash
+docker run -v <out_path>:/data semerulab/tools:tango <vis_model>
+```
+* **out_path**: The absolute path on your machine you want all files to be saved to
+* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
+
+You can also build the docker image yourself:
+```bash
 cd docker_build
 docker build -f Dockerfile.prod -t tango .
 cd ..
 docker run -v <out_path>:/data tango <vis_model>
 ```
-* **out_path**: The absolute path on your machine you want all files to be saved to
-* **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
 
 **Reproduce without Docker:**
 ```bash
@@ -48,6 +54,8 @@ tango_reproduce <down_path> <out_path> <vis_model>
 * **down_path**: The directory where all the files will be downloaded and extracted to.
 * **out_path**: The output path to place all results in.
 * **vis_model**: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or >2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.
+
+You can also use this [Google Colab notebook](https://colab.research.google.com/drive/128l3qK_cogDM38ApHM1lzwrCklo5bdhs?usp=sharing), however, due to the timeout associated with Google Colab, you will most likely be unable to generate all of our results in the alotted time.
 
 ## Detailed Results
 
@@ -127,3 +135,14 @@ If you would like to do this on your own data, look at the `tango_reproduction_p
 
 ## Training SimCLR
 For training the SimCLR model we used the [RICO dataset](https://interactionmining.org/rico) and [this](https://github.com/dthiagarajan/simclr_pytorch) repository for training a SimCLR model using Pytorch Lightning
+
+To cite our work, please use the following bibtex:
+
+```
+@inproceedings{Cooper:ICSE21,
+      title={It Takes Two to Tango: Combining Visual and Textual Information for Detecting Duplicate Video-Based Bug Reports}, 
+      author={Nathan Cooper and Carlos Bernal-Cárdenas and Oscar Chaparro and Kevin Moran and Denys Poshyvanyk},
+      year={2021},
+      booktitle={ICSE’21},
+}
+```
