@@ -23,9 +23,9 @@ In the `models` folder, you will find the two models we evaluated (SIFT, SimCLR,
 The `outputs` folder contains all of the intermediate outputs of our code, except for OCR+IR. In the `results` folder, you will find all of the raw rankings and metrics for the SIFT and SimCLR model for all combinations of video-based bug reports per app. **NOTE: SIFT is missing the 10k raw ranking and metrics, but will be provided in a future version.** `evaluation_setting` contains a json file that contains all of the duplicate detection tasks we used for evaluating our models, i.e. `setting 2` (See paper for more details). `user_rankings_weighted_all` and `user_results_weighted_all` contain converted version of the raw rankings and metrics for the SIFT and SimCLR model to match `setting 2`. `extracted_text` contains the output of running the OCR model, i.e. the frames of the videos and the text from each frame. Lastly, `combined` contains the results of the combined tango approach.
 
 ## Reproduce Results
-{% include important.html content='All code has only been tested on Ubuntu 20.04. Additionally, there is an issue when attempting to reproduce tango via Docker on MacOS. If you are using MacOS, please look at our steps for how to reproduce without Docker.' %}
-The prefered method to reproduce our paper's results is to use Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
+> All code has only been tested on Ubuntu 20.04. Additionally, there is an issue when attempting to reproduce tango via Docker on MacOS. If you are using MacOS, please look at our steps for how to reproduce without Docker.
 
+The prefered method to reproduce our paper's results is to use Docker. Please install [Docker](https://docs.docker.com/get-docker/) if you do not already have it install.
 ```bash
 git clone https://github.com/ncoop57/tango.git
 cd tango
