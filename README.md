@@ -131,7 +131,7 @@ OrderedDict([   (('APOD', 'CC1', 'U1'), 0.9838350837260246),
                 (('APOD', 'RB', 'U12'), 0.029766244020504186)])
 ```
 
-If you would like to do this on your own data, look at the `tango_reproduction_package/artifacts/cli_videos` directory structure for how you need to formate your data to work with `tango`
+If you would like to do this on your own data, look at the `tango_reproduction_package/artifacts/cli_videos` directory structure from our dataset on [Zenodo](https://doi.org/10.5281/zenodo.4453765) for how you need to formate your data to work with `tango`
 
 ## Training SimCLR
 For training the SimCLR model we used the [RICO dataset](https://interactionmining.org/rico) and [this](https://github.com/dthiagarajan/simclr_pytorch) repository for training a SimCLR model using Pytorch Lightning
