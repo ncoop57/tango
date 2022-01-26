@@ -42,6 +42,9 @@ def _download(
 ):
     """Function for downloading all data and results related to this tool's paper"""
     out_path = Path(out_path)
+    if (out_path / "tango_reproduction_package").exists():
+        logging.info(f"{out_path}/tango_reproduction_package exists, skipping download")
+        return
     out_path.mkdir(parents=True, exist_ok=True)
 
     logging.info(f"Downloading and extracting datasets and models to {str(out_path)}.")
@@ -220,7 +223,7 @@ def reproduce(
 
     logging.info("Loading videos.")
     vid_ds = VideoDataset.from_path(
-        art_path/"videos", fr = FPS
+        art_path/"videos", fr = None
     ).label_from_paths()
 
     _generate_vis_results(vid_ds, out_path, art_path, vis_model)
