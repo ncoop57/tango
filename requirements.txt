@@ -65,7 +65,7 @@ nbdev==0.2.3
 nbformat==4.4.0
 notebook==6.0.1
 numexpr==2.7.0
-numpy==1.19.1
+numpy==1.22.0
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
 opencv-contrib-python==3.4.1.15
