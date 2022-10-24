@@ -59,20 +59,25 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2><p>The prefered method to reproduce our paper's results is to use Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
+<h2 id="Reproduce-Results">Reproduce Results<a class="anchor-link" href="#Reproduce-Results"> </a></h2><blockquote><p>All code has only been tested on Ubuntu 20.04. Additionally, there is an issue when attempting to reproduce tango via Docker on MacOS. If you are using MacOS, please look at our steps for how to reproduce without Docker.</p>
+</blockquote>
+<p>The prefered method to reproduce our paper's results is to use Docker. Please install <a href="https://docs.docker.com/get-docker/">Docker</a> if you do not already have it install.</p>
 <div class="highlight"><pre><span></span>git clone https://github.com/ncoop57/tango.git
 <span class="nb">cd</span> tango
 </pre></div>
 <p><strong>Reproduce via Docker:</strong></p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> docker_build
-docker build -f Dockerfile.prod -t tango .
-<span class="nb">cd</span> ..
-docker run -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
+<div class="highlight"><pre><span></span>docker run -v &lt;out_path&gt;:/data semerulab/tools:tango &lt;vis_model&gt;
 </pre></div>
 <ul>
 <li><strong>out_path</strong>: The absolute path on your machine you want all files to be saved to</li>
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
+<p>You can also build the docker image yourself:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> docker_build
+docker build -f Dockerfile.prod -t tango .
+<span class="nb">cd</span> ..
+docker run -v &lt;out_path&gt;:/data tango &lt;vis_model&gt;
+</pre></div>
 <p><strong>Reproduce without Docker:</strong></p>
 <div class="highlight"><pre><span></span>pip install two-to-tango
 tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
@@ -82,6 +87,7 @@ tango_reproduce &lt;down_path&gt; &lt;out_path&gt; &lt;vis_model&gt;
 <li><strong>out_path</strong>: The output path to place all results in.</li>
 <li><strong>vis_model</strong>: The type of visual model. Can be either SimCLR or SIFT, taking ~6 hours or &gt;2 weeks, respectively, for all apps on our machine with 755G of RAM and 72 CPUs.</li>
 </ul>
+<p>You can also use this <a href="https://colab.research.google.com/drive/128l3qK_cogDM38ApHM1lzwrCklo5bdhs?usp=sharing">Google Colab notebook</a>, however, due to the timeout associated with Google Colab, you will most likely be unable to generate all of our results in the alotted time.</p>
 
 </div>
 </div>
@@ -194,7 +200,7 @@ pip install .
                 <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;CC2&#39;</span><span class="p">,</span> <span class="s1">&#39;U1&#39;</span><span class="p">),</span> <span class="mf">0.04211602057931267</span><span class="p">),</span>
                 <span class="p">((</span><span class="s1">&#39;APOD&#39;</span><span class="p">,</span> <span class="s1">&#39;RB&#39;</span><span class="p">,</span> <span class="s1">&#39;U12&#39;</span><span class="p">),</span> <span class="mf">0.029766244020504186</span><span class="p">)])</span>
 </pre></div>
-<p>If you would like to do this on your own data, look at the <code>tango_reproduction_package/artifacts/cli_videos</code> directory structure for how you need to formate your data to work with <a href="/tango/cli.html#tango"><code>tango</code></a></p>
+<p>If you would like to do this on your own data, look at the <code>tango_reproduction_package/artifacts/cli_videos</code> directory structure from our dataset on <a href="https://doi.org/10.5281/zenodo.4453765">Zenodo</a> for how you need to formate your data to work with <a href="/tango/cli.html#tango"><code>tango</code></a></p>
 
 </div>
 </div>
@@ -202,6 +208,20 @@ pip install .
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Training-SimCLR">Training SimCLR<a class="anchor-link" href="#Training-SimCLR"> </a></h2><p>For training the SimCLR model we used the <a href="https://interactionmining.org/rico">RICO dataset</a> and <a href="https://github.com/dthiagarajan/simclr_pytorch">this</a> repository for training a SimCLR model using Pytorch Lightning</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To cite our work, please use the following bibtex:</p>
+
+<pre><code>@inproceedings{Cooper:ICSE21,
+      title={It Takes Two to Tango: Combining Visual and Textual Information for Detecting Duplicate Video-Based Bug Reports}, 
+      author={Nathan Cooper and Carlos Bernal-Cárdenas and Oscar Chaparro and Kevin Moran and Denys Poshyvanyk},
+      year={2021},
+      booktitle={ICSE’21},
+}</code></pre>
 
 </div>
 </div>

@@ -57,12 +57,13 @@ def vid_from_frames(frames, output = None, fr = 30):
 # Cell
 class Video:
     def __init__(self, vid_path, fr = None, overwrite = False):
-        self.video = cv2.VideoCapture(str(vid_path))
         self.vid_path = vid_path
         self.fr = eval(ffmpeg.probe(vid_path)["streams"][0]["avg_frame_rate"])
         if fr is not None:
             self.fr = fr
             self.vid_path = self._fix_framerate(vid_path, fr, overwrite)
+
+        self.video = cv2.VideoCapture(str(self.vid_path))
 
     def show_frame(self, i):
         plt.imshow(self[i])
@@ -114,11 +115,11 @@ class VideoDataset:
     def from_path(path, extract_frames = False, fr = None, overwrite = False):
         videos = []
         fixed_vid_paths = sorted(path.rglob(f"*fixed_{fr}.mp4"))
-        if len(fixed_vid_paths) > 0:
+        if len(fixed_vid_paths) > 0 and fr is not None:
             for vid_path in fixed_vid_paths:
                 videos.append(Video(vid_path, overwrite = overwrite))
         else:
-            vid_paths = sorted(path.rglob('*.mp4'))
+            vid_paths = list(filter(lambda x: "fixed" not in str(x), sorted(path.rglob('*.mp4'))))
             for vid_path in vid_paths:
                 videos.append(Video(vid_path, fr = fr, overwrite = overwrite))
 

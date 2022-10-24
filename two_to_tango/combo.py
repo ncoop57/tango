@@ -111,12 +111,13 @@ def convert_results_format(sim_path, settings_path, out_path, models):
     for model in models:
         sim_files = find_file("rankings_user_*.pkl", os.path.join(similarities_path, model))
         for sim_file in sim_files:
+            print("Loading", sim_file)
             file_name = ntpath.basename(sim_file).split(".")[0]
             file_tokens = file_name.split("_")
 
             vwords = file_tokens[3]
-            frames_per_sec = file_tokens[4]
-            ftk = file_tokens[5]
+            frames_per_sec = "30fps" # file_tokens[4]
+            ftk = file_tokens[4]
 
             model_similarities = pickle.load(open(sim_file, 'rb'))
 
